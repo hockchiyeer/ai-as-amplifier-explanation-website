@@ -1,92 +1,103 @@
-AI Amplifier — Website
-======================
+# AI Amplifier — Website
 
-A small educational website demonstrating "AI as an Amplifier, Multiplier, and Compounder." The project also includes a bilingual (English/Chinese) slide-deck showcase with three local PPTX files that illustrate how one AI application framework can transfer across software testing, political strategy, and business strategy.
+A comprehensive, bilingual (English/Chinese) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder." The project includes a slide-deck showcase with local presentation files that illustrate how a unified AI application framework can be successfully transferred and applied across diverse domains such as software testing, political strategy, and business strategy.
 
-This README is written for both non-technical readers (quick overview and what you can do) and technical users (how to run, develop, and extend).
+This repository contains a full-stack application built with React, Vite, Express, and Drizzle ORM.
 
----
+## 🌟 Key Features
 
-Table of contents
-- Quick overview (for laymen)
-- What you'll find in the repo (brief)
-- How to browse the slide decks (simple)
-- Developer guide (run, build, test)
-- Implementation notes (where things live)
-- Security & privacy
-- Next steps / suggestions
+*   **Bilingual Interface**: Seamless switching between English and Chinese content.
+*   **Educational Slide Showcase**: Explore how AI amplifies outcomes across different domains. The application provides interactive previews and downloads for multiple demonstration slide decks.
+*   **Modern Full-Stack Architecture**: A robust React frontend backed by a fast Express API and type-safe database access using Drizzle ORM.
+*   **Responsive Design**: A user interface that works beautifully across all devices.
 
----
+## 📂 Repository Structure
 
-Quick overview (Laymen)
+The project is structured as a monorepo containing both client and server applications, alongside shared utilities and database definitions.
 
-- Purpose: Explore how AI amplifies or multiplies outcomes across domains. The site explains the core strategic ideas and provides three example slide decks showing the same AI application pattern applied in different areas.
-- Main interactive feature: "Slides / 幻灯片" section on the homepage — provides Preview and Download for three PPTX files included in the repository.
-- No complex setup needed to view the slides if you just want to open them locally — you can open the files in the `resources/data/pptx` folder using PowerPoint or another presentation app.
+```text
+ai-as-amplifier-explanation-website/
+├── client/                 # Frontend React + Vite application
+│   ├── public/             # Static assets
+│   ├── src/                # React components, pages, hooks, and utilities
+│   └── test/               # Frontend test suites
+├── server/                 # Backend Express server and API routes
+│   ├── _core/              # Server configuration and startup
+│   └── routers.ts          # API route definitions
+├── shared/                 # Shared types, constants, and utilities for both client and server
+├── drizzle/                # Database schemas and migration files (Drizzle ORM)
+├── resources/              # Static resources and data
+│   └── data/pptx/          # The example slide decks showcasing AI amplification
+├── scripts/                # Development and build utility scripts
+├── patches/                # Dependency patches
+├── CONTENT.md              # Detailed content documentation
+└── EXPANSION_PLAN.md       # Roadmap and future expansion plans
+```
 
-What you'll find in the repo (short)
+## 🛠️ Tech Stack
 
-- `client/` — React + Vite UI source code. The UI is bilingual (English/Chinese) via an `i18n` file.
-- `server/` — small Express-powered dev server and helpers. The dev server also proxies storage and OAuth helpers used by the app.
-- `resources/data/pptx/` — the 3 PPTX example slides included for the showcase.
-- `README.md` — this document.
+*   **Frontend**: React, TypeScript, Vite
+*   **Backend**: Node.js, Express, TypeScript
+*   **Database**: Drizzle ORM
+*   **Testing**: Vitest
+*   **Package Manager**: pnpm
 
-How to quickly view the slides (simplest)
+## 🚀 Getting Started
 
-1. Open the local folder `resources/data/pptx` in Windows Explorer.
-2. Double-click the PPTX you want to view; it will open in PowerPoint (or any app registered to open .pptx).
+### Prerequisites
 
-How to run the website (technical)
+Ensure you have the following installed:
+*   [Node.js](https://nodejs.org/) (v18 or higher recommended)
+*   [pnpm](https://pnpm.io/) (Recommended package manager)
 
-Prerequisites
-- Node.js (v18+ recommended)
-- pnpm (recommended as package manager, but npm or yarn can also work)
+### Installation
 
-Install and run (development)
+1.  Clone the repository and navigate into it:
+    ```bash
+    git clone <repository-url>
+    cd ai-as-amplifier-explanation-website
+    ```
 
-Open PowerShell in the repository root and run:
+2.  Install all dependencies:
+    ```bash
+    pnpm install
+    ```
 
-```powershell
-pnpm install
+### Running the Application
+
+To start the development server for both the frontend and backend:
+
+```bash
 pnpm dev
 ```
 
-- `pnpm dev` starts the server in development mode (Vite + Express middleware). The server will print the URL it binds to (default http://localhost:3000 or an alternate port if 3000 is busy).
-- Open the URL in your browser. Use the top navigation to switch language and click "Slides" / "幻灯片" to find the slide deck showcase.
+*   The local development server will start (typically bound to `http://localhost:3000`, or the next available port).
+*   Open your browser and navigate to the provided URL to view the application.
 
-How the Slides section works
-- The three PPTX files stored under `resources/data/pptx` are served by the server at `/pptx/<filename>` (e.g. `/pptx/AI_As_Amplifier_...35_slides.pptx`).
-- The site displays a small bilingual card for each deck with Preview (opens the file in a new tab) and Download (triggers a browser download).
-- Note: browsers will typically download `.pptx` files; preview behavior depends on browser plugins or online viewers.
+## 📖 Using the Slide Showcase
 
-Developer reference (files & locations)
-- client/src/lib/i18n.ts — bilingual text for the site, includes `pptShowcase` entries.
-- client/src/components/PptShowcase.tsx — the new component that lists and links to the PPTX files.
-- client/src/pages/Home.tsx — the main home page which now includes the PptShowcase section.
-- client/src/components/Navigation.tsx — navigation entries; includes the Slides menu item.
-- server/_core/index.ts — dev server startup file. Static route added: `app.use('/pptx', express.static(...resources/data/pptx...))`.
-- resources/data/pptx — the three PPTX files included in the project.
+The "Slides / 幻灯片" section is a core feature of the platform, demonstrating practical applications of AI:
 
-Common troubleshooting
-- "Server won't start / port is busy": The dev script attempts to use port 3000 and will pick next available port in range 3000..3019. Check existing services on those ports.
-- "TypeScript errors in IDE": This repo uses TypeScript and expects node/react type definitions; run `pnpm install` to ensure devDependencies like `@types/node` and `@types/react` are present for your editor.
-- "Preview doesn't display in browser": Browsers generally don't render .pptx. Use the Download button and open the file locally or upload it to a drive/viewer (Google Drive or OneDrive) to see an in-browser viewer.
+1.  Navigate to the Slides section via the top navigation bar.
+2.  You can **Preview** the slides (which opens them in a new tab) or **Download** them directly to your machine.
+3.  Alternatively, to view the slides without running the application, navigate to `resources/data/pptx/` and open the `.pptx` files using your preferred presentation software.
 
-Security & privacy
-- The `/pptx` route serves local files from `resources/data/pptx` to anyone who can access the server—this demo is intended for local or protected environments. If you need access control, the server should be updated to require authentication or to issue signed URLs.
+## 🔧 Development Guide
 
-Next steps / optional improvements
-- Convert PPTX to image thumbnails at build-time and display slides inline (fast, offline-friendly preview).
-- Upload PPTX to a cloud drive and embed Office/Drive viewers for inline embed.
-- Add per-file thumbnails and short speaker notes metadata.
+*   **Bilingual Content**: Text and translations are managed within the `client/src/lib/i18n.ts` file.
+*   **Slide Showcase Component**: Modifications to the presentation viewer can be made in `client/src/components/PptShowcase.tsx`.
+*   **Database Schema**: Update your Drizzle schema in the `drizzle/` directory and use the provided pnpm scripts to generate and run migrations.
 
-Contact / author
-- Er Hock Chiye — source author of content; repository maintained for demonstration and experimentation.
+### Troubleshooting
 
----
+*   **Port in Use**: The dev script automatically attempts to find an available port starting from 3000 up to 3019. Check if any background services are blocking these ports.
+*   **TypeScript Errors**: Ensure you have run `pnpm install` so that all necessary `@types/*` packages are available to your IDE.
+*   **Slide Previewing**: Browsers generally do not render `.pptx` files natively. Use the "Download" option or upload the file to a cloud viewer (like Google Drive) for an optimal experience.
 
-If you'd like, I can now:
-- Add in-browser thumbnails by converting each PPTX to images and embedding them (recommended where you want an immediate preview), or
-- Add an authenticated route before exposing `/pptx` publicly.
+## 🔐 Security & Privacy
 
-Tell me which improvement you'd like me to do next and I'll proceed. If you prefer to test locally first, start the dev server per the commands above and open the Slides section in your browser.
+This demonstration is intended for local or protected environments. The slide decks under `resources/data/pptx/` are served statically. If deployed to a public environment, ensure proper authentication and authorization mechanisms are implemented before exposing sensitive routes or files.
+
+## 📞 Contact
+
+*   **Author**: Er Hock Chiye — Source author of content; repository maintained for demonstration and experimentation.
