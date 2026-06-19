@@ -20,7 +20,6 @@ export const i18n = {
       aiMoats: 'AI Moats',
       keyTakeaways: 'Takeaways',
       pptShowcase: 'Slides',
-  neuralLimitations: 'Neural Network Limits',
       language: '中文',
     },
 
@@ -450,47 +449,6 @@ export const i18n = {
       keyTakeawayText:
         "AI doesn't make you smarter. It amplifies what you already do. The question isn't whether to use AI—it's whether your strategy is strong enough to be amplified.",
     },
-    neuralLimitations: {
-      title: 'Neural Network Limitations',
-      subtitle: 'Where neural models differ from human reasoning',
-      hero: {
-        heading: 'Why Neural Networks Aren\'t Human Brains',
-        lead: 'Overview of common failure modes, generalization limits, and what humans still do better.',
-      },
-      sections: {
-        comparison: {
-          title: 'Comparison: Neural Models vs. Humans',
-          points: [
-            'Pattern recognition at scale vs. causal and counterfactual reasoning',
-            'High-dimensional interpolation vs. low-data systematic generalization',
-            'Statistical association vs. grounded semantic understanding',
-          ],
-        },
-        visualMetaphor: {
-          title: 'A Visual Metaphor',
-          text: 'Neural nets are excellent at filling in believable details but lack the causal "seams" that humans use to reason about why something happens.',
-        },
-        detailed: {
-          title: 'Detailed Explanation',
-          paragraphs: [
-            'Neural networks learn statistical patterns from large datasets. This makes them powerful at interpolation and producing fluent outputs, but brittle when asked to extrapolate beyond training distributions.',
-            'Humans use causal models, mental simulation, and symbolic reasoning to test hypotheses—capabilities that current neural models emulate only imperfectly.',
-          ],
-        },
-        resourceComparison: {
-          title: 'When Humans Still Win',
-          bullets: [
-            'Understanding intent and long-term planning',
-            'Designing interventions that change causal systems',
-            'Evaluating subtle social, ethical, or legal implications',
-          ],
-        },
-        conclusion: {
-          title: 'Conclusion',
-          text: 'Use neural models for scale and pattern completion; use humans for causal judgment, strategy, and moral reasoning. Best outcomes combine both.',
-        },
-      },
-    },
   },
 
   zh: {
@@ -511,7 +469,6 @@ export const i18n = {
       aiMoats: 'AI 护城河',
       keyTakeaways: '核心要点',
       pptShowcase: '幻灯片',
-  neuralLimitations: '神经网络局限',
       language: 'English',
     },
 

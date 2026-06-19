@@ -340,8 +340,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Neural Network Limits Section */}
-      {/* Neural limitations moved to standalone page: /neural-network-limits */}
+
 
       {/* Vibe Coding Section */}
       <Section id="vibe-coding" className="bg-white">

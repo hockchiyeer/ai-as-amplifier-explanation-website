@@ -22,7 +22,6 @@ export function Navigation({ activeSection }: NavigationProps) {
     { id: 'case-studies', label: nav.caseStudies },
     { id: 'use-cases', label: nav.useCases },
     { id: 'prompting-guide', label: nav.promptingGuide },
-  { id: 'neural-network-limits', label: nav.neuralLimitations },
     { id: 'vibe-coding', label: nav.vibeCoding },
     { id: 'strategic-insights', label: nav.strategicInsights },
     { id: 'ppt-showcase', label: nav.pptShowcase },
@@ -41,11 +40,6 @@ export function Navigation({ activeSection }: NavigationProps) {
   const handleNavClick = (sectionId: string) => {
     if (sectionId === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (sectionId === 'neural-network-limits') {
-      // navigate to standalone page for Neural Network Limits
-      // do a full navigation to simplify routing and ensure the page loads independently
-      window.location.href = '/neural-network-limits';
-      return;
     } else {
       const element = document.getElementById(sectionId);
       if (element) {
