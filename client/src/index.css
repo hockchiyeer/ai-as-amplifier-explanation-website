@@ -1,0 +1,222 @@
+/* Google Fonts - Must come first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+/* Tailwind CSS */
+@import "tailwindcss";
+
+/* CSS Variables for Premium Design */
+@layer base {
+  :root {
+    --primary: 59 130 246;
+    --primary-foreground: 255 255 255;
+    --secondary: 148 163 184;
+    --secondary-foreground: 255 255 255;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --muted: 226 232 240;
+    --muted-foreground: 100 116 139;
+    --accent: 59 130 246;
+    --accent-foreground: 255 255 255;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 59 130 246;
+    --radius: 0.5rem;
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+  }
+
+  .dark {
+    --primary: 93 155 255;
+    --primary-foreground: 15 23 42;
+    --secondary: 100 116 139;
+    --secondary-foreground: 15 23 42;
+    --destructive: 239 68 68;
+    --destructive-foreground: 15 23 42;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 93 155 255;
+    --accent-foreground: 15 23 42;
+    --popover: 15 23 42;
+    --popover-foreground: 255 255 255;
+    --card: 15 23 42;
+    --card-foreground: 255 255 255;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 93 155 255;
+    --background: 2 8 23;
+    --foreground: 255 255 255;
+  }
+}
+
+/* Typography */
+@layer base {
+  body {
+    @apply font-sans text-slate-900 bg-white;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+/* Smooth Scrolling */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Container */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Flex Defaults */
+.flex {
+  @apply flex min-w-0 min-h-0;
+}
+
+/* Button Defaults */
+button {
+  @apply transition-all duration-200;
+}
+
+button:active {
+  @apply transform scale-95;
+}
+
+/* Link Defaults */
+a {
+  @apply transition-colors duration-200;
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility Classes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up{animation:fadeInUp 0.6s ease-out both}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.5s ease-out;
+}
+
+/* Visual Metaphor & Comparison Animations (shared) */
+@keyframes flip1 {
+  0%,30%{transform:rotateY(0)}
+  35%,95%{transform:rotateY(-180deg)}
+  to{transform:rotateY(0)}
+}
+@keyframes flip2 {
+  0%,45%{transform:rotateY(0)}
+  50%,95%{transform:rotateY(-180deg)}
+  to{transform:rotateY(0)}
+}
+@keyframes flip3 {
+  0%,60%{transform:rotateY(0)}
+  65%,95%{transform:rotateY(-180deg)}
+  to{transform:rotateY(0)}
+}
+@keyframes process-data {
+  0%,to{transform:scale(1);opacity:.7}
+  50%{transform:scale(1.2);opacity:1}
+}
+@keyframes pulse-slow {
+  0%{transform:scale(.8);opacity:.7}
+  50%{transform:scale(1.2);opacity:.9}
+  to{transform:scale(.8);opacity:.7}
+}
+.animate-flip1{animation:flip1 10s infinite}
+.animate-flip2{animation:flip2 10s infinite}
+.animate-flip3{animation:flip3 10s infinite}
+.animate-process1{animation:process-data 5s infinite}
+.animate-process2{animation:process-data 5s infinite .5s}
+.animate-process3{animation:process-data 5s infinite 1s}
+.animate-pulse-slow{animation:pulse-slow 2s infinite}
+.perspective-1000{perspective:1000px}
+.transform-origin-left{transform-origin:left center}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}

@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://xouwhngw.manus.space/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" type="image/svg+xml" href="https://xouwhngw.manus.space/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neural-learning-comparison</title>
+    <script type="module" crossorigin="" src="./neural-learning-comparison_files/index-D9jUpIQa.js.download"></script>
+    <link rel="stylesheet" crossorigin="" href="./neural-learning-comparison_files/index-BT3rRGrx.css">
+  <style id="__manus_style-id">
+      .__manus__-space-editor-highlight {
+        outline: 1px dashed #0081F2;
+        cursor: pointer;
+				border-radius: 12px;
+      }
+			.__manus__virtual-text-node.__manus__-space-editor-highlight{
+				outline: none;
+				text-decoration: underline;
+				border-radius:unset;
+			}
+			.__manus__only-text-node{
+				text-decoration: underline;
+				cursor: pointer!important;
+				border-radius: 12px;
+				outline: 1px dashed #0081F2;
+			}
+			.__manus__text-node-active{
+				border-radius: 6px;
+				outline: 1px solid  #0081F2;
+				background: rgba(0, 129, 242, 0.08);
+				text-decoration: none;
+			}
+      /* 编辑模式下通用光标样式 */
+      body.__manus__edit-mode-active * {
+        cursor: default;
+      }
+      /* 可编辑元素的光标样式 */
+      body.__manus__edit-mode-active .__manus__virtual-text-node,
+      body.__manus__edit-mode-active .__manus__-space-editor-highlight {
+        cursor: pointer;
+      }
+
+			.__manus__hidden{
+			opacity:0
+			}
+
+	.clr-picker {
+  display: none;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 200px;
+  z-index: 1000;
+  border-radius: 10px;
+  background-color: #fff;
+  justify-content: flex-end;
+  direction: ltr;
+  box-shadow: 0 0 5px rgba(0,0,0,.05), 0 5px 20px rgba(0,0,0,.1);
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.clr-picker.clr-open,
+.clr-picker[data-inline="true"] {
+  display: flex;
+}
+
+.clr-picker[data-inline="true"] {
+  position: relative;
+}
+
+.clr-gradient {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 3px 3px 0 0;
+  background-image: linear-gradient(rgba(0,0,0,0), #000), linear-gradient(90deg, #fff, currentColor);
+  cursor: pointer;
+}
+
+.clr-marker {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-color: currentColor;
+  cursor: pointer;
+}
+
+.clr-picker input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 16px;
+}
+
+.clr-picker input[type="range"]::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  -webkit-appearance: none;
+}
+
+.clr-picker input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 16px;
+  border: 0;
+}
+
+.clr-picker input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+}
+
+.clr-hue {
+  background-image: linear-gradient(to right, #f00 0%, #ff0 16.66%, #0f0 33.33%, #0ff 50%, #00f 66.66%, #f0f 83.33%, #f00 100%);
+}
+
+.clr-hue,
+.clr-alpha {
+  position: relative;
+  width: calc(100% - 40px);
+  height: 8px;
+  margin: 5px 20px;
+  border-radius: 4px;
+}
+
+.clr-alpha span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background-image: linear-gradient(90deg, rgba(0,0,0,0), currentColor);
+}
+
+.clr-hue input[type="range"],
+.clr-alpha input[type="range"] {
+  position: absolute;
+  width: calc(100% + 32px);
+  height: 16px;
+  left: -16px;
+  top: -4px;
+  margin: 0;
+  background-color: transparent;
+  opacity: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.clr-hue div,
+.clr-alpha div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  top: 50%;
+  margin-left: -8px;
+  transform: translateY(-50%);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: currentColor;
+  box-shadow: 0 0 1px #888;
+  pointer-events: none;
+}
+
+.clr-alpha div:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.clr-format {
+  display: none;
+  order: 1;
+  width: calc(100% - 40px);
+  margin: 0 20px 20px;
+}
+
+.clr-segmented {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #999;
+  font-size: 12px;
+}
+
+.clr-segmented input,
+.clr-segmented legend {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.clr-segmented label {
+  flex-grow: 1;
+  margin: 0;
+  padding: 4px 0;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: initial;
+  text-align: center;
+  cursor: pointer;
+}
+
+.clr-segmented label:first-of-type {
+  border-radius: 10px 0 0 10px;
+}
+
+.clr-segmented label:last-of-type {
+  border-radius: 0 10px 10px 0;
+}
+
+.clr-segmented input:checked + label {
+  color: #fff;
+  background-color: #666;
+}
+
+.clr-swatches {
+  order: 2;
+  width: calc(100% - 32px);
+  margin: 0 16px;
+}
+
+.clr-swatches div {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  justify-content: center;
+}
+
+.clr-swatches button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 4px 6px 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  text-indent: -1000px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.clr-swatches button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  background-color: currentColor;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+}
+
+input.clr-color {
+  order: 1;
+  width: calc(100% - 80px);
+  height: 32px;
+  margin: 15px 20px 20px auto;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  color: #444;
+  background-color: #fff;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: none;
+}
+
+input.clr-color:focus {
+  outline: none;
+  border: 1px solid #1e90ff;
+}
+
+.clr-close,
+.clr-clear {
+  display: none;
+  order: 2;
+  height: 24px;
+  margin: 0 20px 20px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #666;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.clr-close {
+  display: block;
+  margin: 0 20px 20px auto;
+}
+
+.clr-preview {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin: 15px 0 20px 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.clr-preview:before,
+.clr-preview:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.clr-preview:after {
+  border: 0;
+  background-color: currentColor;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+}
+
+.clr-preview button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  outline-offset: -2px;
+  background-color: transparent;
+  text-indent: -9999px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.clr-marker,
+.clr-hue div,
+.clr-alpha div,
+.clr-color {
+  box-sizing: border-box;
+}
+
+.clr-field {
+  display: inline-block;
+  position: relative;
+  color: transparent;
+}
+
+.clr-field input {
+  margin: 0;
+  direction: ltr;
+}
+
+.clr-field.clr-rtl input {
+  text-align: right;
+}
+
+.clr-field button {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  text-indent: -1000px;
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.clr-field.clr-rtl button {
+  right: auto;
+  left: 0;
+}
+
+.clr-field button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  background-color: currentColor;
+  box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+}
+
+.clr-alpha,
+.clr-alpha div,
+.clr-swatches button,
+.clr-preview:before,
+.clr-field button {
+  background-image: repeating-linear-gradient(45deg, #aaa 25%, transparent 25%, transparent 75%, #aaa 75%, #aaa), repeating-linear-gradient(45deg, #aaa 25%, #fff 25%, #fff 75%, #aaa 75%, #aaa);
+  background-position: 0 0, 4px 4px;
+  background-size: 8px 8px;
+}
+
+.clr-marker:focus {
+  outline: none;
+}
+
+.clr-keyboard-nav .clr-marker:focus,
+.clr-keyboard-nav .clr-hue input:focus + div,
+.clr-keyboard-nav .clr-alpha input:focus + div,
+.clr-keyboard-nav .clr-segmented input:focus + label {
+  outline: none;
+  box-shadow: 0 0 0 2px #1e90ff, 0 0 2px 2px #fff;
+}
+
+.clr-picker[data-alpha="false"] .clr-alpha {
+  display: none;
+}
+
+.clr-picker[data-minimal="true"] {
+  padding-top: 16px;
+}
+
+.clr-picker[data-minimal="true"] .clr-gradient,
+.clr-picker[data-minimal="true"] .clr-hue,
+.clr-picker[data-minimal="true"] .clr-alpha,
+.clr-picker[data-minimal="true"] .clr-color,
+.clr-picker[data-minimal="true"] .clr-preview {
+  display: none;
+}
+
+/** Dark theme **/
+
+.clr-dark {
+  background-color: #444;
+}
+
+.clr-dark .clr-segmented {
+  border-color: #777;
+}
+
+.clr-dark .clr-swatches button:after {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.3);
+}
+
+.clr-dark input.clr-color {
+  color: #fff;
+  border-color: #777;
+  background-color: #555;
+}
+
+.clr-dark input.clr-color:focus {
+  border-color: #1e90ff;
+}
+
+.clr-dark .clr-preview:after {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.5);
+}
+
+.clr-dark .clr-alpha,
+.clr-dark .clr-alpha div,
+.clr-dark .clr-swatches button,
+.clr-dark .clr-preview:before {
+  background-image: repeating-linear-gradient(45deg, #666 25%, transparent 25%, transparent 75%, #888 75%, #888), repeating-linear-gradient(45deg, #888 25%, #444 25%, #444 75%, #888 75%, #888);
+}
+
+/** Polaroid theme **/
+
+.clr-picker.clr-polaroid {
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,.1), 0 5px 30px rgba(0,0,0,.2);
+}
+
+.clr-picker.clr-polaroid:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 10px;
+  left: 20px;
+  top: -10px;
+  border: solid transparent;
+  border-width: 0 8px 10px 8px;
+  border-bottom-color: currentColor;
+  box-sizing: border-box;
+  color: #fff;
+  filter: drop-shadow(0 -4px 3px rgba(0,0,0,.1));
+  pointer-events: none;
+}
+
+.clr-picker.clr-polaroid.clr-dark:before {
+  color: #444;
+}
+
+.clr-picker.clr-polaroid.clr-left:before {
+  left: auto;
+  right: 20px;
+}
+
+.clr-picker.clr-polaroid.clr-top:before {
+  top: auto;
+  bottom: -10px;
+  transform: rotateZ(180deg);
+}
+
+.clr-polaroid .clr-gradient {
+  width: calc(100% - 20px);
+  height: 120px;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.clr-polaroid .clr-hue,
+.clr-polaroid .clr-alpha {
+  width: calc(100% - 30px);
+  height: 10px;
+  margin: 6px 15px;
+  border-radius: 5px;
+}
+
+.clr-polaroid .clr-hue div,
+.clr-polaroid .clr-alpha div {
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.clr-polaroid .clr-format {
+  width: calc(100% - 20px);
+  margin: 0 10px 15px;
+}
+
+.clr-polaroid .clr-swatches {
+  width: calc(100% - 12px);
+  margin: 0 6px;
+}
+.clr-polaroid .clr-swatches div {
+  padding-bottom: 10px;
+}
+
+.clr-polaroid .clr-swatches button {
+  width: 22px;
+  height: 22px;
+}
+
+.clr-polaroid input.clr-color {
+  width: calc(100% - 60px);
+  margin: 10px 10px 15px auto;
+}
+
+.clr-polaroid .clr-clear {
+  margin: 0 10px 15px 10px;
+}
+
+.clr-polaroid .clr-close {
+  margin: 0 10px 15px auto;
+}
+
+.clr-polaroid .clr-preview {
+  margin: 10px 0 15px 10px;
+}
+
+/** Large theme **/
+
+.clr-picker.clr-large {
+  width: 275px;
+}
+
+.clr-large .clr-gradient {
+  height: 150px;
+}
+
+.clr-large .clr-swatches button {
+  width: 22px;
+  height: 22px;
+}
+
+/** Pill (horizontal) theme **/
+
+.clr-picker.clr-pill {
+  width: 380px;
+  padding-left: 180px;
+  box-sizing: border-box;
+}
+
+.clr-pill .clr-gradient {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin-bottom: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.clr-pill .clr-hue {
+  margin-top: 20px;
+}
+    </style></head>
+  <body>
+    <div id="root"><div class="app-container human-mode"><header><nav class="main-nav"><div class="logo">Neural Learning Comparison</div><button class="mode-toggle human">Switch to Machine Mode</button></nav></header><main><section class="hero-section"><div class="hero-content" style="opacity: 1;"><h1 class="hero-title" style="opacity: 1; transform: none;">The Learning Gap: Human Minds vs Neural Networks</h1><p class="hero-subtitle" style="opacity: 1; transform: none;">Exploring the fundamental differences between how humans learn and how neural networks process information</p><div class="hero-toggle-container" style="opacity: 1; transform: none;"><button class="hero-toggle-button human"><span class="toggle-label human">Human Learning</span><span class="toggle-switch"><span class="toggle-indicator"></span></span><span class="toggle-label machine">Machine Learning</span></button></div><div class="hero-visualization" style="opacity: 1; transform: none;"><div class="human-learning-visual"><div class="brain-container"><div class="brain-highlight pulse"></div><div class="brain-highlight pulse delay-1"></div><div class="brain-highlight pulse delay-2"></div><div class="knowledge-fragment fragment-1">Concept A</div><div class="knowledge-fragment fragment-2">Concept B</div><div class="knowledge-fragment fragment-3">Concept C</div></div></div></div><div class="hero-scroll-indicator" style="opacity: 1; transform: none;"><span>Scroll to explore</span><div class="scroll-arrow">↓</div></div></div></section><section class="comparison-section"><div class="section-container" style="opacity: 0;"><h2 class="section-title" style="opacity: 0; transform: translateY(30px);">Two Fundamentally Different Learning Approaches</h2><div class="comparison-container" style="opacity: 0; transform: translateY(30px);"><div class="comparison-side human-side active"><h3>Human Learning</h3><div class="comparison-visual human-visual"><div class="book-visual"><div class="page page-1"><div class="highlight"></div></div><div class="page page-2"><div class="highlight"></div></div><div class="page page-3"><div class="highlight"></div></div></div></div><ul class="comparison-points"><li><span class="point-title">Sparse &amp; Fragmented</span><p>Humans learn in bits and pieces, focusing on what matters most</p></li><li><span class="point-title">Selective Attention</span><p>We can browse highlights and extract key information quickly</p></li><li><span class="point-title">Generalization</span><p>Can form abstract concepts from minimal examples</p></li><li><span class="point-title">Resource Efficient</span><p>Learning requires relatively little time and energy</p></li></ul></div><div class="comparison-divider">VS</div><div class="comparison-side machine-side "><h3>Neural Network Learning</h3><div class="comparison-visual machine-visual"><div class="dataset-visual"><div class="data-item" style="animation-delay: 0s;"></div><div class="data-item" style="animation-delay: 0.2s;"></div><div class="data-item" style="animation-delay: 0.4s;"></div><div class="data-item" style="animation-delay: 0.6s;"></div><div class="data-item" style="animation-delay: 0.8s;"></div><div class="data-item" style="animation-delay: 1s;"></div><div class="epoch-label">Epoch 1/10</div></div></div><ul class="comparison-points"><li><span class="point-title">Complete &amp; Disciplined</span><p>Must process entire training dataset repeatedly</p></li><li><span class="point-title">Comprehensive Processing</span><p>Requires carefully curated, engineered data</p></li><li><span class="point-title">Extensive Examples</span><p>Needs many examples to form generalizations</p></li><li><span class="point-title">Resource Intensive</span><p>Time-consuming, energy-intensive, storage-heavy</p></li></ul></div></div></div></section><section class="visual-metaphor-section"><div class="section-container" style="opacity: 0;"><h2 class="section-title" style="opacity: 0; transform: translateY(30px);">Learning in Action: A Visual Comparison</h2><div class="metaphor-container" style="opacity: 0; transform: translateY(30px);"><div class="metaphor-animation"><div class="human-learning-animation"><div class="book-stack"><div class="book book-1"></div><div class="book book-2"></div><div class="book book-3"></div></div><div class="human-figure"><div class="human-head"><div class="thought-bubble"><div class="thought-fragment">Key insight!</div></div></div><div class="human-body"></div></div><div class="open-book"><div class="page-content"><div class="text-line"></div><div class="text-line"></div><div class="text-line highlight"></div><div class="text-line"></div><div class="text-line"></div></div></div></div></div><div class="metaphor-explanation"><h3>Selective &amp; Efficient</h3><p>Humans naturally focus on the most relevant information, skipping what's unnecessary. We can quickly browse a book, extract key insights, and form new connections without processing every word.</p><div class="efficiency-meter"><div class="meter-label">Resource Efficiency</div><div class="meter-bar"><div class="meter-fill" style="width: 80%; background-color: var(--human-color);"></div></div><div class="meter-value">High</div></div></div></div></div></section><section class="detailed-explanation-section"><div class="section-container" style="opacity: 0;"><h2 class="section-title" style="opacity: 0; transform: translateY(20px);">Understanding the Differences in Detail</h2><p class="section-description" style="opacity: 0; transform: translateY(20px);">Explore the key differences between human learning and neural network learning through these interactive cards. Click on each card to learn more.</p><div class="explanation-cards" style="opacity: 0; transform: translateY(20px);"><div class="explanation-card " style="height: 120px;"><div class="card-header"><h3>Learning Approach</h3><p class="card-short-desc">How information is processed and retained</p><div class="expand-icon">+</div></div></div><div class="explanation-card " style="height: 120px;"><div class="card-header"><h3>Knowledge Acquisition</h3><p class="card-short-desc">How new information is gathered</p><div class="expand-icon">+</div></div></div><div class="explanation-card " style="height: 120px;"><div class="card-header"><h3>Abstraction Ability</h3><p class="card-short-desc">How concepts are generalized</p><div class="expand-icon">+</div></div></div><div class="explanation-card " style="height: 120px;"><div class="card-header"><h3>Resource Consumption</h3><p class="card-short-desc">Energy and time requirements</p><div class="expand-icon">+</div></div></div></div></div></section><section class="resource-comparison-section"><div class="section-container" style="opacity: 0;"><h2 class="section-title" style="opacity: 0; transform: translateY(30px);">Resource Consumption Comparison</h2><p class="section-description" style="opacity: 0; transform: translateY(30px);">Neural networks require significantly more resources than human learning across multiple dimensions. This visualization compares the relative resource intensity between the two learning approaches.</p><div class="chart-container" style="opacity: 0; transform: translateY(30px);"><svg class="resource-chart" width="600" height="400"><g transform="translate(80,30)"><g transform="translate(0,320)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="currentColor" d="M0,6V0H440V6"></path><g class="tick" opacity="1" transform="translate(53.96226415094337,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em" style="font-size: 12px;">Time</text></g><g class="tick" opacity="1" transform="translate(136.98113207547166,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em" style="font-size: 12px;">Energy</text></g><g class="tick" opacity="1" transform="translate(219.99999999999997,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em" style="font-size: 12px;">Storage</text></g><g class="tick" opacity="1" transform="translate(303.0188679245283,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em" style="font-size: 12px;">Flexibility</text></g><g class="tick" opacity="1" transform="translate(386.0377358490566,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em" style="font-size: 12px;">Generalization</text></g></g><g fill="none" font-size="10" font-family="sans-serif" text-anchor="end"><path class="domain" stroke="currentColor" d="M-6,320H0V0H-6"></path><g class="tick" opacity="1" transform="translate(0,320)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em" style="font-size: 12px;">0</text></g><g class="tick" opacity="1" transform="translate(0,256)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em" style="font-size: 12px;">20</text></g><g class="tick" opacity="1" transform="translate(0,192)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em" style="font-size: 12px;">40</text></g><g class="tick" opacity="1" transform="translate(0,128)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em" style="font-size: 12px;">60</text></g><g class="tick" opacity="1" transform="translate(0,63.999999999999986)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em" style="font-size: 12px;">80</text></g><g class="tick" opacity="1" transform="translate(0,0)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em" style="font-size: 12px;">100</text></g></g><text transform="rotate(-90)" y="-60" x="-160" dy="1em" style="text-anchor: middle; font-size: 14px;">Resource Intensity (%)</text><rect class="bar-human" x="10.377358490566005" width="29.056603773584907" y="256" height="64" fill="var(--human-color)"></rect><rect class="bar-human" x="93.39622641509432" width="29.056603773584907" y="272" height="48" fill="var(--human-color)"></rect><rect class="bar-human" x="176.4150943396226" width="29.056603773584907" y="240" height="80" fill="var(--human-color)"></rect><rect class="bar-human" x="259.4339622641509" width="29.056603773584907" y="48.00000000000001" height="272" fill="var(--human-color)"></rect><rect class="bar-human" x="342.45283018867923" width="29.056603773584907" y="63.999999999999986" height="256" fill="var(--human-color)"></rect><rect class="bar-machine" x="39.433962264150914" width="29.056603773584907" y="48.00000000000001" height="272" fill="var(--machine-color)"></rect><rect class="bar-machine" x="122.45283018867921" width="29.056603773584907" y="31.999999999999993" height="288" fill="var(--machine-color)"></rect><rect class="bar-machine" x="205.47169811320754" width="29.056603773584907" y="63.999999999999986" height="256" fill="var(--machine-color)"></rect><rect class="bar-machine" x="288.49056603773585" width="29.056603773584907" y="224" height="96" fill="var(--machine-color)"></rect><rect class="bar-machine" x="371.50943396226415" width="29.056603773584907" y="192" height="128" fill="var(--machine-color)"></rect><g transform="translate(460, 0)"><rect x="0" y="0" width="15" height="15" fill="var(--human-color)"></rect><text x="25" y="12" style="font-size: 12px;">Human Learning</text><rect x="0" y="30" width="15" height="15" fill="var(--machine-color)"></rect><text x="25" y="42" style="font-size: 12px;">Neural Network</text></g><text class="label" x="53.96226415094337" y="355" text-anchor="middle" style="font-size: 11px;">Training Time</text><text class="label" x="136.98113207547166" y="355" text-anchor="middle" style="font-size: 11px;">Energy Consumption</text><text class="label" x="219.99999999999997" y="355" text-anchor="middle" style="font-size: 11px;">Storage Requirements</text><text class="label" x="303.0188679245283" y="355" text-anchor="middle" style="font-size: 11px;">Learning Flexibility</text><text class="label" x="386.0377358490566" y="355" text-anchor="middle" style="font-size: 11px;">Few-Shot Learning</text></g></svg></div><div class="resource-explanation" style="opacity: 0; transform: translateY(30px);"><div class="resource-card"><h3>Developer Impact</h3><p>The resource-intensive nature of neural network training has significant impacts on development:</p><ul><li><strong>Time Constraints:</strong> Long training cycles slow down development and iteration</li><li><strong>Cost Barriers:</strong> High computational requirements create financial obstacles</li><li><strong>Environmental Concerns:</strong> Energy consumption raises sustainability questions</li><li><strong>Motivation Challenges:</strong> Lengthy training processes can erode developer motivation</li></ul></div></div></div></section><section class="conclusion-section"><div class="section-container" style="opacity: 0;"><h2 class="section-title" style="opacity: 0; transform: translateY(30px);">Future Directions: Bridging the Gap</h2><div class="conclusion-content" style="opacity: 0; transform: translateY(30px);"><div class="thought-experiment"><h3>What if neural networks could learn like humans?</h3><p>Imagine a future where neural networks could adopt the efficiency of human learning: selective attention to important information, sparse and incremental knowledge acquisition, and the ability to generalize from minimal examples.</p><div class="future-possibilities"><div class="possibility-card"><h4>Sparse Training</h4><p>Research into sparse training methods that focus computational resources on the most important parts of the data, similar to human attention mechanisms.</p></div><div class="possibility-card"><h4>Incremental Learning</h4><p>Developing models that can continuously learn from new data without requiring complete retraining, mimicking human incremental learning.</p></div><div class="possibility-card"><h4>Few-Shot Learning</h4><p>Advancing few-shot learning techniques that allow models to generalize effectively from a small number of examples, similar to human abstraction abilities.</p></div></div></div><div class="final-thoughts"><h3>Closing Thoughts</h3><p>While neural networks have achieved remarkable results in many domains, their fundamental learning approach remains inefficient compared to human cognition. By understanding these differences, researchers can work toward more efficient and sustainable AI systems that combine the best aspects of both approaches.</p><p>The future of machine learning may lie not in simply scaling up existing approaches, but in developing new paradigms that more closely mimic the efficiency and flexibility of human learning while maintaining the precision and scalability of computational methods.</p></div></div></div></section></main><footer class="site-footer"><div class="footer-container"><div class="footer-content"><div class="footer-section"><h3>Neural Learning Comparison</h3><p>An interactive exploration of the differences between human learning and neural network learning approaches.</p></div><div class="footer-section"><h3>References</h3><ul class="reference-list"><li><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener noreferrer">Language Models are Few-Shot Learners (Brown et al., 2020)</a></li><li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">Attention Is All You Need (Vaswani et al., 2017)</a></li><li><a href="https://arxiv.org/abs/1909.11942" target="_blank" rel="noopener noreferrer">ALBERT: A Lite BERT for Self-supervised Learning of Language Representations</a></li><li><a href="https://arxiv.org/abs/2106.04554" target="_blank" rel="noopener noreferrer">The Carbon Footprint of Machine Learning Training Will Plateau, Then Shrink</a></li></ul></div><div class="footer-section"><h3>Further Reading</h3><ul class="reading-list"><li><a href="https://arxiv.org/abs/2101.03961" target="_blank" rel="noopener noreferrer">Sparse Transfer Learning via Winning Lottery Tickets</a></li><li><a href="https://arxiv.org/abs/2103.00020" target="_blank" rel="noopener noreferrer">Scaling Laws for Neural Language Models</a></li><li><a href="https://arxiv.org/abs/2102.01293" target="_blank" rel="noopener noreferrer">The Hardware Lottery</a></li></ul></div></div><div class="footer-bottom"><p>© 2025 Neural Learning Comparison</p></div></div></footer></div></div>
+  <manus-content-root><template shadowrootmode="open"><div id="content-root"><div id="toast-manager-container" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column-reverse; align-items: center; z-index: 1000; pointer-events: none;"></div><style>
+#content-root {
+  /* Text Colors */
+  --text-primary: #34322d;
+  --text-secondary: #535350;
+  --text-tertiary: #858481;
+  --text-disable: #b9b9b7;
+  --text-brand: #0081f2;
+  --text-onblack: #ffffff;
+  --text-white: #ffffff;
+  --text-white-tsp: #ffffff99;
+  --theme-text-primary: #262626;
+  --logo-color: #34322d;
+
+  /* Background Colors */
+  --background-gray-main: #f8f8f7;
+  --background-white-main: #ffffff;
+  --background-menu-white: #ffffff;
+  --background-tsp-menu-white: #ffffff14;
+  --background-tsp-card-gray: #37352f0a;
+  --background-nav: #ebebeb;
+  --background-card: #fafafa;
+  --background-mask: #000000a6;
+  --background-card-gray: #fafafa;
+  --background-preview-mask: #000000d9;
+
+  /* Border Colors */
+  --border-main: #0000000f;
+  --border-white: #ffffff33;
+  --border-btn-main: #0000001f;
+  --border-input-active: #0081f280;
+  --border-light: #0000000a;
+  --border-dark: #0000001f;
+  --border-primary: #4f59661f;
+
+  /* Icon Colors */
+  --icon-primary: #34322d;
+  --icon-secondary: #535350;
+  --icon-tertiary: #858481;
+  --icon-disable: #b9b9b7;
+  --icon-brand: #0081f2;
+  --icon-onblack: #ffffff;
+  --icon-white: #ffffff;
+  --icon-white-tsp: #ffffff99;
+
+  /* Function Colors */
+  --function-error: #f25a5a;
+  --function-success: #25ba3b;
+  --function-warning: #efa201;
+  --function-error-tsp: #f25a5a14;
+  --function-warning-tsp: #efa2011f;
+
+  /* Fill Colors */
+  --fill-blue: #0081f214;
+  --fill-tsp-white-main: #37352f0f;
+  --fill-tsp-white-dark: #37352f14;
+  --fill-tsp-white-light: #37352f0a;
+  --fill-tsp-gray-dark: #37352f14;
+  --fill-tsp-gray-main: #37352f0a;
+  --fill-input-chat: #ffffff;
+  --fill-white: #ffffff;
+  --fill-black: #28282973;
+  --fill-gray: #f8f8f7;
+
+  /* Button Colors */
+  --Button-primary-black: #1a1a19;
+  --Button-primary-white: #ffffff;
+  --Button-primary-brand: #0081f2;
+  --Button-primary-brand-disabled: #7cbdf5;
+  --Button-secondary-brand: #0081f21a;
+  --Button-secondary-error-border: #f25a5a80;
+  --Button-secondary-error-fill: #ffffff;
+  --Button-secondary-main: #ffffff;
+  --Button-secondary-gray: #37352f0f;
+
+  /* Tab Colors */
+  --tab-fill: rgba(0, 0, 0, 0.04);
+  --tab-active-black: #1a1a19;
+
+  /* Shadow Colors */
+  --shadow-L: #0000003d;
+  --shadow-M: #0000001f;
+  --shadow-S: #00000014;
+  --shadow-XS: #0000000f;
+  --shadows-inner-0: #ffffff00;
+  --shadows-inner-1: #16191d14;
+  --shadows-inner-2: #16191d1f;
+  --shadows-drop-1: #16191d08;
+  --shadows-drop-2: #16191d0a;
+  --shadows-drop-3: #16191d14;
+  --shadows-drop-4: #16191d1f;
+  --shadows-highlight-1: #cce5ff;
+  --shadows-highlight-2: #1487fa;
+  --shadows-danger-1: #fed7d7;
+  --shadows-danger-2: #ee3a3a;
+  --shadows-card-border: #16191d1f;
+  --shadows-card-border-2: #16191d1f;
+
+  /* Tooltips */
+  --Tooltips-main: #000000e6;
+
+  /* Gradual Colors */
+  --gradual-white-0: #ffffff00;
+  --gradual-gray-100: #ffffff00;
+  --gradual-gray-0: #ffffff00;
+  --gradual-dark-20: #00000033;
+
+  /** input */
+  --fill-input-chat: #ffffff;
+
+  /** gradient */
+  --gradient-bg-mask-gray-0: #eaeaeb00;
+}
+
+#content-root.dark {
+  /* Text Colors */
+  --text-primary: #dadada;
+  --text-secondary: #acacac;
+  --text-tertiary: #7f7f7f;
+  --text-disable: #5f5f5f;
+  --text-brand: #1a93fe;
+  --text-onblack: #000000e6;
+  --text-white: #ffffff;
+  --text-white-tsp: #ffffff99;
+  --theme-text-primary: #dbdbdb;
+  --logo-color: #dadada;
+  /* Background Colors */
+  --background-gray-main: #272728;
+  --background-white-main: #161618;
+  --background-menu-white: #383739;
+  --background-tsp-menu-white: #ffffff0f;
+  --background-tsp-card-gray: #ffffff0f;
+  --background-nav: #212122;
+  --background-card: #383739;
+  --background-mask: #000000a6;
+  --background-card-gray: #383739;
+  --background-preview-mask: #000000d9;
+
+  /* Border Colors */
+  --border-main: #ffffff14;
+  --border-white: #00000014;
+  --border-btn-main: #ffffff1a;
+  --border-input-active: #1a93fe80;
+  --border-light: #ffffff0f;
+  --border-dark: #ffffff29;
+  --border-primary: #56565f52;
+
+  /* Icon Colors */
+  --icon-primary: #dadada;
+  --icon-secondary: #acacac;
+  --icon-tertiary: #7f7f7f;
+  --icon-disable: #5f5f5f;
+  --icon-brand: #1a93fe;
+  --icon-onblack: #000000d9;
+  --icon-white: #ffffff;
+  --icon-white-tsp: #ffffff99;
+
+  /* Function Colors */
+  --function-error: #eb4d4d;
+  --function-success: #5eb92d;
+  --function-warning: #ffbf36;
+  --function-error-tsp: #eb4d4d14;
+  --function-warning-tsp: #ffbf361f;
+
+  /* Fill Colors */
+  --fill-blue: #1a93fe1f;
+  --fill-tsp-white-main: #ffffff0f;
+  --fill-tsp-white-dark: #ffffff1f;
+  --fill-tsp-white-light: #ffffff0a;
+  --fill-tsp-gray-dark: #00000047;
+  --fill-tsp-gray-main: #00000033;
+  --fill-input-chat: #363537;
+  --fill-white: #3e3d3e;
+  --fill-black: #28282973;
+  --fill-gray: #444345;
+
+  /* Button Colors */
+  --Button-primary-black: #ffffff;
+  --Button-primary-white: #ffffff14;
+  --Button-primary-brand: #1a93fe;
+  --Button-primary-brand-disabled: #215d93;
+  --Button-secondary-brand: #1a93fe1f;
+  --Button-secondary-error-border: #eb4d4d29;
+  --Button-secondary-error-fill: #eb4d4d1f;
+  --Button-secondary-main: #ffffff1f;
+  --Button-secondary-gray: #ffffff0f;
+
+  /* Tab Colors */
+  --tab-fill: rgba(255, 255, 255, 0.06);
+  --tab-active-black: #ffffff;
+
+  /* Shadow Colors */
+  --shadow-L: #00000066;
+  --shadow-M: #0000003d;
+  --shadow-S: #00000029;
+  --shadow-XS: #0000001f;
+  --shadows-inner-0: #ffffff1f;
+  --shadows-inner-1: #ffffff14;
+  --shadows-inner-2: #ffffff1f;
+  --shadows-drop-1: #0000001f;
+  --shadows-drop-2: #00000033;
+  --shadows-drop-3: #00000047;
+  --shadows-drop-4: #0000005c;
+  --shadows-highlight-1: #1b61a6;
+  --shadows-highlight-2: #1487fa;
+  --shadows-danger-1: #8f1919;
+  --shadows-danger-2: #ee3a3a;
+  --shadows-card-border: #ffffff1f;
+  --shadows-card-border-2: #ffffff00;
+
+  /* Tooltips */
+  --Tooltips-main: #000000e6;
+
+  /* Gradual Colors */
+  --gradual-white-0: #27272800;
+  --gradual-gray-100: #444345;
+  --gradual-gray-0: #44434500;
+  --gradual-dark-20: #ffffff33;
+
+  /** input */
+  --fill-input-chat: #363537;
+
+  /** gradient */
+  --gradient-bg-mask-gray-0: #1E1E1E00;
+}
+
+
+/* CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+.tooltip-trigger-css {
+            position: relative;
+        }
+
+        .tooltip-trigger-css::after {
+            content: attr(data-tooltip);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 280px;
+            min-width: 40px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.90);
+            border-radius: 12px;
+
+            color: var(--text-white);
+            font-size: 12px;
+            line-height: 16px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            text-align: left;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            z-index: 10;
+            width:max-content;
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0.2s;
+        }
+
+        .tooltip-trigger-css.tooltip-trigger-right-css::after {
+            left: unset;
+            right: 0;
+            transform: translateX(0) translateY(-8px);
+        }
+
+        .tooltip-trigger-css.tooltip-trigger-right-css:hover::after {
+            left: unset;
+            right: 0;
+            transform: translateX(0) translateY(-8px);
+        }
+
+        /* 当触发元素被 hover 或 focus 时显示 tooltip */
+        .tooltip-trigger-css:hover::after,
+        .tooltip-trigger-css:focus::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-10px); /* 轻微向上移动的动画 */
+            transition-delay: 0s, 0s, 0s; /* 确保立即显示，覆盖 visibility 的延迟 */
+        }
+
+        /* 确保非交互元素可聚焦，以便 tooltip 可以通过键盘触发 */
+        .tooltip-trigger-css:not(button):not(input):not(a[href]) {
+            outline: none; /* 移除默认轮廓，如果需要自定义焦点样式 */
+        }
+        .tooltip-trigger-css:focus {
+            /* 自定义焦点样式 (可选) */
+            box-shadow: 0 0 0 2px skyblue;
+        }
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+margin-block-start:0;
+margin-block-end:0;
+}
+
+#content-root {
+font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif
+}
+ 
+</style><billing-banner><!----></billing-banner><!----><style>
+				.<!---->footer-toolbar-container {
+					position: fixed;
+					z-index: 999999;
+					right: 16px;
+					bottom: 16px;
+				}
+
+				.<!---->footer-toolbar-dialog-footer {
+					display: flex;
+					justify-content: flex-end;
+					gap: 12px;
+				}
+
+				.<!---->footer-toolbar-dialog-button {
+					display: flex;
+					height: 36px;
+					min-width: 64px;
+					min-height: 36px;
+					padding: 8px 12px;
+					justify-content: center;
+					align-items: center;
+					gap: 6px;
+					cursor: pointer;
+					color: var(--text-primary);
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 20px;
+					letter-spacing: -0.154px;
+					border-radius: 10px;
+					border: 1px solid var(--border-btn-main);
+					background: transparent;
+				}
+
+				.<!---->footer-toolbar-dialog-button:disabled {
+					opacity: 0.5;
+					cursor: not-allowed;
+				}
+
+				.<!---->footer-toolbar-dialog-button:hover {
+					opacity: 0.85;
+				}
+
+				.<!---->footer-toolbar-dialog-button-danger {
+					background: var(--function-error);
+					color: var(--text-white);
+					border: none;
+				}
+			<!----></style>
+			<div class=" footer-toolbar-container __manus__space-footer-toolbar ">
+				<!--?lit$625295836$--><style>
+					.<!---->footer-toolbar-btn-container {
+						position: relative;
+						display: flex;
+						border-radius: 99px;
+						box-shadow: 0 4px 11px 0 var(--shadow-S);
+						backdrop-filter: blur(40px);
+						border: 0.5px solid var(--border-main);
+					}
+
+					.<!---->footer-toolbar-btn {
+						display: inline-flex;
+						height: 32px;
+						padding: 0 10px 0 12px;
+						justify-content: center;
+						align-items: center;
+						gap: 4px;
+						flex-shrink: 0;
+						cursor: pointer;
+						background: var(--background-menu-white);
+						border-radius: 99px 0 0 99px;
+						backdrop-filter: blur(40px);
+						color: var(--text-primary);
+						font-size: 13px;
+						font-weight: 500;
+						line-height: 18px;
+						letter-spacing: -0.091px;
+					}
+
+					.<!---->footer-toolbar-btn:hover {
+						background: var(--fill-tsp-white-light);
+					}
+
+					.<!---->footer-toolbar-btn-blue {
+						background: var(--Button-primary-brand);
+						color: var(--text-white);
+					}
+
+					.<!---->footer-toolbar-btn-blue:hover {
+						background: var(--Button-primary-brand);
+						opacity: 0.85;
+					}
+
+					.<!---->footer-toolbar-no-history-btn {
+						border-radius: 99px;
+					}
+
+					.<!---->footer-toolbar-btn-container-right {
+						padding: 0 8px 0 6px;
+						border-left: 1px solid var(--border-main);
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						cursor: pointer;
+						color: var(--text-primary);
+						background: var(--background-menu-white);
+						border-radius: 0 99px 99px 0;
+					}
+
+					.<!---->footer-toolbar-btn-container-right:hover {
+						background: var(--fill-tsp-white-light);
+					}
+
+					.<!---->footer-toolbar-btn-container-right-blue {
+						color: var(--text-white);
+						background: var(--Button-primary-brand);
+						border-radius: 0 99px 99px 0;
+						border-left-color: var(--border-white);
+					}
+
+					.<!---->footer-toolbar-btn-container-right-blue:hover {
+						background: var(--Button-primary-brand);
+						opacity: 0.85;
+					}
+
+					.<!---->footer-toolbar-popover {
+						position: absolute;
+						bottom: calc(100% + 3px);
+						right: 0;
+						z-index: 1000;
+						border-radius: 12px;
+						border: 0.5px solid var(--border-dark);
+						background: var(--background-menu-white);
+						box-shadow: 0 4px 11px 0 var(--shadow-S);
+						backdrop-filter: blur(40px);
+						width: max-content;
+						padding: 8px;
+						display: flex;
+						height: 36px;
+						min-width: 94px;
+						min-height: 36px;
+						align-items: center;
+						gap: 8px;
+						cursor: pointer;
+						color: var(--text-secondary);
+						font-size: 14px;
+						line-height: 22px;
+						letter-spacing: -0.154px;
+						border-radius: 12px;
+						user-select: none;
+					}
+
+					.<!---->footer-toolbar-popover:hover {
+						background: var(--fill-tsp-white-main);
+					}
+				<!----></style>
+				<div class="footer-toolbar-btn-container">
+					<button class=" footer-toolbar-btn footer-toolbar-no-history-btn ">
+						<!--?lit$625295836$--><!--?lit$625295836$--><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M11.6766 1.33594C12.3517 1.33606 12.9993 1.60455 13.4767 2.08203C13.954 2.55952 14.2222 3.20702 14.2221 3.88216C14.222 4.51523 13.9863 5.12416 13.5633 5.59114L13.476 5.68229L12.0841 7.07422C12.0665 7.09721 12.0479 7.12022 12.0268 7.14127C12.0055 7.16259 11.9825 7.18139 11.9591 7.19922L5.91166 13.248L5.91101 13.2487C5.67921 13.4798 5.39408 13.6508 5.08094 13.7461H5.08029L2.17863 14.6263L2.17667 14.6269C2.00393 14.6788 1.82035 14.6826 1.64543 14.6387C1.47046 14.5947 1.31026 14.5044 1.18254 14.3769C1.05479 14.2494 0.963819 14.0891 0.919524 13.9141C0.875316 13.7392 0.878989 13.5556 0.930592 13.3828L0.931894 13.3802L1.81209 10.4785L1.81274 10.4766L1.85246 10.3607C1.93852 10.1312 2.06617 9.91968 2.22876 9.73632L2.31274 9.64648L8.36151 3.59505C8.37855 3.57308 8.39733 3.55209 8.4175 3.5319C8.43806 3.51133 8.45953 3.49192 8.48195 3.47461L9.87582 2.08138L9.96761 1.99414C10.4347 1.57138 11.0436 1.33586 11.6766 1.33594ZM3.25479 10.5905L3.25414 10.5911C3.17682 10.6683 3.11949 10.7634 3.08747 10.8678L2.38826 13.1686L4.69292 12.47L4.7691 12.4421C4.84355 12.409 4.91161 12.3625 4.96961 12.3047L10.6076 6.66471L8.89275 4.94987L3.25479 10.5905ZM11.6766 2.66927C11.3551 2.66923 11.0459 2.79625 10.8185 3.02344L10.8192 3.02409L9.83545 4.00716L11.5503 5.722L12.5333 4.73958L12.6141 4.65039C12.7908 4.43469 12.8887 4.16347 12.8888 3.88216C12.8888 3.56056 12.7607 3.25217 12.5333 3.02474C12.306 2.79741 11.998 2.66939 11.6766 2.66927Z" fill="currentColor"></path>
+</svg> Tweak
+					</button>
+					<!--?lit$625295836$-->
+				</div>
+				<!--?lit$625295836$--> 
+			</div><div class="__manus__space-editor-element-editor-modal"><!----><style>
+				.<!---->element-edit-panel-view-root {
+					border-radius: 12px;
+					border: 0.5px solid var(--border-dark);
+					background: var(--background-menu-white);
+					box-shadow: 0px 4px 11px 0px var(--shadow-M);
+					backdrop-filter: blur(40px);
+					display: flex;
+					gap: 2px;
+					align-items: center;
+					width: 158px;
+					padding: 4px;
+				}
+				.<!---->element-edit-panel-view-button {
+					flex: 1;
+					min-width: 0;
+					display: flex;
+					padding: 6px 8px;
+					justify-content: center;
+					align-items: center;
+					gap: 4px;
+					border-radius: 8px;
+					background: transparent;
+					cursor: pointer;
+					font-size: 13px;
+					font-weight: 500;
+					line-height: 18px;
+					border: none;
+				}
+				.<!---->element-edit-panel-view-button:hover {
+					background: var(--fill-tsp-gray-main);
+				}
+
+				.<!---->element-edit-panel-view-button-default {
+					color: var(--text-primary);
+				}
+				.<!---->element-edit-panel-view-button-danger {
+					color: var(--function-error);
+				}
+				.<!---->element-edit-panel-view-divider {
+					width: 1px;
+					height: 14.5px;
+					background: var(--border-main);
+					display: flex;
+				}
+			<!----></style>
+			<lit-popup><template shadowrootmode="open"><!---->
+			<style>
+				:host {
+					display: block;
+				}
+
+				.popup-content {
+					display: <!---->none;
+					position: fixed;
+					z-index: 1000;
+				}
+
+				/* 底部定位时的连接伪元素 */
+				.popup-content[data-position='bottom']::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: -<!---->10px;
+					height: <!---->10px;
+					/* 调试时可以设置背景色 */
+					/* background-color: rgba(255, 0, 0, 0.2); */
+				}
+
+				/* 顶部定位时的连接伪元素 */
+				.popup-content[data-position='top']::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: -<!---->10px;
+					height: <!---->10px;
+					/* 调试时可以设置背景色 */
+					/* background-color: rgba(0, 255, 0, 0.2); */
+				}
+			<!----></style>
+			<div data-position="bottom" class="popup-content ">
+				<slot></slot>
+			</div>
+		</template>
+				<div class="element-edit-panel-view-root" style="">
+					<button class=" element-edit-panel-view-button element-edit-panel-view-button-default ">
+						<!--?lit$625295836$--><!--?lit$625295836$--><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+  <path d="M12.2482 5.83594C12.2482 5.51377 11.987 5.2526 11.6649 5.2526H5.83154C5.50938 5.2526 5.24821 5.51377 5.24821 5.83594V11.6693C5.24821 11.9914 5.50938 12.2526 5.83154 12.2526H11.6649C11.987 12.2526 12.2482 11.9914 12.2482 11.6693V5.83594ZM8.74821 2.33594C8.74821 2.01644 8.48438 1.7526 8.16488 1.7526H2.33154C2.01204 1.7526 1.74821 2.01644 1.74821 2.33594V8.16927C1.74821 8.4688 1.98006 8.71959 2.2723 8.74976L2.39136 8.75545C2.68543 8.7854 2.91488 9.03396 2.91488 9.33594C2.91488 9.63792 2.68543 9.88648 2.39136 9.91642L2.33154 9.91927L2.24154 9.91699C1.31924 9.86987 0.581543 9.10292 0.581543 8.16927V2.33594C0.581543 1.3721 1.36771 0.585938 2.33154 0.585938H8.16488C9.12871 0.585938 9.91488 1.3721 9.91488 2.33594C9.91488 2.6581 9.65371 2.91927 9.33154 2.91927C9.00938 2.91927 8.74821 2.6581 8.74821 2.33594ZM13.4149 11.6693C13.4149 12.6358 12.6314 13.4193 11.6649 13.4193H5.83154C4.86504 13.4193 4.08154 12.6358 4.08154 11.6693V5.83594C4.08154 4.86944 4.86504 4.08594 5.83154 4.08594H11.6649C12.6314 4.08594 13.4149 4.86944 13.4149 5.83594V11.6693Z" fill="currentColor"></path>
+</svg> Copy
+					</button>
+					<span class="element-edit-panel-view-divider"></span>
+					<button class=" element-edit-panel-view-button element-edit-panel-view-button-danger ">
+						<!--?lit$625295836$--><!--?lit$625295836$--><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" style="min-width:14px;min-height:14px;" viewBox="0 0 14 14" fill="none">
+  <path d="M10.4998 4.08594H3.49984V11.6693C3.49984 11.7712 3.55664 11.922 3.69352 12.0589C3.8304 12.1958 3.98122 12.2526 4.08317 12.2526H9.9165C10.0185 12.2526 10.1693 12.1957 10.3062 12.0589C10.4429 11.9221 10.4998 11.7712 10.4998 11.6693V4.08594ZM5.24984 9.91927V6.41927C5.24984 6.09715 5.51106 5.83601 5.83317 5.83594C6.15534 5.83594 6.4165 6.09711 6.4165 6.41927V9.91927C6.4165 10.2414 6.15534 10.5026 5.83317 10.5026C5.51106 10.5025 5.24984 10.2414 5.24984 9.91927ZM7.58317 9.91927V6.41927C7.58317 6.09711 7.84434 5.83594 8.1665 5.83594C8.48861 5.83601 8.74984 6.09715 8.74984 6.41927V9.91927C8.74984 10.2414 8.48861 10.5025 8.1665 10.5026C7.84434 10.5026 7.58317 10.2414 7.58317 9.91927ZM8.74984 2.33594C8.74984 2.23399 8.69303 2.08317 8.55615 1.94629C8.4193 1.80949 8.26842 1.7526 8.1665 1.7526H5.83317C5.73123 1.75269 5.5803 1.80951 5.44352 1.94629C5.30672 2.08314 5.24984 2.23402 5.24984 2.33594V2.91927H8.74984V2.33594ZM9.9165 2.91927H12.2498L12.3097 2.92269C12.6037 2.95265 12.8331 3.2007 12.8332 3.5026C12.8332 3.80458 12.6037 4.05314 12.3097 4.08309L12.2498 4.08594H11.6665V11.6693C11.6665 12.1506 11.4316 12.5832 11.131 12.8838C10.8304 13.1844 10.3978 13.4192 9.9165 13.4193H4.08317C3.60179 13.4193 3.16927 13.1844 2.86865 12.8838C2.56803 12.5832 2.33317 12.1507 2.33317 11.6693V4.08594H1.74984C1.42767 4.08594 1.1665 3.82477 1.1665 3.5026C1.16657 3.1805 1.42771 2.91927 1.74984 2.91927H4.08317V2.33594C4.08317 1.85461 4.31809 1.42203 4.61865 1.12142C4.91922 0.820847 5.35187 0.58601 5.83317 0.585938H8.1665C8.64783 0.585938 9.08041 0.820854 9.38102 1.12142C9.68164 1.42204 9.9165 1.85455 9.9165 2.33594V2.91927Z" fill="currentColor"></path>
+</svg> Delete
+					</button>
+				</div>
+			</lit-popup> </div><div class="__manus__space-editor-text-editor-modal"><!---->
+			<style>
+				<!---->.clr-picker {
+  display: none;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 200px;
+  z-index: 1000;
+  border-radius: 10px;
+  background-color: #fff;
+  justify-content: flex-end;
+  direction: ltr;
+  box-shadow: 0 0 5px rgba(0,0,0,.05), 0 5px 20px rgba(0,0,0,.1);
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.clr-picker.clr-open,
+.clr-picker[data-inline="true"] {
+  display: flex;
+}
+
+.clr-picker[data-inline="true"] {
+  position: relative;
+}
+
+.clr-gradient {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 3px 3px 0 0;
+  background-image: linear-gradient(rgba(0,0,0,0), #000), linear-gradient(90deg, #fff, currentColor);
+  cursor: pointer;
+}
+
+.clr-marker {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-color: currentColor;
+  cursor: pointer;
+}
+
+.clr-picker input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 16px;
+}
+
+.clr-picker input[type="range"]::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  -webkit-appearance: none;
+}
+
+.clr-picker input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 16px;
+  border: 0;
+}
+
+.clr-picker input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+}
+
+.clr-hue {
+  background-image: linear-gradient(to right, #f00 0%, #ff0 16.66%, #0f0 33.33%, #0ff 50%, #00f 66.66%, #f0f 83.33%, #f00 100%);
+}
+
+.clr-hue,
+.clr-alpha {
+  position: relative;
+  width: calc(100% - 40px);
+  height: 8px;
+  margin: 5px 20px;
+  border-radius: 4px;
+}
+
+.clr-alpha span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background-image: linear-gradient(90deg, rgba(0,0,0,0), currentColor);
+}
+
+.clr-hue input[type="range"],
+.clr-alpha input[type="range"] {
+  position: absolute;
+  width: calc(100% + 32px);
+  height: 16px;
+  left: -16px;
+  top: -4px;
+  margin: 0;
+  background-color: transparent;
+  opacity: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.clr-hue div,
+.clr-alpha div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  top: 50%;
+  margin-left: -8px;
+  transform: translateY(-50%);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: currentColor;
+  box-shadow: 0 0 1px #888;
+  pointer-events: none;
+}
+
+.clr-alpha div:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.clr-format {
+  display: none;
+  order: 1;
+  width: calc(100% - 40px);
+  margin: 0 20px 20px;
+}
+
+.clr-segmented {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #999;
+  font-size: 12px;
+}
+
+.clr-segmented input,
+.clr-segmented legend {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.clr-segmented label {
+  flex-grow: 1;
+  margin: 0;
+  padding: 4px 0;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: initial;
+  text-align: center;
+  cursor: pointer;
+}
+
+.clr-segmented label:first-of-type {
+  border-radius: 10px 0 0 10px;
+}
+
+.clr-segmented label:last-of-type {
+  border-radius: 0 10px 10px 0;
+}
+
+.clr-segmented input:checked + label {
+  color: #fff;
+  background-color: #666;
+}
+
+.clr-swatches {
+  order: 2;
+  width: calc(100% - 32px);
+  margin: 0 16px;
+}
+
+.clr-swatches div {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  justify-content: center;
+}
+
+.clr-swatches button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 4px 6px 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  text-indent: -1000px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.clr-swatches button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  background-color: currentColor;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+}
+
+input.clr-color {
+  order: 1;
+  width: calc(100% - 80px);
+  height: 32px;
+  margin: 15px 20px 20px auto;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  color: #444;
+  background-color: #fff;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: none;
+}
+
+input.clr-color:focus {
+  outline: none;
+  border: 1px solid #1e90ff;
+}
+
+.clr-close,
+.clr-clear {
+  display: none;
+  order: 2;
+  height: 24px;
+  margin: 0 20px 20px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #666;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.clr-close {
+  display: block;
+  margin: 0 20px 20px auto;
+}
+
+.clr-preview {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin: 15px 0 20px 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.clr-preview:before,
+.clr-preview:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.clr-preview:after {
+  border: 0;
+  background-color: currentColor;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+}
+
+.clr-preview button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  outline-offset: -2px;
+  background-color: transparent;
+  text-indent: -9999px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.clr-marker,
+.clr-hue div,
+.clr-alpha div,
+.clr-color {
+  box-sizing: border-box;
+}
+
+.clr-field {
+  display: inline-block;
+  position: relative;
+  color: transparent;
+}
+
+.clr-field input {
+  margin: 0;
+  direction: ltr;
+}
+
+.clr-field.clr-rtl input {
+  text-align: right;
+}
+
+.clr-field button {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  text-indent: -1000px;
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.clr-field.clr-rtl button {
+  right: auto;
+  left: 0;
+}
+
+.clr-field button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  background-color: currentColor;
+  box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+}
+
+.clr-alpha,
+.clr-alpha div,
+.clr-swatches button,
+.clr-preview:before,
+.clr-field button {
+  background-image: repeating-linear-gradient(45deg, #aaa 25%, transparent 25%, transparent 75%, #aaa 75%, #aaa), repeating-linear-gradient(45deg, #aaa 25%, #fff 25%, #fff 75%, #aaa 75%, #aaa);
+  background-position: 0 0, 4px 4px;
+  background-size: 8px 8px;
+}
+
+.clr-marker:focus {
+  outline: none;
+}
+
+.clr-keyboard-nav .clr-marker:focus,
+.clr-keyboard-nav .clr-hue input:focus + div,
+.clr-keyboard-nav .clr-alpha input:focus + div,
+.clr-keyboard-nav .clr-segmented input:focus + label {
+  outline: none;
+  box-shadow: 0 0 0 2px #1e90ff, 0 0 2px 2px #fff;
+}
+
+.clr-picker[data-alpha="false"] .clr-alpha {
+  display: none;
+}
+
+.clr-picker[data-minimal="true"] {
+  padding-top: 16px;
+}
+
+.clr-picker[data-minimal="true"] .clr-gradient,
+.clr-picker[data-minimal="true"] .clr-hue,
+.clr-picker[data-minimal="true"] .clr-alpha,
+.clr-picker[data-minimal="true"] .clr-color,
+.clr-picker[data-minimal="true"] .clr-preview {
+  display: none;
+}
+
+/** Dark theme **/
+
+.clr-dark {
+  background-color: #444;
+}
+
+.clr-dark .clr-segmented {
+  border-color: #777;
+}
+
+.clr-dark .clr-swatches button:after {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.3);
+}
+
+.clr-dark input.clr-color {
+  color: #fff;
+  border-color: #777;
+  background-color: #555;
+}
+
+.clr-dark input.clr-color:focus {
+  border-color: #1e90ff;
+}
+
+.clr-dark .clr-preview:after {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.5);
+}
+
+.clr-dark .clr-alpha,
+.clr-dark .clr-alpha div,
+.clr-dark .clr-swatches button,
+.clr-dark .clr-preview:before {
+  background-image: repeating-linear-gradient(45deg, #666 25%, transparent 25%, transparent 75%, #888 75%, #888), repeating-linear-gradient(45deg, #888 25%, #444 25%, #444 75%, #888 75%, #888);
+}
+
+/** Polaroid theme **/
+
+.clr-picker.clr-polaroid {
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,.1), 0 5px 30px rgba(0,0,0,.2);
+}
+
+.clr-picker.clr-polaroid:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 10px;
+  left: 20px;
+  top: -10px;
+  border: solid transparent;
+  border-width: 0 8px 10px 8px;
+  border-bottom-color: currentColor;
+  box-sizing: border-box;
+  color: #fff;
+  filter: drop-shadow(0 -4px 3px rgba(0,0,0,.1));
+  pointer-events: none;
+}
+
+.clr-picker.clr-polaroid.clr-dark:before {
+  color: #444;
+}
+
+.clr-picker.clr-polaroid.clr-left:before {
+  left: auto;
+  right: 20px;
+}
+
+.clr-picker.clr-polaroid.clr-top:before {
+  top: auto;
+  bottom: -10px;
+  transform: rotateZ(180deg);
+}
+
+.clr-polaroid .clr-gradient {
+  width: calc(100% - 20px);
+  height: 120px;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.clr-polaroid .clr-hue,
+.clr-polaroid .clr-alpha {
+  width: calc(100% - 30px);
+  height: 10px;
+  margin: 6px 15px;
+  border-radius: 5px;
+}
+
+.clr-polaroid .clr-hue div,
+.clr-polaroid .clr-alpha div {
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.clr-polaroid .clr-format {
+  width: calc(100% - 20px);
+  margin: 0 10px 15px;
+}
+
+.clr-polaroid .clr-swatches {
+  width: calc(100% - 12px);
+  margin: 0 6px;
+}
+.clr-polaroid .clr-swatches div {
+  padding-bottom: 10px;
+}
+
+.clr-polaroid .clr-swatches button {
+  width: 22px;
+  height: 22px;
+}
+
+.clr-polaroid input.clr-color {
+  width: calc(100% - 60px);
+  margin: 10px 10px 15px auto;
+}
+
+.clr-polaroid .clr-clear {
+  margin: 0 10px 15px 10px;
+}
+
+.clr-polaroid .clr-close {
+  margin: 0 10px 15px auto;
+}
+
+.clr-polaroid .clr-preview {
+  margin: 10px 0 15px 10px;
+}
+
+/** Large theme **/
+
+.clr-picker.clr-large {
+  width: 275px;
+}
+
+.clr-large .clr-gradient {
+  height: 150px;
+}
+
+.clr-large .clr-swatches button {
+  width: 22px;
+  height: 22px;
+}
+
+/** Pill (horizontal) theme **/
+
+.clr-picker.clr-pill {
+  width: 380px;
+  padding-left: 180px;
+  box-sizing: border-box;
+}
+
+.clr-pill .clr-gradient {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin-bottom: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.clr-pill .clr-hue {
+  margin-top: 20px;
+} .<!---->text-edit-panel-view-root {
+					border-radius: 12px;
+					border: 0.5px solid var(--border-dark);
+					background: var(--background-menu-white);
+					box-shadow: 0px 4px 11px 0px var(--shadow-M);
+					backdrop-filter: blur(40px);
+					display: flex;
+					flex-direction: column;
+					width: 382px;
+				}
+
+				.<!---->text-edit-panel-view-toolbar {
+					display: flex;
+					align-items: center;
+					gap: 8px;
+					padding: 12px 12px 0px 8px;
+				}
+
+				.<!---->text-edit-panel-view-tool-item {
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					width: 28px;
+					height: 28px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 6px;
+				}
+
+				.<!---->text-edit-panel-view-tool-item-color {
+					position: relative;
+				}
+
+				.<!---->text-edit-panel-view-tool-item-color .clr-field {
+					position: absolute;
+					inset: 0;
+					opacity: 0;
+				}
+
+				.<!---->text-edit-panel-view-tool-item-color .clr-field * {
+					cursor: pointer;
+				}
+
+				.<!---->text-edit-panel-view-tool-item-color .clr-field input {
+					width: 100%;
+					height: 100%;
+				}
+
+				.<!---->text-edit-panel-view-tool-item-active {
+					color: var(--icon-brand);
+				}
+
+				.<!---->text-edit-panel-view-tool-item:hover {
+					background: var(--fill-tsp-gray-main);
+				}
+
+				.<!---->text-edit-panel-view-textarea-box {
+					padding: 10px 12px 12px;
+					overflow: hidden;
+				}
+
+				.<!---->text-edit-panel-view-textarea {
+					display: flex;
+					width: 100%;
+					min-height: 100px;
+					max-height: 530px;
+					overflow-y: auto;
+					resize: none;
+					padding: 12px 12px 12px 16px;
+					border-radius: 10px;
+					border: 1.5px solid transparent;
+					background: var(--fill-tsp-white-main);
+					color: var(--text-primary);
+					font-size: 14px;
+					line-height: 22px;
+					letter-spacing: -0.154px;
+				}
+
+				.<!---->text-edit-panel-view-textarea:focus-within {
+					border-color: var(--border-dark);
+				}
+			<!----></style>
+			<lit-popup><template shadowrootmode="open"><!---->
+			<style>
+				:host {
+					display: block;
+				}
+
+				.popup-content {
+					display: <!---->none;
+					position: fixed;
+					z-index: 1000;
+				}
+
+				/* 底部定位时的连接伪元素 */
+				.popup-content[data-position='bottom']::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: -<!---->10px;
+					height: <!---->10px;
+					/* 调试时可以设置背景色 */
+					/* background-color: rgba(255, 0, 0, 0.2); */
+				}
+
+				/* 顶部定位时的连接伪元素 */
+				.popup-content[data-position='top']::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: -<!---->10px;
+					height: <!---->10px;
+					/* 调试时可以设置背景色 */
+					/* background-color: rgba(0, 255, 0, 0.2); */
+				}
+			<!----></style>
+			<div data-position="bottom" class="popup-content ">
+				<slot></slot>
+			</div>
+		</template>
+				<div class="text-edit-panel-view-root">
+					<div class="text-edit-panel-view-toolbar">
+						<!--?lit$625295836$--><!----><button class=" text-edit-panel-view-tool-item tooltip-trigger-css " data-tooltip="Bold">
+									<!--?lit$625295836$--><!--?lit$625295836$--><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <path d="M4.5 9H11.25C12.0456 9 12.8087 9.31607 13.3713 9.87868C13.9339 10.4413 14.25 11.2044 14.25 12C14.25 12.7956 13.9339 13.5587 13.3713 14.1213C12.8087 14.6839 12.0456 15 11.25 15H5.25C5.05109 15 4.86032 14.921 4.71967 14.7803C4.57902 14.6397 4.5 14.4489 4.5 14.25V3.75C4.5 3.55109 4.57902 3.36032 4.71967 3.21967C4.86032 3.07902 5.05109 3 5.25 3H10.5C11.2956 3 12.0587 3.31607 12.6213 3.87868C13.1839 4.44129 13.5 5.20435 13.5 6C13.5 6.79565 13.1839 7.55871 12.6213 8.12132C12.0587 8.68393 11.2956 9 10.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg><!--?-->
+								</button><!----><!----><button class=" text-edit-panel-view-tool-item tooltip-trigger-css " data-tooltip="Italic">
+									<!--?lit$625295836$--><!--?lit$625295836$--><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <path d="M14.25 3H7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M10.5 15H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M11.25 3L6.75 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg><!--?-->
+								</button><!----><!----><button class=" text-edit-panel-view-tool-item tooltip-trigger-css " data-tooltip="Underline">
+									<!--?lit$625295836$--><!--?lit$625295836$--><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <path d="M4.5 3V7.5C4.5 8.69347 4.97411 9.83807 5.81802 10.682C6.66193 11.5259 7.80653 12 9 12C10.1935 12 11.3381 11.5259 12.182 10.682C13.0259 9.83807 13.5 8.69347 13.5 7.5V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M3 15H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg><!--?-->
+								</button><!----><!----><label style="position:relative;" class=" text-edit-panel-view-tool-item text-edit-panel-view-tool-item-color ">
+										<!--?lit$625295836$--><!--?lit$625295836$--><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <path d="M4.5 12L9 3L13.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M5.99951 9H11.9995" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <rect x="2.25" y="14.625" width="13.5" height="3.375" rx="1.125" fill=""></rect>
+</svg><!--?-->
+										<div class="clr-field"><button type="button" aria-labelledby="clr-open-label"></button><input id="coloris"></div>
+									</label><!---->
+					</div>
+					<div class="text-edit-panel-view-textarea-box">
+						<lit-textarea auto-resize="" autofocus="" class="text-edit-panel-view-textarea" value=""><!---->
+			<style>
+				.internal-textarea:disabled {
+					cursor: not-allowed;
+					opacity: 0.7;
+				}
+
+				.internal-textarea {
+					width: 100%;
+					background: transparent;
+					border: none;
+					resize: none;
+					overflow: hidden;
+				}
+
+				.internal-textarea:focus {
+					outline: none;
+				}
+			</style>
+			<textarea part="textarea" class=" internal-textarea auto-resize-active " placeholder="" autofocus="" rows="1" aria-label="textarea" style="height: 22px;"></textarea>
+		</lit-textarea>
+					</div>
+				</div>
+			</lit-popup>
+		</div></div></template></manus-content-root><script>
+			var __manus_space_editor_info = {
+			spaceId : 'xouwhngw',
+			patchList : [],
+			hideBadge : false,
+			sessionId : '',
+			isWebDev : false,
+			usageStatus : 'UsageStatus_Unknown',
+			};
+			var __manus__global_env = {
+				apiHost: 'https://api.manus.im',
+				host: 'https://manus.im',
+				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
+			};
+			</script><script src="./neural-learning-comparison_files/spaceEditor-DPV-_I11.js.download" async=""></script>
+
+<div id="clr-picker" class="clr-picker" data-alpha="true"><input id="clr-color-value" name="clr-color-value" class="clr-color" type="text" value="" spellcheck="false" aria-label="Color value field"><div id="clr-color-area" class="clr-gradient" role="application" aria-label="Saturation and brightness selector. Use up, down, left and right arrow keys to select."><div id="clr-color-marker" class="clr-marker" tabindex="0"></div></div><div class="clr-hue"><input id="clr-hue-slider" name="clr-hue-slider" type="range" min="0" max="360" step="1" aria-label="Hue slider"><div id="clr-hue-marker"></div></div><div class="clr-alpha"><input id="clr-alpha-slider" name="clr-alpha-slider" type="range" min="0" max="100" step="1" aria-label="Opacity slider"><div id="clr-alpha-marker"></div><span></span></div><div id="clr-format" class="clr-format"><fieldset class="clr-segmented"><legend>Color format</legend><input id="clr-f1" type="radio" name="clr-format" value="hex"><label for="clr-f1">Hex</label><input id="clr-f2" type="radio" name="clr-format" value="rgb"><label for="clr-f2">RGB</label><input id="clr-f3" type="radio" name="clr-format" value="hsl"><label for="clr-f3">HSL</label><span></span></fieldset></div><div id="clr-swatches" class="clr-swatches"><div><button type="button" id="clr-swatch-0" aria-labelledby="clr-swatch-label clr-swatch-0" style="color: rgb(255, 255, 255);">#FFF</button><button type="button" id="clr-swatch-1" aria-labelledby="clr-swatch-label clr-swatch-1" style="color: rgb(0, 0, 0);">#000000</button><button type="button" id="clr-swatch-2" aria-labelledby="clr-swatch-label clr-swatch-2" style="color: rgb(255, 0, 1);">#FF0001</button><button type="button" id="clr-swatch-3" aria-labelledby="clr-swatch-label clr-swatch-3" style="color: rgb(255, 81, 0);">#FF5100</button><button type="button" id="clr-swatch-4" aria-labelledby="clr-swatch-label clr-swatch-4" style="color: rgb(255, 199, 0);">#FFC700</button><button type="button" id="clr-swatch-5" aria-labelledby="clr-swatch-label clr-swatch-5" style="color: rgb(0, 179, 54);">#00B336</button><button type="button" id="clr-swatch-6" aria-labelledby="clr-swatch-label clr-swatch-6" style="color: rgb(0, 203, 255);">#00CBFF</button><button type="button" id="clr-swatch-7" aria-labelledby="clr-swatch-label clr-swatch-7" style="color: rgb(101, 186, 255);">#65BAFF</button><button type="button" id="clr-swatch-8" aria-labelledby="clr-swatch-label clr-swatch-8" style="color: rgb(180, 0, 216);">#B400D8</button><button type="button" id="clr-swatch-9" aria-labelledby="clr-swatch-label clr-swatch-9" style="color: rgb(134, 163, 171);">#86A3AB</button><button type="button" id="clr-swatch-10" aria-labelledby="clr-swatch-label clr-swatch-10" style="color: rgb(79, 85, 89);">#4F5559</button></div></div><button type="button" id="clr-clear" class="clr-clear" aria-label="Clear the selected color">Clear</button><div id="clr-color-preview" class="clr-preview"><button type="button" id="clr-close" class="clr-close" aria-label="Close color picker">Close</button></div><span id="clr-open-label" hidden="">Open color picker</span><span id="clr-swatch-label" hidden="">Color swatch</span></div></body></html>

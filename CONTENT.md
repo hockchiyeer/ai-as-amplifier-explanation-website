@@ -1,0 +1,453 @@
+# AI Amplifier Website - Bilingual Content Structure
+
+## Navigation & Language Toggle
+
+### English
+- Home
+- Three Effects
+- Mirror Principle
+- AI Paradigms
+- Case Studies
+- Use Cases
+- Prompting Guide
+- Language: 中文
+
+### Chinese
+- 首页
+- 三大效应
+- 镜像原理
+- AI范式
+- 案例研究
+- 应用场景
+- 提示指南
+- 语言: English
+
+---
+
+## Hero Section
+
+### English
+**Main Heading:** AI as an Amplifier, Multiplier, and Compounder
+
+**Subheading:** How AI magnifies your competitive advantage—or accelerates your strategic mistakes.
+
+**Description:** In the age of abundant computing resources, AI doesn't make you smarter. It amplifies what you already do—for better or worse. Learn how to harness AI as a strategic multiplier while avoiding the pitfalls that turn competitive advantages into compounded failures.
+
+**CTA Button:** Explore the Three Effects
+
+### Chinese
+**Main Heading:** AI 作为放大器、倍增器与复利器
+
+**Subheading:** AI 如何放大你的竞争优势——或加速你的战略失误。
+
+**Description:** 在算力充裕的时代，AI 不会让你变得更聪明。它只会放大你已经在做的事——无论好坏。学习如何将 AI 作为战略倍增器，同时避免那些将竞争优势转化为复利失败的陷阱。
+
+**CTA Button:** 探索三大效应
+
+---
+
+## Three Effects Section
+
+### Amplifier Effect (⚡)
+
+**English Title:** The Amplifier Effect
+
+**English Description:** AI magnifies every action's impact—whether good or bad. A correct strategy produces outsized returns; a flawed strategy accelerates failure. AI doesn't create strategy; it exposes and amplifies what's already there.
+
+**English Key Point:** Faster · Cheaper · More Efficient—in the direction you're already heading
+
+**Chinese Title:** 放大器效应
+
+**Chinese Description:** AI 放大每一个行动的影响——无论好坏。正确的战略会产生超额回报；有缺陷的战略则会加速失败。AI 不会创造战略；它只会暴露并放大你原本已有的战略。
+
+**Chinese Key Point:** 更快 · 更便宜 · 更高效——沿着你已经前进的方向
+
+---
+
+### Multiplier Effect (✖)
+
+**English Title:** The Multiplier Effect
+
+**English Description:** AI multiplies your team's output and reach across channels, markets, and skill domains—operating where humans cannot. But when AI goes wrong, it also multiplies errors, misinformation, and poor decisions across the entire organization.
+
+**English Key Point:** 10× the output · 10× the risk if strategy is flawed
+
+**Chinese Title:** 倍增器效应
+
+**Chinese Description:** AI 能倍增团队在各渠道、市场和职能领域的有效产出与覆盖范围——在人力无法兼顾之处同时运作。但当 AI 出错时，也会在整个组织中复制错误、错误信息和糟糕的决策。
+
+**Chinese Key Point:** 产出增加 10 倍 · 如果战略有缺陷，风险也增加 10 倍
+
+---
+
+### Compounder Effect (📈)
+
+**English Title:** The Compounder Effect
+
+**English Description:** AI advantages compound over time. Teams building AI systems today gain exponential competitive advantage over rivals still relying on linear human processes. But if built on flawed strategy, AI compounds errors just as relentlessly—pushing organizations toward increasingly costly, irreversible outcomes.
+
+**English Key Point:** Exponential advantage or exponential decline—compounding works both ways
+
+**Chinese Title:** 复利器效应
+
+**Chinese Description:** AI 带来的优势会随时间复利累积。今天构建 AI 系统的团队，将比仍依赖线性人工流程的竞争对手获得指数级领先优势。但若建立在有缺陷的战略之上，AI 同样会让错误随时间复利累积，把组织推向代价越来越高、越来越难以逆转的结局。
+
+**Chinese Key Point:** 指数级优势或指数级衰退——复利在两个方向都起作用
+
+---
+
+## Mirror Principle Section
+
+### English Title
+The Mirror Principle: AI Reflects What You Already Are
+
+### English Description
+AI is a mirror of your organization's operating model. It doesn't fix weak strategies—it exposes them faster and at greater scale. The same AI system produces radically different outcomes depending on the quality of the strategy it amplifies.
+
+### Three Scenarios
+
+#### Smart Organization (✅ AI Accelerates Success)
+- **Input:** Clear positioning, sound processes, quality data, good judgment
+- **Process:** AI × Amplifier
+- **Output:** Faster clarity, accelerated learning, compounding growth
+
+#### Mediocre Organization (⚠️ AI Copies Mediocrity)
+- **Input:** Unclear positioning, average processes, mixed data quality
+- **Process:** AI × Amplifier
+- **Output:** More output, but not necessarily more advantage
+
+#### Defective Organization (❌ AI Amplifies Failure)
+- **Input:** Flawed positioning, broken processes, poor data, weak judgment
+- **Process:** AI × Amplifier
+- **Output:** Faster failure, amplified waste, compounded internal friction
+
+### Core Principle
+**Rule:** AI does not repair weak business strategy. It only makes consequences appear faster—for better or worse.
+
+### Chinese Title
+镜像原理：AI 反映你已有的样子
+
+### Chinese Description
+AI 是你组织运作模式的一面镜子。它不会修复薄弱的商业战略，它只会让后果更快显现——无论好坏。同样的 AI 系统根据它放大的战略质量而产生截然不同的结果。
+
+### Three Scenarios (Chinese)
+
+#### 聪慧组织 (✅ AI 加速成功)
+- **输入:** 清晰定位、健全流程、优质数据、良好判断
+- **过程:** AI × 放大器
+- **输出:** 更快的清晰度、加速学习、复利增长
+
+#### 平庸组织 (⚠️ AI 复制平庸)
+- **输入:** 模糊定位、平均流程、混合数据质量
+- **过程:** AI × 放大器
+- **输出:** 更多产出，但不一定带来更多优势
+
+#### 有缺陷的组织 (❌ AI 放大失败)
+- **输入:** 有缺陷的定位、破碎流程、劣质数据、薄弱判断
+- **过程:** AI × 放大器
+- **输出:** 更快失败、放大浪费、复合内部摩擦
+
+### Core Principle (Chinese)
+**规律:** AI 不会修复薄弱的商业战略。它只会让后果更快显现——无论好坏。
+
+---
+
+## Two AI Paradigms Section
+
+### Paradigm 1: Language Generator
+
+**English Title:** Language Generator Paradigm
+
+**English Subtitle:** ChatGPT · Google Gemini · DeepSeek
+
+**English Best For:**
+- Brainstorming and strategic ideation
+- Long-form writing: reports, analysis, narrative articles
+- Interpretation and expansion within long conversation threads
+- More economical alternative to IDE-embedded agents
+
+**English Prompting Tips:** Detailed, conversational, context-rich prompts → richer, more comprehensive output
+
+**Chinese Title:** 语言生成器范式
+
+**Chinese Subtitle:** ChatGPT · Google Gemini · DeepSeek
+
+**Chinese Best For:**
+- 头脑风暴与战略构思
+- 长篇写作：报告、分析、叙述性文章
+- 在长对话线程中进行解读与扩展
+- 比 IDE 内置智能体更经济的替代方案
+
+**Chinese Prompting Tips:** 详细、对话式、上下文丰富的提示 → 更丰富、更全面的输出
+
+---
+
+### Paradigm 2: Task Executor
+
+**English Title:** Task Executor Paradigm
+
+**English Subtitle:** Claude AI · GitHub Copilot · Cursor Agents
+
+**English Best For:**
+- Autonomous execution of multi-step workflows
+- Coordinating tools, APIs, files, and systems
+- Programming, automation, and agentic operations
+- Tasks with clear end states
+
+**English Prompting Tips:** Concise, task-focused, explicit output format → maximizes agent output quality
+
+**Chinese Title:** 任务执行者范式
+
+**Chinese Subtitle:** Claude AI · GitHub Copilot · Cursor Agents
+
+**Chinese Best For:**
+- 自主执行多步骤工作流
+- 协调工具、API、文件与系统
+- 编程、自动化与智能体操作
+- 具有明确终态的任务
+
+**Chinese Prompting Tips:** 简洁、聚焦任务、明确输出格式 → 最大化智能体输出质量
+
+---
+
+## Case Studies Section
+
+### Case Study 1: Wrong Strategy × AI = Accelerated Failure
+
+**English Title:** Case Study #1: Competitive Attack Content × AI Batch Production
+
+**English Scenario:**
+A marketing team deployed AI to batch-produce attack-competitor content across LinkedIn and social channels. However, the underlying strategy had already triggered strong industry backlash.
+
+**English Outcome:**
+The more content they produced with AI, the more the negative effects amplified. More content ≠ more influence—it became larger-scale damage.
+
+**English Core Business Lesson:**
+If your strategy is already triggering backlash, using AI to produce more content only magnifies the problem tenfold. Wrong direction × faster speed = faster failure.
+
+**English Visual:** Angry emoji → AI Batch Production → Fire/explosion emoji (amplified negative effect)
+
+**Chinese Title:** 案例研究 #1：竞争对手攻击型内容 × AI 批量生产
+
+**Chinese Scenario:**
+某企业营销团队部署 AI，在领英及社交渠道上批量生产攻击竞争对手的内容。而其底层战略本身已经引发了业内的强烈反弹。
+
+**Chinese Outcome:**
+他们用 AI 生产得越多，负面效应只会被放大十倍。更多内容不等于更多影响力——而是更大规模的损害。
+
+**Chinese Core Business Lesson:**
+如果你的战略本就已经引发反弹，用 AI 生产得越多，负面效应只会被放大十倍。方向错误 × 速度更快 = 更快走向失败。
+
+**Chinese Visual:** 愤怒表情 → AI 批量生产 → 火焰/爆炸表情（放大的负面效应）
+
+---
+
+### Case Study 2: Brand Association Trap
+
+**English Title:** Case Study #2: Premium Product Meets Negative Brand Association
+
+**English Scenario:**
+A high-quality product or executive becomes associated with a negatively perceived brand. AI-generated content then amplifies the wrong signal at massive scale.
+
+**English Outcome:**
+The product's strong track record and real customer value cannot overcome the brand association barrier. More AI content = faster rejection from key market segments.
+
+**English Core Business Lesson:**
+AI content amplifies existing perceptions—both positive and negative. A strong product attached to a weak brand signal will see AI accelerate the rejection, not overcome it.
+
+**English Visual:** Trophy (quality product) + Prohibited symbol (negative brand) → AI Content → Declining arrow (amplified rejection)
+
+**Chinese Title:** 案例研究 #2：优质产品遭遇负面品牌联想
+
+**Chinese Scenario:**
+一个优质产品或高管与一个负面感知的品牌产生关联。AI 内容会把错误的信号大规模放大。
+
+**Chinese Outcome:**
+产品出色的业绩记录和真实的客户价值无法克服品牌联想障碍。更多 AI 内容 = 关键细分群体更快拒绝。
+
+**Chinese Core Business Lesson:**
+AI 内容放大现有认知——无论积极还是消极。一个强产品附带弱品牌信号将看到 AI 加速拒绝，而不是克服它。
+
+**Chinese Visual:** 奖杯（优质产品）+ 禁止符号（负面品牌）→ AI 内容 → 下降箭头（放大的拒绝）
+
+---
+
+## Business Use Cases Grid
+
+### Sales
+
+**English:**
+- Customer research and discovery
+- Call preparation and strategy
+- Follow-up email drafting
+- Objection handling and rebuttals
+
+**Chinese:**
+- 客户调研与发现
+- 通话准备与策略
+- 跟进邮件起草
+- 异议处理与反驳
+
+---
+
+### Marketing
+
+**English:**
+- Message testing and validation
+- Audience segmentation and targeting
+- Content variant generation
+- Campaign ideation and strategy
+
+**Chinese:**
+- 信息测试与验证
+- 受众细分与定位
+- 内容变体生成
+- 活动创意与策略
+
+---
+
+### Operations
+
+**English:**
+- Process documentation and summarization
+- SOP (Standard Operating Procedure) drafting
+- Knowledge retrieval and management
+- Workflow automation and optimization
+
+**Chinese:**
+- 流程文档与总结
+- SOP（标准操作程序）起草
+- 知识检索与管理
+- 工作流自动化与优化
+
+---
+
+### Product
+
+**English:**
+- User feedback integration and analysis
+- Roadmap assumptions and validation
+- Feature prioritization and ranking
+- Product strategy refinement
+
+**Chinese:**
+- 用户反馈整合与分析
+- 路线图假设与验证
+- 功能优先级排序
+- 产品战略优化
+
+---
+
+### QA (Quality Assurance)
+
+**English:**
+- Test framework and skeleton generation
+- Edge case identification
+- Regression testing strategy
+- Defect summarization and reporting
+
+**Chinese:**
+- 测试框架与骨架生成
+- 边界场景识别
+- 回归测试策略
+- 缺陷总结与报告
+
+---
+
+### Competitive Intelligence
+
+**English:**
+- Market scanning and monitoring
+- Scenario planning and forecasting
+- Competitor positioning analysis
+- Industry trend identification
+
+**Chinese:**
+- 市场扫描与监控
+- 情景规划与预测
+- 竞争对手定位分析
+- 行业趋势识别
+
+---
+
+## Strategic Prompting Guide Section
+
+### English Title
+Strategic Prompting Guide: Eliciting Honest, High-Quality AI Output
+
+### English Introduction
+The best AI results come from asking the right strategic questions—not just requesting content production. Here's how to prompt for genuine insight.
+
+### Do's (✓ Correct Approach)
+
+**Example 1:**
+- **Do:** "What customer needs are we currently overlooking?"
+- **Don't:** "Write a product launch press release"
+
+**Example 2:**
+- **Do:** "Which strategic bets have the highest impact-to-investment ratio?"
+- **Don't:** "Generate 20 social media posts for our brand"
+
+**Example 3:**
+- **Do:** "Where are we most vulnerable to competitive disruption?"
+- **Don't:** "Draft attack content against competitors"
+
+**Example 4:**
+- **Do:** "Be honest: what are the blind spots in our strategy?"
+- **Don't:** "Write 10 email templates for the sales team"
+
+**Example 5:**
+- **Do:** "What are the most viable quick-win opportunities in the next 90 days?"
+- **Don't:** "Create a Q3 investor newsletter"
+
+### Key Insight
+**The Right First Step:** Request honest, clear strategic judgment from AI—not content production. This is where AI's true value emerges.
+
+### Chinese Title
+战略提示指南：引出诚实、高质量的 AI 输出
+
+### Chinese Introduction
+最好的 AI 结果来自提出正确的战略问题——而不仅仅是要求内容生产。以下是如何提示以获得真正洞察的方法。
+
+### Do's (✓ 正确方法)
+
+**Example 1:**
+- **Do:** "我们目前忽视了哪些客户需求？"
+- **Don't:** "写一份产品发布新闻稿"
+
+**Example 2:**
+- **Do:** "哪些战略押注的影响力/投入比最高？"
+- **Don't:** "为我们的品牌生成 20 条社媒帖文"
+
+**Example 3:**
+- **Do:** "我们最容易受到竞争颠覆的地方在哪里？"
+- **Don't:** "为领英起草攻击竞争对手的内容"
+
+**Example 4:**
+- **Do:** "老实告诉我，我们的战略有哪些盲点。"
+- **Don't:** "为销售团队制作 10 份邮件模板"
+
+**Example 5:**
+- **Do:** "未来 90 天内最可行的速赢机会是什么？"
+- **Don't:** "写我们的 Q3 投资者通讯"
+
+### Key Insight (Chinese)
+**正确的第一步:** 要求 AI 给出诚实、清晰的战略判断——而不是内容生产。这是 AI 真正价值所在。
+
+---
+
+## Footer Content
+
+### English
+**About This Site**
+This educational resource explores how AI amplifies organizational capabilities—for better or worse. The strategic principles presented here are drawn from real-world case studies and best practices in AI deployment.
+
+**Key Takeaway**
+AI doesn't make you smarter. It amplifies what you already do. The question isn't whether to use AI—it's whether your strategy is strong enough to be amplified.
+
+### Chinese
+**关于本站**
+这个教育资源探讨了 AI 如何放大组织能力——无论好坏。本站呈现的战略原则来自真实案例研究和 AI 部署最佳实践。
+
+**核心要点**
+AI 不会让你变得更聪明。它只会放大你已经在做的事。问题不是是否使用 AI——而是你的战略是否足够强大，能够被放大。
