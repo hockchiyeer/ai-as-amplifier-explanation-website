@@ -1,103 +1,57 @@
-# AI Amplifier — Website
+# AI Amplifier — Zero-Build Standalone Edition
 
-A comprehensive, bilingual (English/Chinese) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder." The project includes a slide-deck showcase with local presentation files that illustrate how a unified AI application framework can be successfully transferred and applied across diverse domains such as software testing, political strategy, and business strategy.
+A comprehensive, bilingual (English/Chinese) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder." 
 
-This repository contains a full-stack application built with React, Vite, Express, and Drizzle ORM.
+This project has been architected to run as a **100% self-sustaining standalone application**. It requires **no build step, no npm install, and no backend server**. It leverages vanilla HTML, JavaScript, and CSS bundled into a single file while maintaining a premium, pixel-perfect layout and animations.
 
 ## 🌟 Key Features
 
+*   **Zero-Build Architecture**: Launch the application instantly by opening `index.html` in any web browser. No `node_modules` or dependencies required.
+*   **Decoupled Content (content.js)**: All text and translations live in an external `content.js` file, allowing non-developers to edit the website content without touching the core UI engine.
+*   **In-Browser CMS**: A built-in "✏️ Edit Content" feature allows users to visually edit, import, and download updated `content.js` files directly from the browser.
 *   **Bilingual Interface**: Seamless switching between English and Chinese content.
-*   **Educational Slide Showcase**: Explore how AI amplifies outcomes across different domains. The application provides interactive previews and downloads for multiple demonstration slide decks.
-*   **Modern Full-Stack Architecture**: A robust React frontend backed by a fast Express API and type-safe database access using Drizzle ORM.
-*   **Responsive Design**: A user interface that works beautifully across all devices.
+*   **Educational Slide Showcase**: Explore how AI amplifies outcomes across different domains with interactive slide previews and downloads.
 
-## 📂 Repository Structure
+## 📂 Standalone Application Structure
 
-The project is structured as a monorepo containing both client and server applications, alongside shared utilities and database definitions.
+To deploy or share this application, you only need the following files:
 
 ```text
-ai-as-amplifier-explanation-website/
-├── client/                 # Frontend React + Vite application
-│   ├── public/             # Static assets
-│   ├── src/                # React components, pages, hooks, and utilities
-│   └── test/               # Frontend test suites
-├── server/                 # Backend Express server and API routes
-│   ├── _core/              # Server configuration and startup
-│   └── routers.ts          # API route definitions
-├── shared/                 # Shared types, constants, and utilities for both client and server
-├── drizzle/                # Database schemas and migration files (Drizzle ORM)
-├── resources/              # Static resources and data
-│   └── data/pptx/          # The example slide decks showcasing AI amplification
-├── scripts/                # Development and build utility scripts
-├── patches/                # Dependency patches
-├── CONTENT.md              # Detailed content documentation
-└── EXPANSION_PLAN.md       # Roadmap and future expansion plans
+AI_Amplifier_Standalone/
+├── index.html          # The complete core application (UI, styles, and logic)
+├── content.js          # The externalized content dictionary (English/Chinese)
+└── resources/          # Static assets
+    └── data/
+        ├── pptx/       # Downloadable presentation files
+        └── pptx_images/# Exported slides for in-browser preview
 ```
-
-## 🛠️ Tech Stack
-
-*   **Frontend**: React, TypeScript, Vite
-*   **Backend**: Node.js, Express, TypeScript
-*   **Database**: Drizzle ORM
-*   **Testing**: Vitest
-*   **Package Manager**: pnpm
 
 ## 🚀 Getting Started
 
-### Prerequisites
+1. Navigate to the `AI_Amplifier_Standalone` directory (or the root directory where `index.html` resides).
+2. Double-click **`index.html`** to open it in your web browser (Chrome, Edge, Safari, Firefox).
+3. The application is now running locally.
 
-Ensure you have the following installed:
-*   [Node.js](https://nodejs.org/) (v18 or higher recommended)
-*   [pnpm](https://pnpm.io/) (Recommended package manager)
+## ✏️ Editing Content (No Coding Required)
 
-### Installation
+You do not need a development environment to change the text on the website.
 
-1.  Clone the repository and navigate into it:
-    ```bash
-    git clone <repository-url>
-    cd ai-as-amplifier-explanation-website
-    ```
+1. Open `index.html` in your browser.
+2. Click **✏️ Edit Content** in the top right navigation menu.
+3. Use the form to change any English or Chinese text.
+4. Click **Apply Changes** to preview your edits immediately.
+5. Click **Download content.js** to save your new content dictionary.
+6. Replace the old `content.js` file in your directory with the newly downloaded one. 
 
-2.  Install all dependencies:
-    ```bash
-    pnpm install
-    ```
-
-### Running the Application
-
-To start the development server for both the frontend and backend:
-
-```bash
-pnpm dev
-```
-
-*   The local development server will start (typically bound to `http://localhost:3000`, or the next available port).
-*   Open your browser and navigate to the provided URL to view the application.
+When you refresh `index.html`, your new content will be loaded automatically!
 
 ## 📖 Using the Slide Showcase
 
-The "Slides / 幻灯片" section is a core feature of the platform, demonstrating practical applications of AI:
+The "Slides / 幻灯片" section demonstrates practical applications of AI:
 
-1.  Navigate to the Slides section via the top navigation bar.
-2.  You can **Preview** the slides (which opens them in a new tab) or **Download** them directly to your machine.
-3.  Alternatively, to view the slides without running the application, navigate to `resources/data/pptx/` and open the `.pptx` files using your preferred presentation software.
-
-## 🔧 Development Guide
-
-*   **Bilingual Content**: Text and translations are managed within the `client/src/lib/i18n.ts` file.
-*   **Slide Showcase Component**: Modifications to the presentation viewer can be made in `client/src/components/PptShowcase.tsx`.
-*   **Database Schema**: Update your Drizzle schema in the `drizzle/` directory and use the provided pnpm scripts to generate and run migrations.
-
-### Troubleshooting
-
-*   **Port in Use**: The dev script automatically attempts to find an available port starting from 3000 up to 3019. Check if any background services are blocking these ports.
-*   **TypeScript Errors**: Ensure you have run `pnpm install` so that all necessary `@types/*` packages are available to your IDE.
-*   **Slide Previewing**: Browsers generally do not render `.pptx` files natively. Use the "Download" option or upload the file to a cloud viewer (like Google Drive) for an optimal experience.
+*   **Preview**: Opens a full-screen, interactive gallery of the slides. This feature pulls images directly from the local `resources/data/pptx_images/` directory without needing a backend server.
+*   **Download**: Prompts a direct download of the `.pptx` file from the local `resources/data/pptx/` directory.
 
 ## 🔐 Security & Privacy
 
-This demonstration is intended for local or protected environments. The slide decks under `resources/data/pptx/` are served statically. If deployed to a public environment, ensure proper authentication and authorization mechanisms are implemented before exposing sensitive routes or files.
-
-## 📞 Contact
-
-*   **Author**: Er Hock Chiye — Source author of content; repository maintained for demonstration and experimentation.
+Since this is a client-side only application, all data, content edits, and file interactions happen entirely within your local browser. No data is sent to external servers.

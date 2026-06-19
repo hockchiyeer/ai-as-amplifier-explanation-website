@@ -6,6 +6,12 @@ import { X } from 'lucide-react';
 export function PptShowcase() {
   const { t } = useLanguage();
   const data = getSectionContent(t, 'pptShowcase', { title: '', description: '', items: [], preview: 'Preview', download: 'Download' });
+  
+  const SLIDE_COUNTS: Record<string, number> = {
+    'AI_in_Software_Test_Automation_ByErHockChiye.pptx': 25,
+    'AI_As_Amplifier_Multiplier_Compounder_Chinese_version_35_slides.pptx': 35,
+    'AI政治策略课程_完整版.pptx': 21
+  };
   const [imagesMap, setImagesMap] = useState<Record<string, string[]>>({});
   const [modal, setModal] = useState<{
     images: string[];
@@ -18,19 +24,17 @@ export function PptShowcase() {
   const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
-    // for each item, request generated images
-    data.items.forEach(async (item: any) => {
-      try {
-        const resp = await fetch(`/pptx/${encodeURIComponent(item.filename)}/images`);
-        if (!resp.ok) return;
-        const json = await resp.json();
-        if (json.ok && Array.isArray(json.images)) {
-          setImagesMap(m => ({ ...m, [item.filename]: json.images }));
-        }
-      } catch (err) {
-        // ignore
+    const staticMap: Record<string, string[]> = {};
+    data.items.forEach((item: any) => {
+      const count = SLIDE_COUNTS[item.filename] || 0;
+      if (count > 0) {
+        const folder = item.filename.replace('.pptx', '');
+        staticMap[item.filename] = Array.from({ length: count }, (_, i) => 
+          `./resources/data/pptx_images/${folder}/Slide${i + 1}.PNG`
+        );
       }
     });
+    setImagesMap(staticMap);
   }, [data.items]);
 
   // keyboard navigation when modal is open
@@ -206,7 +210,7 @@ export function PptShowcase() {
                       if (imgs && imgs.length > 0) {
                         setModal({ images: imgs, index: 0, filename: item.filename, title: item.title });
                       } else {
-                        window.open(`/pptx/${item.filename}`, '_blank');
+                        window.open(`./resources/data/pptx/${item.filename}`, '_blank');
                       }
                     }}
                   >
@@ -215,47 +219,13 @@ export function PptShowcase() {
 
                   <Button
                     size="sm"
-                    onClick={async () => {
-                      // try protected download first
-                      const protectedUrl = `/pptx/${encodeURIComponent(item.filename)}/protected-download`;
-                      try {
-                        const r = await fetch(protectedUrl, { method: 'GET' });
-                        if (r.status === 403) {
-                          // fallback to public file
-                          const link = document.createElement('a');
-                          link.href = `/pptx/${item.filename}`;
-                          link.download = item.filename;
-                          document.body.appendChild(link);
-                          link.click();
-                          document.body.removeChild(link);
-                        } else if (r.ok) {
-                          // create blob and download
-                          const blob = await r.blob();
-                          const url = URL.createObjectURL(blob);
-                          const link = document.createElement('a');
-                          link.href = url;
-                          link.download = item.filename;
-                          document.body.appendChild(link);
-                          link.click();
-                          document.body.removeChild(link);
-                          URL.revokeObjectURL(url);
-                        } else {
-                          // fallback
-                          const link = document.createElement('a');
-                          link.href = `/pptx/${item.filename}`;
-                          link.download = item.filename;
-                          document.body.appendChild(link);
-                          link.click();
-                          document.body.removeChild(link);
-                        }
-                      } catch (err) {
-                        const link = document.createElement('a');
-                        link.href = `/pptx/${item.filename}`;
-                        link.download = item.filename;
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                      }
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = `./resources/data/pptx/${item.filename}`;
+                      link.download = item.filename;
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
                     }}
                   >
                     {data.download}

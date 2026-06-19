@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Edit3 } from 'lucide-react';
+import { ContentEditor } from '@/components/ContentEditor';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -12,6 +13,7 @@ export function Navigation({ activeSection }: NavigationProps) {
   const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isEditorOpen, setIsEditorOpen] = useState(false);
 
   const nav = t.nav;
   const sections = [
@@ -102,6 +104,16 @@ export function Navigation({ activeSection }: NavigationProps) {
         {/* Language Toggle & Mobile Menu */}
         <div className="flex items-center gap-2">
           <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setIsEditorOpen(true)}
+            className="hidden md:flex gap-2 text-blue-600 border-blue-200 hover:bg-blue-50"
+          >
+            <Edit3 className="w-4 h-4" />
+            Edit Content
+          </Button>
+
+          <Button
             variant="ghost"
             size="sm"
             onClick={toggleLanguage}
@@ -138,8 +150,23 @@ export function Navigation({ activeSection }: NavigationProps) {
                 {section.label}
               </button>
             ))}
+            
+            <button
+              onClick={() => {
+                setIsEditorOpen(true);
+                setIsOpen(false);
+              }}
+              className="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-blue-600 bg-blue-50 mt-2"
+            >
+              ✏️ Edit Content
+            </button>
           </div>
         </div>
+      )}
+      
+      {/* Editor Modal */}
+      {isEditorOpen && (
+        <ContentEditor onClose={() => setIsEditorOpen(false)} />
       )}
     </header>
   );

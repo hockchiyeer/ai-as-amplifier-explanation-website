@@ -14,9 +14,14 @@ function deepMerge(target: any, source: any): any {
 }
 
 export function getContent(language: Language) {
+  // Try to use globally injected APP_CONTENT first (for static single-file deployments)
+  const sourceI18n = (typeof window !== 'undefined' && (window as any).APP_CONTENT) 
+    ? (window as any).APP_CONTENT 
+    : i18n;
+
   // merge with English defaults to ensure complete shape is present
-  const base = i18n.en;
-  const localized = i18n[language] || {};
+  const base = sourceI18n.en;
+  const localized = sourceI18n[language] || {};
   return deepMerge(base, localized) as Content;
 }
 
