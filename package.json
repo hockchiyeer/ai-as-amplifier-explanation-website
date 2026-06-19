@@ -12,7 +12,8 @@
     "test": "vitest run",
     "find:t-any": "node ./scripts/find_t_any.js",
     "find-casts": "node ./scripts/find_casts.cjs",
-    "db:push": "drizzle-kit generate && drizzle-kit migrate"
+    "db:push": "drizzle-kit generate && drizzle-kit migrate",
+    "build:standalone": "tsx scripts/build-standalone.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.693.0",

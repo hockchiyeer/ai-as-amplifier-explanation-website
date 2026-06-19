@@ -17,14 +17,18 @@ This project has been architected to run as a **100% self-sustaining standalone 
 To deploy or share this application, you only need the following files:
 
 ```text
-AI_Amplifier_Standalone/
+/ (Root Directory)
 ├── index.html          # The complete core application (UI, styles, and logic)
 ├── content.js          # The externalized content dictionary (English/Chinese)
-└── resources/          # Static assets
-    └── data/
-        ├── pptx/       # Downloadable presentation files
-        └── pptx_images/# Exported slides for in-browser preview
+└── resources/          # Static assets (images, pptx downloads)
+
+AI_Amplifier_Standalone/
+├── index.html          # Identical to the root version
+├── content.js          # Identical to the root version
+└── resources/          # Identical to the root version
 ```
+
+Both the root directory and the `AI_Amplifier_Standalone/` folder are valid standalone distributions. We provide the `AI_Amplifier_Standalone/` folder so you can simply zip it and send it to users without including repository configuration files like `package.json` or `README.md`.
 
 ## 🚀 Getting Started
 
@@ -55,3 +59,17 @@ The "Slides / 幻灯片" section demonstrates practical applications of AI:
 ## 🔐 Security & Privacy
 
 Since this is a client-side only application, all data, content edits, and file interactions happen entirely within your local browser. No data is sent to external servers.
+
+## 🛠️ Development
+
+If you'd like to modify the source code (the React components or the styling), you can use the built-in standalone generation script to rebuild the application:
+
+1. Make your changes in `client/src/`.
+2. Run the build script:
+   ```bash
+   npm run build:standalone
+   ```
+3. This command will:
+   - Build a fresh zero-build React bundle via Vite.
+   - Extract the latest dictionary from `client/src/lib/i18n.ts` into `content.js`.
+   - Copy the newly built `index.html`, `content.js`, and `resources/` into BOTH the root directory and the `AI_Amplifier_Standalone/` distribution folder.
