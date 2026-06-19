@@ -62,21 +62,29 @@ async function startServer() {
       fs.mkdirSync(outFolder, { recursive: true });
     }
 
+    const sortFiles = (files: string[]) => {
+      return files.sort((a, b) => {
+        const numA = parseInt(a.replace(/\D/g, '')) || 0;
+        const numB = parseInt(b.replace(/\D/g, '')) || 0;
+        return numA - numB;
+      });
+    };
+
     // If folder already contains PNG files, return them
-    const existing = fs.readdirSync(outFolder).filter(f => /\.png$/i.test(f)).sort();
+    const existing = sortFiles(fs.readdirSync(outFolder).filter(f => /\.png$/i.test(f)));
     if (existing.length > 0) return existing.map(f => path.join(path.parse(safe).name, f));
 
-    // Try to use LibreOffice (soffice) to convert slides to PNG
+    // Try to use Python win32com to convert slides to PNG
     try {
-      // soffice --headless --convert-to png --outdir <outFolder> <pptPath>
-      await execFileAsync('soffice', ['--headless', '--convert-to', 'png', '--outdir', outFolder, pptPath], { timeout: 30_000 });
+      const pyScript = path.resolve(import.meta.dirname, 'pptx_to_png.py');
+      await execFileAsync('python', [pyScript, pptPath, outFolder], { timeout: 60_000 });
 
       // Collect generated png files
-      const generated = fs.readdirSync(outFolder).filter(f => /\.png$/i.test(f)).sort();
+      const generated = sortFiles(fs.readdirSync(outFolder).filter(f => /\.png$/i.test(f)));
       if (generated.length === 0) return null;
       return generated.map(f => path.join(path.parse(safe).name, f));
     } catch (err) {
-      console.warn('[PPTX] conversion failed (soffice not available or error):', String(err));
+      console.warn('[PPTX] conversion failed (python script not available or error):', String(err));
       return null;
     }
   }
@@ -91,7 +99,7 @@ async function startServer() {
         return;
       }
       // construct URLs relative to server
-      const urls = images.map(p => `/pptx-images/${p.replace(/\\\\/g, '/')}`);
+      const urls = images.map(p => `/pptx-images/${p.replace(/\\/g, '/')}`);
       res.json({ ok: true, images: urls });
     } catch (err) {
       console.error('[PPTX] images error', err);

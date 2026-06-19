@@ -22,10 +22,14 @@ export default function Home() {
         'ai-paradigms',
         'case-studies',
         'use-cases',
-          'prompting-guide',
+        'prompting-guide',
         'vibe-coding',
+        'cross-model-validation',
         'strategic-insights',
+        'ai-red-teaming',
+        'production-observations',
         'subtract-principle',
+        'ai-moats',
         'key-takeaways',
         'ai-journey',
       ];
@@ -401,6 +405,25 @@ export default function Home() {
         </div>
       </Section>
 
+      
+      {/* Cross-Model Validation Section */}
+      <Section id="cross-model-validation" className="bg-slate-50">
+        <SectionHeader
+          title={t.crossModelValidation?.title || 'Cross-Model Validation'}
+          subtitle={t.crossModelValidation?.subtitle || 'Reducing hallucinations'}
+          description={t.crossModelValidation?.description}
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {t.crossModelValidation?.steps?.map((step: any, idx: number) => (
+            <div key={idx} className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s` }}>
+              <div className="text-3xl font-bold text-blue-200 mb-4">{idx + 1}</div>
+              <h4 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h4>
+              <p className="text-sm text-slate-600">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* Strategic Insights Section */}
       <Section id="strategic-insights" className="bg-blue-50">
         <SectionHeader
@@ -415,6 +438,42 @@ export default function Home() {
 
         <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-8 text-center">
           <p className="text-lg font-semibold">{t.strategicInsights.keyPoint}</p>
+        </div>
+      </Section>
+
+      
+      {/* AI Red Teaming Section */}
+      <Section id="ai-red-teaming" className="bg-red-50/50">
+        <SectionHeader
+          title={t.aiRedTeaming?.title || 'AI Red Teaming'}
+          subtitle={t.aiRedTeaming?.subtitle}
+          description={t.aiRedTeaming?.description}
+        />
+        <div className="space-y-4 max-w-3xl mx-auto">
+          {t.aiRedTeaming?.questions?.map((q: string, idx: number) => (
+            <div key={idx} className="flex gap-4 items-start bg-white p-5 rounded-lg border border-red-100 shadow-sm animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s` }}>
+              <span className="text-red-500 font-bold text-xl flex-shrink-0">🔴</span>
+              <p className="text-slate-800 font-medium">{q}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      
+      {/* Production Observations Section */}
+      <Section id="production-observations" className="bg-white">
+        <SectionHeader
+          title={t.productionObservations?.title || 'Observations'}
+          subtitle={t.productionObservations?.subtitle}
+        />
+        <div className="grid md:grid-cols-2 gap-6">
+          {t.productionObservations?.observations?.map((obs: any, idx: number) => (
+            <div key={idx} className="border border-slate-200 rounded-xl p-6 hover:border-blue-300 transition-colors">
+              <div className="text-blue-600 font-bold text-lg mb-2">0{idx + 1}</div>
+              <h4 className="text-xl font-bold text-slate-900 mb-3">{obs.title}</h4>
+              <p className="text-slate-600 leading-relaxed text-sm">{obs.description}</p>
+            </div>
+          ))}
         </div>
       </Section>
 
@@ -436,6 +495,26 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </Section>
+
+      
+      {/* AI Moats Section */}
+      <Section id="ai-moats" className="bg-gradient-to-br from-blue-50 to-indigo-50">
+        <SectionHeader
+          title={t.aiMoats?.title || 'Building Long-Term AI Moats'}
+          subtitle={t.aiMoats?.subtitle}
+          description={t.aiMoats?.description}
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {t.aiMoats?.timeline?.map((item: any, idx: number) => (
+            <div key={idx} className="bg-white/80 backdrop-blur rounded-lg p-6 border border-blue-100 relative overflow-hidden group hover:shadow-md transition-all">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-blue-100 rounded-bl-full -mr-8 -mt-8 opacity-50 group-hover:bg-blue-200 transition-colors"></div>
+              <h5 className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">{item.period}</h5>
+              <h4 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h4>
+              <p className="text-sm text-slate-600">{item.description}</p>
+            </div>
+          ))}
         </div>
       </Section>
 

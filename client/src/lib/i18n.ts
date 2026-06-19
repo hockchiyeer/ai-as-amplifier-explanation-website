@@ -14,6 +14,10 @@ export const i18n = {
       promptingGuide: 'Prompting Guide',
       vibeCoding: 'Vibe Coding',
       strategicInsights: 'Strategy',
+      crossModelValidation: 'Validation',
+      aiRedTeaming: 'Red Teaming',
+      productionObservations: 'Observations',
+      aiMoats: 'AI Moats',
       keyTakeaways: 'Takeaways',
       pptShowcase: 'Slides',
   neuralLimitations: 'Neural Network Limits',
@@ -354,6 +358,58 @@ export const i18n = {
       author: 'Er Hock Chiye | AI Use Case Practitioner',
     },
 
+
+    // Cross-Model Validation Section
+    crossModelValidation: {
+      title: 'Cross-Model Validation Workflow',
+      subtitle: 'Reducing hallucinations and expanding context with Google NotebookLM',
+      description: 'Never stop at a single AI model\'s conclusion. Use the same prompt across multiple models to cross-validate and synthesize deeper insights.',
+      steps: [
+        { title: 'Establish Baseline', description: 'Build an initial knowledge base by importing PDFs, reports, and data into NotebookLM.' },
+        { title: 'Parallel Testing', description: 'Send the identical prompt to multiple models (e.g., ChatGPT, Gemini, Claude, DeepSeek).' },
+        { title: 'Synthesize & Align', description: 'Export the responses and import them back into NotebookLM to summarize agreements and pinpoint divergence.' },
+        { title: 'Final Judgment', description: 'Use the consolidated insights to form a robust strategy—always retaining human accountability.' }
+      ]
+    },
+
+    // AI Red Teaming Section
+    aiRedTeaming: {
+      title: 'AI Red Teaming',
+      subtitle: 'Let AI play your competitor\'s CEO',
+      description: 'Force AI to find the vulnerabilities you are most likely to be exploited on, before your competitors do.',
+      questions: [
+        'If our top competitor launched an aggressive campaign next quarter, what would be their most destructive angle?',
+        'What are the top 3 undefended weaknesses a well-funded rival could exploit right now?',
+        'Which market segment is most vulnerable to being poached by a competitor\'s offer?',
+        'What are the strategic assumptions we hold that are most likely to be wrong?'
+      ]
+    },
+
+    // Production Observations Section
+    productionObservations: {
+      title: '4 Key Observations from AI in Production',
+      subtitle: 'Hard-earned lessons from long-term, multi-model AI deployment',
+      observations: [
+        { title: 'Requirement Drift', description: 'Context fragments over long threads. Models deviate from the initial strategic goal. Always reset to first principles.' },
+        { title: 'Not Optimized for Quality', description: 'Models confidently produce flawed logic. Establish explicit human validation for high-stakes decisions.' },
+        { title: 'Breadth Without Depth', description: 'AI outputs offer impressive coverage but miss critical edge cases that determine real-world success.' },
+        { title: 'The Delegation Trap', description: 'Outsourcing strategy to AI might yield fast results, but speed without accuracy is a liability.' }
+      ]
+    },
+
+    // AI Moats Section
+    aiMoats: {
+      title: 'Building Long-Term AI Moats',
+      subtitle: 'The compounding effect of early AI adoption',
+      description: 'AI advantages compound over time. Early movers build data and workflow moats that late adopters cannot overcome, regardless of budget.',
+      timeline: [
+        { period: 'Months 1-3', title: 'Adoption', description: 'Deploying tools, building prompt libraries, and capturing early efficiency gains.' },
+        { period: 'Months 4-6', title: 'Integration', description: 'AI becomes embedded in core processes. Organizational knowledge begins to compound.' },
+        { period: 'Months 7-12', title: 'Systematization', description: 'AI systems feed each other. Customer data refines product strategy; sales data informs marketing.' },
+        { period: 'Year 2+', title: 'Compounding', description: 'Exponential data moats and self-reinforcing feedback loops are established.' }
+      ]
+    },
+
     // PPTX Showcase (English)
     pptShowcase: {
       title: 'Slide Decks on AI Applications',
@@ -449,6 +505,10 @@ export const i18n = {
       promptingGuide: '提示指南',
       vibeCoding: '敏捷编码',
       strategicInsights: '战略洞察',
+      crossModelValidation: '交叉验证',
+      aiRedTeaming: '红队分析',
+      productionObservations: '实战观察',
+      aiMoats: 'AI 护城河',
       keyTakeaways: '核心要点',
       pptShowcase: '幻灯片',
   neuralLimitations: '神经网络局限',
@@ -788,6 +848,58 @@ export const i18n = {
       ],
       cta: '立即开始你的转变',
       author: 'Er Hock Chiye | AI 用例实践者',
+    },
+
+
+    // Cross-Model Validation Section
+    crossModelValidation: {
+      title: '多模型交叉验证工作流',
+      subtitle: '使用 Google NotebookLM 减少幻觉并扩展上下文',
+      description: '不要止步于单一AI模型的总结与结论——用同一提示词在多个模型间交叉验证，才能拓宽内容的广度与深度。',
+      steps: [
+        { title: '建立基准', description: '在NotebookLM新建笔记本，导入PDF、研究报告等资料作为基准数据源。' },
+        { title: '多模型并行测试', description: '使用同一Prompt，同时发给多个大语言模型（如 ChatGPT, Gemini, Claude, DeepSeek）。' },
+        { title: '汇总与对齐', description: '将模型答复导入NotebookLM，一键摘要梳理各模型脉络，提炼共识与分歧。' },
+        { title: '最终判断', description: '多模型加上多来源文档辅以人工验证，提炼出更客观、全面的深度洞察。' }
+      ]
+    },
+
+    // AI Red Teaming Section
+    aiRedTeaming: {
+      title: 'AI 红队分析',
+      subtitle: '让AI扮演你竞争对手的CEO',
+      description: '在竞争对手之前，强迫AI找出你最容易被利用的弱点。',
+      questions: [
+        '如果我们的头号竞争对手下季度发起一场攻势性的campaign，他们最具破坏力的角度会是什么？',
+        '资金充足的对手现在就能利用的三个最该被防守的弱点是什么？',
+        '当下哪个市场细分群体最容易被竞争对手的报价拿下？',
+        '我们正在做的哪些战略假设最有可能是错的？'
+      ]
+    },
+
+    // Production Observations Section
+    productionObservations: {
+      title: '来自AI生产环境使用的4个关键观察',
+      subtitle: '在长期、多模型AI辅助运营中得来的宝贵经验',
+      observations: [
+        { title: '需求会随时间漂移', description: '上下文会在长对话中碎片化，模型逐渐偏离最初目标。务必时常回到第一原则。' },
+        { title: '天生并非为质量而优化', description: '模型会自信地产出有缺陷的结果。务必在每一个高风险决策节点建立人工验证。' },
+        { title: '有广度没有深度', description: 'AI的输出覆盖面广，却常遗漏具体边界场景。深度需要独立验证。' },
+        { title: '完全放手的陷阱', description: '把战略外包给AI或许很快，但无法保证正确性。没有正确性的速度是一种负担。' }
+      ]
+    },
+
+    // AI Moats Section
+    aiMoats: {
+      title: '复利效应：构建长期的AI护城河',
+      subtitle: 'AI带来的优势并非一成不变，它会复利累积',
+      description: '先行者建立的领先优势，后来者即便投入再多预算也难以追平。',
+      timeline: [
+        { period: '第 1-3 个月', title: 'AI 采用', description: '部署AI工具，建立提示词库，搭建初始工作流。小而可见的收益显现。' },
+        { period: '第 4-6 个月', title: 'AI 融合', description: 'AI被嵌入核心流程，组织知识被沉淀下来，团队能力开始复利累积。' },
+        { period: '第 7-12 个月', title: 'AI 系统化', description: '各AI系统相互反哺。客户数据反哺产品，销售数据反哺内容战略。' },
+        { period: '第 2 年以上', title: 'AI 复利', description: '指数级的数据护城河，自我强化的反馈循环。对手难以用合理成本追平。' }
+      ]
     },
 
     // PPTX Showcase

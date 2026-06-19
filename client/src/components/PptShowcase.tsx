@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getSectionContent } from '@/lib/i18nHelpers';
 import { Button } from '@/components/ui/button';
-
+import { X } from 'lucide-react';
 export function PptShowcase() {
   const { t } = useLanguage();
   const data = getSectionContent(t, 'pptShowcase', { title: '', description: '', items: [], preview: 'Preview', download: 'Download' });
@@ -202,7 +202,13 @@ export function PptShowcase() {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => window.open(`/pptx/${item.filename}`, '_blank')}
+                    onClick={() => {
+                      if (imgs && imgs.length > 0) {
+                        setModal({ images: imgs, index: 0, filename: item.filename, title: item.title });
+                      } else {
+                        window.open(`/pptx/${item.filename}`, '_blank');
+                      }
+                    }}
                   >
                     {data.preview}
                   </Button>
@@ -295,6 +301,15 @@ export function PptShowcase() {
                 touchStartX.current = null;
               }}
             >
+              {/* Close button */}
+              <button
+                className="absolute top-4 right-4 md:top-6 md:right-6 bg-black/50 hover:bg-black/80 text-white rounded-full p-2 z-50 transition-colors"
+                onClick={() => setModal(null)}
+                aria-label="close"
+              >
+                <X className="w-5 h-5 md:w-6 md:h-6" />
+              </button>
+
               {/* Prev button */}
               <button
                 className="absolute left-2 md:left-4 bg-white/80 hover:bg-white text-slate-800 rounded-full p-1 md:p-2 z-20"
