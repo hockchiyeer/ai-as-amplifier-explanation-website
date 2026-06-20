@@ -1,6 +1,6 @@
 # AI Amplifier — Zero-Build Standalone Edition
 
-A comprehensive, bilingual (English/Chinese) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder." 
+A comprehensive, bilingual (English/Chinese) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder".
 
 This project has been architected to run as a **100% self-sustaining standalone application**. It requires **no build step, no npm install, and no backend server**. It leverages vanilla HTML, JavaScript, and CSS bundled into a single file while maintaining a premium, pixel-perfect layout and animations.
 

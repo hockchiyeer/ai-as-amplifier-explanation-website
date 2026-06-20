@@ -91,7 +91,7 @@ window.APP_CONTENT = {
       },
       "paradigm2": {
         "title": "Task Executor",
-        "subtitle": "Claude AI · GitHub Copilot · Cursor Agents",
+        "subtitle": "Claude AI · Manus AI · Cursor Agents",
         "bestFor": [
           "Autonomous execution of multi-step workflows",
           "Coordinating tools, APIs, files, and systems",
@@ -548,7 +548,7 @@ window.APP_CONTENT = {
       },
       "paradigm2": {
         "title": "任务执行者",
-        "subtitle": "Claude AI · GitHub Copilot · Cursor Agents",
+        "subtitle": "Claude AI · Manus AI · Cursor Agents",
         "bestFor": [
           "自主执行多步骤工作流",
           "协调工具、API、文件与系统",

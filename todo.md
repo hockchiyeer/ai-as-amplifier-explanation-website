@@ -30,7 +30,7 @@
 ### Two AI Paradigms Section
 - [x] Side-by-side comparison layout
 - [x] Language Generator paradigm (ChatGPT, Gemini, DeepSeek)
-- [x] Task Executor paradigm (Claude AI, GitHub Copilot, Cursor)
+- [x] Task Executor paradigm (Claude AI, Manus AI, Cursor)
 - [x] Best use cases for each paradigm
 - [x] Prompting tips for each approach
 - [x] Bilingual content for all descriptions
