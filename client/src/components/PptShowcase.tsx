@@ -6,7 +6,7 @@ import { X } from 'lucide-react';
 export function PptShowcase() {
   const { t } = useLanguage();
   const data = getSectionContent(t, 'pptShowcase', { title: '', description: '', items: [], preview: 'Preview', download: 'Download' });
-  
+
   const SLIDE_COUNTS: Record<string, number> = {
     'AI_in_Software_Test_Automation_ByErHockChiye.pptx': 25,
     'AI_As_Amplifier_Multiplier_Compounder_Chinese_version_35_slides.pptx': 35,
@@ -29,7 +29,7 @@ export function PptShowcase() {
       const count = SLIDE_COUNTS[item.filename] || 0;
       if (count > 0) {
         const folder = item.filename.replace('.pptx', '');
-        staticMap[item.filename] = Array.from({ length: count }, (_, i) => 
+        staticMap[item.filename] = Array.from({ length: count }, (_, i) =>
           `./resources/data/pptx_images/${folder}/Slide${i + 1}.PNG`
         );
       }
@@ -56,7 +56,7 @@ export function PptShowcase() {
   // Prefetch adjacent images for smoother navigation
   useEffect(() => {
     if (!modal) return;
-  const { images, index } = modal;
+    const { images, index } = modal;
     const toPrefetch: string[] = [];
     if (images.length <= 1) return;
     const prev = (index - 1 + images.length) % images.length;
@@ -157,7 +157,7 @@ export function PptShowcase() {
 
     return () => {
       cancelled = true;
-      created.forEach(img => { try { img.src = ''; } catch {} });
+      created.forEach(img => { try { img.src = ''; } catch { } });
     };
   }, [modal?.index, modal?.images]);
 
@@ -242,7 +242,7 @@ export function PptShowcase() {
 
         <div className="mt-8 text-center text-sm text-slate-500">
           <p>{data.conclusionText}</p>
-          <p className="mt-1">{data.caseLabel} — {data.caseExample}</p>
+          <p className="mt-1">{data.caseLabel} : {data.caseExample}</p>
         </div>
 
         {modal && (
