@@ -241,8 +241,8 @@ export function PptShowcase() {
         </div>
 
         <div className="mt-8 text-center text-sm text-slate-500">
-          <p>在算力、模型与知识资源日益充裕(Abundance of Resources)的时代,掌握一种AI应用框架,往往能够快速迁移到多个行业与领域。</p>
-          <p className="mt-1">Case: 同一套AI应用框架,跨领域变通迁移 — Test Automation → Politics Maneuver → Business Strategy</p>
+          <p>{data.conclusionText}</p>
+          <p className="mt-1">{data.caseLabel} — {data.caseExample}</p>
         </div>
 
         {modal && (

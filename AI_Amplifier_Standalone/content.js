@@ -51,6 +51,8 @@ window.APP_CONTENT = {
       "subtitle": "AI Reflects What You Already Are",
       "description": "AI is a mirror of your organization's operating model. It doesn't fix weak strategies—it exposes them faster and at greater scale. The same AI system produces radically different outcomes depending on the quality of the strategy it amplifies.",
       "rule": "AI does not repair weak business strategy. It only makes consequences appear faster—for better or worse.",
+      "inputLabel": "INPUT",
+      "outputLabel": "OUTPUT",
       "scenarios": {
         "smart": {
           "title": "Smart Organization",
@@ -78,6 +80,8 @@ window.APP_CONTENT = {
     "aiParadigms": {
       "title": "Two AI Paradigms",
       "subtitle": "Understanding Language Generators vs. Task Executors",
+      "bestForLabel": "Best For",
+      "promptingTipLabel": "Prompting Tip",
       "paradigm1": {
         "title": "Language Generator",
         "subtitle": "ChatGPT · Google Gemini · DeepSeek",
@@ -104,6 +108,9 @@ window.APP_CONTENT = {
     "caseStudies": {
       "title": "Real-World Case Studies",
       "subtitle": "How AI amplifies both success and failure",
+      "scenarioLabel": "Scenario",
+      "outcomeLabel": "Outcome",
+      "lessonLabel": "Core Business Lesson",
       "case1": {
         "title": "Case Study #1: Competitive Attack Content × AI Batch Production",
         "scenario": "A marketing team deployed AI to batch-produce attack-competitor content across LinkedIn and social channels. However, the underlying strategy had already triggered strong industry backlash.",
@@ -180,6 +187,8 @@ window.APP_CONTENT = {
       "subtitle": "Eliciting Honest, High-Quality AI Output",
       "introduction": "The best AI results come from asking the right strategic questions—not just requesting content production. Here's how to prompt for genuine insight.",
       "keyInsight": "Request honest, clear strategic judgment from AI—not content production. This is where AI's true value emerges.",
+      "doLabel": "✓ DO",
+      "dontLabel": "✗ DON'T",
       "examples": [
         {
           "correct": "What customer needs are we currently overlooking?",
@@ -426,6 +435,9 @@ window.APP_CONTENT = {
       "title": "Slide Decks on AI Applications",
       "subtitle": "Bilingual previews and downloads",
       "description": "Three example slide decks demonstrating how a single AI application framework transfers across testing, politics, and business strategy.",
+      "conclusionText": "In the era of increasingly abundant compute, models, and knowledge resources, mastering an AI application framework often allows rapid migration across multiple industries and domains.",
+      "caseLabel": "Case",
+      "caseExample": "Test Automation → Politics Maneuver → Business Strategy",
       "items": [
         {
           "id": "amplifier",
@@ -508,6 +520,8 @@ window.APP_CONTENT = {
       "subtitle": "AI 反映你已有的样子",
       "description": "AI 是你组织运作模式的一面镜子。它不会修复薄弱的商业战略，它只会让后果更快显现——无论好坏。同样的 AI 系统根据它放大的战略质量而产生截然不同的结果。",
       "rule": "AI 不会修复薄弱的商业战略。它只会让后果更快显现——无论好坏。",
+      "inputLabel": "INPUT:输入",
+      "outputLabel": "OUTPUT:产出",
       "scenarios": {
         "smart": {
           "title": "聪慧组织",
@@ -535,6 +549,8 @@ window.APP_CONTENT = {
     "aiParadigms": {
       "title": "两种 AI 范式",
       "subtitle": "理解语言生成器与任务执行者",
+      "bestForLabel": "Best For： 最佳应用场景",
+      "promptingTipLabel": "Prompting Tip： 提示词技巧",
       "paradigm1": {
         "title": "语言生成器",
         "subtitle": "ChatGPT · Google Gemini · DeepSeek",
@@ -561,6 +577,9 @@ window.APP_CONTENT = {
     "caseStudies": {
       "title": "真实案例研究",
       "subtitle": "AI 如何放大成功与失败",
+      "scenarioLabel": "Scenario： 情境",
+      "outcomeLabel": "Outcome： 后果",
+      "lessonLabel": "Core Business Lesson： 核心商业启示",
       "case1": {
         "title": "案例研究 #1：竞争对手攻击型内容 × AI 批量生产",
         "scenario": "某企业营销团队部署 AI，在领英及社交渠道上批量生产攻击竞争对手的内容。而其底层战略本身已经引发了业内的强烈反弹。",
@@ -637,6 +656,8 @@ window.APP_CONTENT = {
       "subtitle": "引出诚实、高质量的 AI 输出",
       "introduction": "最好的 AI 结果来自提出正确的战略问题——而不仅仅是要求内容生产。以下是如何提示以获得真正洞察的方法。",
       "keyInsight": "要求 AI 给出诚实、清晰的战略判断——而不是内容生产。这是 AI 真正价值所在。",
+      "doLabel": "✓ DO:  ✓ 推荐做法(宜）",
+      "dontLabel": "✗ DON'T： ✗ 避免做法（忌）",
       "examples": [
         {
           "correct": "我们目前忽视了哪些客户需求？",
@@ -883,6 +904,9 @@ window.APP_CONTENT = {
       "title": "AI 主题幻灯片集",
       "subtitle": "双语预览与下载",
       "description": "三份示例幻灯片，演示同一 AI 应用框架如何在测试、政治与企业战略间迁移与变通。",
+      "conclusionText": "在算力、模型与知识资源日益充裕(Abundance of Resources)的时代,掌握一种AI应用框架,往往能够快速迁移到多个行业与领域。",
+      "caseLabel": "Case: 应用案例",
+      "caseExample": "Test Automation → Politics Maneuver → Business Strategy: 测试自动化 → 政治博弈 → 商业战略",
       "items": [
         {
           "id": "amplifier",

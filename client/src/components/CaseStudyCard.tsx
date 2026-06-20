@@ -3,10 +3,22 @@ interface CaseStudyCardProps {
   scenario: string;
   outcome: string;
   lesson: string;
+  scenarioLabel?: string;
+  outcomeLabel?: string;
+  lessonLabel?: string;
   index: number;
 }
 
-export function CaseStudyCard({ title, scenario, outcome, lesson, index }: CaseStudyCardProps) {
+export function CaseStudyCard({ 
+  title, 
+  scenario, 
+  outcome, 
+  lesson, 
+  scenarioLabel = "Scenario",
+  outcomeLabel = "Outcome",
+  lessonLabel = "Core Business Lesson",
+  index 
+}: CaseStudyCardProps) {
   return (
     <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: `${0.1 * index}s` }}>
       <div className="border border-slate-200 rounded-lg p-6 bg-white hover:shadow-lg hover:shadow-blue-100 transition-shadow duration-300">
@@ -16,7 +28,7 @@ export function CaseStudyCard({ title, scenario, outcome, lesson, index }: CaseS
           {/* Scenario */}
           <div>
             <h4 className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2">
-              Scenario
+              {scenarioLabel}
             </h4>
             <p className="text-sm text-slate-900 leading-relaxed">{scenario}</p>
           </div>
@@ -24,7 +36,7 @@ export function CaseStudyCard({ title, scenario, outcome, lesson, index }: CaseS
           {/* Outcome */}
           <div>
             <h4 className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2">
-              Outcome
+              {outcomeLabel}
             </h4>
             <p className="text-sm text-slate-900 leading-relaxed">{outcome}</p>
           </div>
@@ -32,7 +44,7 @@ export function CaseStudyCard({ title, scenario, outcome, lesson, index }: CaseS
           {/* Lesson */}
           <div className="bg-red-50 border border-red-200 rounded p-3">
             <h4 className="text-sm font-semibold text-red-700 uppercase tracking-wide mb-2">
-              Core Business Lesson
+              {lessonLabel}
             </h4>
             <p className="text-sm text-red-600 leading-relaxed">{lesson}</p>
           </div>
