@@ -367,9 +367,9 @@ export default function Home() {
         />
 
         {t.vibeCoding.usefulTip && (
-          <div className="max-w-4xl mx-auto -mt-6 mb-12 p-5 bg-yellow-50 hover:bg-sky-50 border border-yellow-200/60 hover:border-sky-200/60 transition-all duration-300 rounded-xl shadow-sm relative overflow-hidden group hover:shadow-md">
+          <div className="max-w-4xl mx-auto -mt-6 mb-12 p-6 bg-yellow-200 hover:bg-blue-100 border border-yellow-300 hover:border-blue-200 transition-colors duration-300 rounded-xl shadow-md relative overflow-hidden group hover:shadow-lg">
             <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/80 to-transparent group-hover:animate-shimmer skew-x-12" />
-            <p className="text-sm md:text-base text-slate-800 leading-relaxed relative z-10" dangerouslySetInnerHTML={{ __html: t.vibeCoding.usefulTip }} />
+            <p className="text-base md:text-lg text-slate-900 leading-relaxed relative z-10 font-medium" dangerouslySetInnerHTML={{ __html: t.vibeCoding.usefulTip }} />
           </div>
         )}
 
