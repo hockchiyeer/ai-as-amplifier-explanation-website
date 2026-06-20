@@ -246,10 +246,10 @@ window.APP_CONTENT = {
         "title": "Real-World AI Tools in Action",
         "bugGenie": {
           "name": "BugGenie AI",
-          "subtitle": "Bug Ticket Drafting tool driven by <a href=\"https://gemini.google.com/canvas\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"hover:underline text-blue-600\">Google Gemini's built-in Canvas feature</a>",
+          "subtitle": "Bug Ticket Drafting tool driven by <a href=\"https://gemini.google.com/canvas\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Google Gemini's built-in Canvas feature</a>",
           "description": "Transforms screenshots and supporting artifacts into structured, professional bug reports directly in the browser—no backend or installation required.",
           "features": [
-            "Driven by <a href=\"https://gemini.google.com/canvas\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"hover:underline text-blue-600\">Google Gemini's Canvas feature</a> or via <a href=\"https://aistudio.google.com/apps\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"hover:underline text-blue-600\">Google AI Studio's Build Apps</a>",
+            "Driven by <a href=\"https://gemini.google.com/canvas\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Google Gemini's Canvas feature</a> or via <a href=\"https://aistudio.google.com/apps\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Google AI Studio's Build Apps</a> feature",
             "Browser-based—no install, no build step",
             "Accepts screenshots & supporting artifacts",
             "Outputs structured, ready-to-file bug tickets"
@@ -406,7 +406,7 @@ window.APP_CONTENT = {
         },
         {
           "title": "Parallel Testing",
-          "description": "Send the identical prompt to multiple models (e.g., ChatGPT, Gemini, Claude, DeepSeek)."
+          "description": "Send the identical prompt to multiple models (e.g., <a href=\"https://chatgpt.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">ChatGPT</a>, <a href=\"https://gemini.google.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Gemini</a>, <a href=\"https://claude.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Claude</a>, <a href=\"https://deepseek.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">DeepSeek</a>, <a href=\"https://chat.qwen.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Qwen</a>)."
         },
         {
           "title": "Synthesize & Align",
@@ -762,10 +762,10 @@ window.APP_CONTENT = {
         "title": "实际应用中的 AI 工具",
         "bugGenie": {
           "name": "BugGenie AI",
-          "subtitle": "由 <a href=\"https://gemini.google.com/canvas\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"hover:underline text-blue-600\">Google Gemini内置Canvas功能</a> 驱动的程序漏洞报告起草工具",
+          "subtitle": "由 <a href=\"https://gemini.google.com/canvas\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Google Gemini内置Canvas功能</a> 驱动的程序漏洞报告起草工具",
           "description": "将屏幕截图和支持文件转换为结构化的专业错误报告——直接在浏览器中进行，无需后端或安装。",
           "features": [
-            "由 <a href=\"https://gemini.google.com/canvas\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"hover:underline text-blue-600\">Google Gemini的Canvas功能</a> 或通过 <a href=\"https://aistudio.google.com/apps\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"hover:underline text-blue-600\">Google AI Studio的Build Apps</a> 所驱动",
+            "由 <a href=\"https://gemini.google.com/canvas\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Google Gemini的Canvas功能</a> 或通过 <a href=\"https://aistudio.google.com/apps\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Google AI Studio的Build Apps功能</a> 所驱动",
             "基于浏览器——无需安装、无需构建步骤",
             "接受屏幕截图和支持文件",
             "输出结构化的、可直接提交的错误单据"
@@ -922,7 +922,7 @@ window.APP_CONTENT = {
         },
         {
           "title": "多模型并行测试",
-          "description": "使用同一Prompt，同时发给多个大语言模型（如 ChatGPT, Gemini, Claude, DeepSeek）。"
+          "description": "使用同一Prompt，同时发给多个大语言模型（如 <a href=\"https://chatgpt.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">ChatGPT</a>、<a href=\"https://gemini.google.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Gemini</a>、<a href=\"https://claude.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Claude</a>、<a href=\"https://deepseek.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">DeepSeek</a>、<a href=\"https://chat.qwen.ai/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-600 underline font-semibold hover:text-amber-800\">Qwen</a>）。"
         },
         {
           "title": "汇总与对齐",

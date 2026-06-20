@@ -373,13 +373,13 @@ export default function Home() {
             {/* BugGenie AI */}
             <div className="border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
               <h4 className="text-xl font-bold text-slate-900 mb-2">{t.vibeCoding.tools.bugGenie.name}</h4>
-              <p className="text-sm text-blue-600 font-semibold mb-3">{t.vibeCoding.tools.bugGenie.subtitle}</p>
+              <p className="text-sm text-blue-600 font-semibold mb-3" dangerouslySetInnerHTML={{ __html: t.vibeCoding.tools.bugGenie.subtitle }} />
               <p className="text-sm text-slate-600 mb-4">{t.vibeCoding.tools.bugGenie.description}</p>
               <ul className="space-y-2">
                 {t.vibeCoding.tools.bugGenie.features.map((feature: any, idx: number) => (
                   <li key={idx} className="text-sm text-slate-700 flex items-start">
                     <span className="text-green-600 mr-2">✓</span>
-                    <span>{feature}</span>
+                    <span dangerouslySetInnerHTML={{ __html: feature }} />
                   </li>
                 ))}
               </ul>
@@ -402,13 +402,13 @@ export default function Home() {
             {/* Agile Maturity */}
             <div className="border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
               <h4 className="text-xl font-bold text-slate-900 mb-2">{t.vibeCoding.tools.agileMaturity.name}</h4>
-              <p className="text-sm text-blue-600 font-semibold mb-3">{t.vibeCoding.tools.agileMaturity.subtitle}</p>
+              <p className="text-sm text-blue-600 font-semibold mb-3" dangerouslySetInnerHTML={{ __html: t.vibeCoding.tools.agileMaturity.subtitle }} />
               <p className="text-sm text-slate-600 mb-4">{t.vibeCoding.tools.agileMaturity.description}</p>
               <ul className="space-y-2">
                 {t.vibeCoding.tools.agileMaturity.features.map((feature: any, idx: number) => (
                   <li key={idx} className="text-sm text-slate-700 flex items-start">
                     <span className="text-green-600 mr-2">✓</span>
-                    <span>{feature}</span>
+                    <span dangerouslySetInnerHTML={{ __html: feature }} />
                   </li>
                 ))}
               </ul>
@@ -463,7 +463,7 @@ export default function Home() {
             <div key={idx} className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s` }}>
               <div className="text-3xl font-bold text-blue-200 mb-4">{idx + 1}</div>
               <h4 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h4>
-              <p className="text-sm text-slate-600">{step.description}</p>
+              <p className="text-sm text-slate-600" dangerouslySetInnerHTML={{ __html: step.description }} />
             </div>
           ))}
         </div>
