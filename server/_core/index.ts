@@ -39,7 +39,9 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
-  // Serve local PPTX resources under /pptx/<filename>
+  // Serve the entire resources folder to mirror the static build structure
+  app.use('/resources', express.static(path.resolve(import.meta.dirname, '..', '..', 'resources')));
+  
   // Serve local PPTX resources under /pptx/<filename>
   app.use('/pptx', express.static(path.resolve(import.meta.dirname, '..', '..', 'resources', 'data', 'pptx')));
   // Serve generated PPTX images under /pptx-images
