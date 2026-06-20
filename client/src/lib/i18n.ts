@@ -101,7 +101,11 @@ export const i18n = {
       promptingTipLabel: 'Prompting Tip',
       paradigm1: {
         title: 'Language Generator',
-        subtitle: 'ChatGPT · Google Gemini · DeepSeek',
+        tools: [
+          { name: 'ChatGPT', url: 'https://chatgpt.com' },
+          { name: 'Google Gemini', url: 'https://gemini.google.com' },
+          { name: 'DeepSeek', url: 'https://www.deepseek.com' }
+        ],
         bestFor: [
           'Brainstorming and strategic ideation',
           'Long-form writing: reports, analysis, narrative articles',
@@ -112,7 +116,11 @@ export const i18n = {
       },
       paradigm2: {
         title: 'Task Executor',
-        subtitle: 'Claude AI · GitHub Copilot · Cursor Agents',
+        tools: [
+          { name: 'Claude AI', url: 'https://claude.ai' },
+          { name: 'GitHub Copilot', url: 'https://github.com/features/copilot' },
+          { name: 'Cursor Agents', url: 'https://cursor.com' }
+        ],
         bestFor: [
           'Autonomous execution of multi-step workflows',
           'Coordinating tools, APIs, files, and systems',
@@ -260,6 +268,8 @@ export const i18n = {
             'Accepts screenshots & supporting artifacts',
             'Outputs structured, ready-to-file bug tickets',
           ],
+          githubLink: { label: 'Github Source Code', url: 'https://github.com/hockchiyeer/ai-powered-auto-bug-ticket-logger' },
+          appLink: { label: 'Application', url: 'https://aistudio.google.com/apps/ce12cbda-aa17-405d-9018-96a8ef249d29?showPreview=true&showAssistant=true' },
         },
         agileMaturity: {
           name: 'Agile Maturity Assessment App',
@@ -271,17 +281,19 @@ export const i18n = {
             'Open index.html directly to run locally',
             'Deployable to GitHub Pages in one step',
           ],
+          githubLink: { label: 'Github Source Code', url: 'https://github.com/hockchiyeer/google-ai-studio-generated-agile-maturity-assessment-app' },
+          appLink: { label: 'Application', url: 'https://hockchiyeer.github.io/google-ai-studio-generated-agile-maturity-assessment-app' },
         },
       },
       toolRankings: {
         title: 'AI Tool Rankings for Coding Tasks',
         subtitle: 'Efficiency, accuracy & output quality (personal experience)',
         tools: [
-          { rank: 1, name: 'GPT-5.5 Ultra High Thinking', score: '9.0/10' },
-          { rank: 2, name: 'Claude Sonnet 4.6 High Thinking', score: '7.8/10' },
-          { rank: 3, name: 'Cursor Agents', score: '6.8/10' },
-          { rank: 4, name: 'GPT-4.1 mini model', score: '5.8/10' },
-          { rank: 5, name: 'Gemini Pro 3.1 High Thinking', score: '5.6/10' },
+          { rank: 1, name: 'GPT-5.5 Ultra High Thinking', url: 'https://chatgpt.com', score: '9.0/10' },
+          { rank: 2, name: 'Claude Sonnet 4.6 High Thinking', url: 'https://claude.ai', score: '7.8/10' },
+          { rank: 3, name: 'Cursor Agents', url: 'https://cursor.com', score: '6.8/10' },
+          { rank: 4, name: 'GPT-4.1 mini model', url: 'https://chatgpt.com', score: '5.8/10' },
+          { rank: 5, name: 'Gemini Pro 3.1 High Thinking', url: 'https://gemini.google.com', score: '5.6/10' },
         ],
       },
     },
@@ -562,7 +574,11 @@ export const i18n = {
       promptingTipLabel: '提示词技巧',
       paradigm1: {
         title: '语言生成器',
-        subtitle: 'ChatGPT · Google Gemini · DeepSeek',
+        tools: [
+          { name: 'ChatGPT', url: 'https://chatgpt.com' },
+          { name: 'Google Gemini', url: 'https://gemini.google.com' },
+          { name: 'DeepSeek', url: 'https://www.deepseek.com' }
+        ],
         bestFor: [
           '头脑风暴与战略构思',
           '长篇写作：报告、分析、叙述性文章',
@@ -573,7 +589,11 @@ export const i18n = {
       },
       paradigm2: {
         title: '任务执行者',
-        subtitle: 'Claude AI · GitHub Copilot · Cursor Agents',
+        tools: [
+          { name: 'Claude AI', url: 'https://claude.ai' },
+          { name: 'GitHub Copilot', url: 'https://github.com/features/copilot' },
+          { name: 'Cursor Agents', url: 'https://cursor.com' }
+        ],
         bestFor: [
           '自主执行多步骤工作流',
           '协调工具、API、文件与系统',
@@ -722,6 +742,8 @@ export const i18n = {
             '接受屏幕截图和支持文件',
             '输出结构化的、可直接提交的错误单据',
           ],
+          githubLink: { label: 'Github代码链接', url: 'https://github.com/hockchiyeer/ai-powered-auto-bug-ticket-logger' },
+          appLink: { label: '应用链接', url: 'https://aistudio.google.com/apps/ce12cbda-aa17-405d-9018-96a8ef249d29?showPreview=true&showAssistant=true' },
         },
         agileMaturity: {
           name: '敏捷成熟度评估应用',
@@ -733,17 +755,19 @@ export const i18n = {
             '直接打开 index.html 即可本地运行',
             '可一步部署到 GitHub Pages',
           ],
+          githubLink: { label: 'Github代码链接', url: 'https://github.com/hockchiyeer/google-ai-studio-generated-agile-maturity-assessment-app' },
+          appLink: { label: '应用链接', url: 'https://hockchiyeer.github.io/google-ai-studio-generated-agile-maturity-assessment-app' },
         },
       },
       toolRankings: {
         title: '编码任务 AI 工具排名',
         subtitle: '效率、准确性和输出质量（个人经验）',
         tools: [
-          { rank: 1, name: 'GPT-5.5 Ultra High Thinking', score: '9.0/10' },
-          { rank: 2, name: 'Claude Sonnet 4.6 High Thinking', score: '7.8/10' },
-          { rank: 3, name: 'Cursor Agents', score: '6.8/10' },
-          { rank: 4, name: 'GPT-4.1 mini model', score: '5.8/10' },
-          { rank: 5, name: 'Gemini Pro 3.1 High Thinking', score: '5.6/10' },
+          { rank: 1, name: 'GPT-5.5 Ultra High Thinking', url: 'https://chatgpt.com', score: '9.0/10' },
+          { rank: 2, name: 'Claude Sonnet 4.6 High Thinking', url: 'https://claude.ai', score: '7.8/10' },
+          { rank: 3, name: 'Cursor Agents', url: 'https://cursor.com', score: '6.8/10' },
+          { rank: 4, name: 'GPT-4.1 mini model', url: 'https://chatgpt.com', score: '5.8/10' },
+          { rank: 5, name: 'Gemini Pro 3.1 High Thinking', url: 'https://gemini.google.com', score: '5.6/10' },
         ],
       },
     },

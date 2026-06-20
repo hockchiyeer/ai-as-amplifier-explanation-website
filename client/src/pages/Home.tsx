@@ -210,7 +210,16 @@ export default function Home() {
               style={{ animationDelay: `${0.1 * item.index}s` }}
             >
               <h3 className="text-2xl font-bold text-slate-900 mb-1">{item.paradigm.title}</h3>
-              <p className="text-sm text-blue-600 font-semibold mb-4">{item.paradigm.subtitle}</p>
+              <div className="flex flex-wrap gap-2 text-sm text-blue-600 font-semibold mb-4 items-center">
+                {item.paradigm.tools.map((tool: any, toolIdx: number) => (
+                  <span key={toolIdx} className="flex gap-2 items-center">
+                    <a href={tool.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {tool.name}
+                    </a>
+                    {toolIdx < item.paradigm.tools.length - 1 && <span className="text-blue-300">·</span>}
+                  </span>
+                ))}
+              </div>
 
               <div className="space-y-4">
                 <div>
@@ -367,13 +376,27 @@ export default function Home() {
               <p className="text-sm text-blue-600 font-semibold mb-3">{t.vibeCoding.tools.bugGenie.subtitle}</p>
               <p className="text-sm text-slate-600 mb-4">{t.vibeCoding.tools.bugGenie.description}</p>
               <ul className="space-y-2">
-                {t.vibeCoding.tools.bugGenie.features.map((feature, idx) => (
+                {t.vibeCoding.tools.bugGenie.features.map((feature: any, idx: number) => (
                   <li key={idx} className="text-sm text-slate-700 flex items-start">
                     <span className="text-green-600 mr-2">✓</span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
+              <div className="mt-5 space-y-2 text-sm border-t border-slate-100 pt-4">
+                <div className="flex flex-col gap-1">
+                  <span className="font-semibold text-slate-700">{t.vibeCoding.tools.bugGenie.githubLink.label}: </span>
+                  <a href={t.vibeCoding.tools.bugGenie.githubLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">
+                    {t.vibeCoding.tools.bugGenie.githubLink.url.replace('https://', '')}
+                  </a>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="font-semibold text-slate-700">{t.vibeCoding.tools.bugGenie.appLink.label}: </span>
+                  <a href={t.vibeCoding.tools.bugGenie.appLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">
+                    {t.vibeCoding.tools.bugGenie.appLink.url.replace('https://', '')}
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Agile Maturity */}
@@ -382,13 +405,27 @@ export default function Home() {
               <p className="text-sm text-blue-600 font-semibold mb-3">{t.vibeCoding.tools.agileMaturity.subtitle}</p>
               <p className="text-sm text-slate-600 mb-4">{t.vibeCoding.tools.agileMaturity.description}</p>
               <ul className="space-y-2">
-                {t.vibeCoding.tools.agileMaturity.features.map((feature, idx) => (
+                {t.vibeCoding.tools.agileMaturity.features.map((feature: any, idx: number) => (
                   <li key={idx} className="text-sm text-slate-700 flex items-start">
                     <span className="text-green-600 mr-2">✓</span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
+              <div className="mt-5 space-y-2 text-sm border-t border-slate-100 pt-4">
+                <div className="flex flex-col gap-1">
+                  <span className="font-semibold text-slate-700">{t.vibeCoding.tools.agileMaturity.githubLink.label}: </span>
+                  <a href={t.vibeCoding.tools.agileMaturity.githubLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">
+                    {t.vibeCoding.tools.agileMaturity.githubLink.url.replace('https://', '')}
+                  </a>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="font-semibold text-slate-700">{t.vibeCoding.tools.agileMaturity.appLink.label}: </span>
+                  <a href={t.vibeCoding.tools.agileMaturity.appLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">
+                    {t.vibeCoding.tools.agileMaturity.appLink.url.replace('https://', '')}
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -398,11 +435,13 @@ export default function Home() {
           <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">{t.vibeCoding.toolRankings.title}</h3>
           <p className="text-sm text-slate-600 text-center mb-6">{t.vibeCoding.toolRankings.subtitle}</p>
           <div className="space-y-3">
-            {t.vibeCoding.toolRankings.tools.map((tool, idx) => (
+            {t.vibeCoding.toolRankings.tools.map((tool: any, idx: number) => (
               <div key={idx} className="flex items-center justify-between bg-white p-4 rounded border border-slate-200">
                 <div className="flex items-center gap-4">
                   <span className="text-lg font-bold text-blue-600 w-8 text-center">#{tool.rank}</span>
-                  <span className="font-medium text-slate-900">{tool.name}</span>
+                  <a href={tool.url} target="_blank" rel="noopener noreferrer" className="font-medium text-slate-900 hover:text-blue-600 hover:underline">
+                    {tool.name}
+                  </a>
                 </div>
                 <span className="text-lg font-bold text-blue-600">{tool.score}</span>
               </div>
