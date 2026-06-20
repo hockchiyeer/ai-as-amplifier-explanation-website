@@ -527,8 +527,8 @@ export const i18n = {
       description:
         'AI 是你组织运作模式的一面镜子。它不会修复薄弱的商业战略，它只会让后果更快显现——无论好坏。同样的 AI 系统根据它放大的战略质量而产生截然不同的结果。',
       rule: 'AI 不会修复薄弱的商业战略。它只会让后果更快显现——无论好坏。',
-      inputLabel: 'INPUT:输入',
-      outputLabel: 'OUTPUT:产出',
+      inputLabel: '输入',
+      outputLabel: '产出',
       scenarios: {
         smart: {
           title: '聪慧组织',
@@ -558,8 +558,8 @@ export const i18n = {
     aiParadigms: {
       title: '两种 AI 范式',
       subtitle: '理解语言生成器与任务执行者',
-      bestForLabel: 'Best For： 最佳应用场景',
-      promptingTipLabel: 'Prompting Tip： 提示词技巧',
+      bestForLabel: '最佳应用场景',
+      promptingTipLabel: '提示词技巧',
       paradigm1: {
         title: '语言生成器',
         subtitle: 'ChatGPT · Google Gemini · DeepSeek',
@@ -588,9 +588,9 @@ export const i18n = {
     caseStudies: {
       title: '真实案例研究',
       subtitle: 'AI 如何放大成功与失败',
-      scenarioLabel: 'Scenario： 情境',
-      outcomeLabel: 'Outcome： 后果',
-      lessonLabel: 'Core Business Lesson： 核心商业启示',
+      scenarioLabel: '情境',
+      outcomeLabel: '后果',
+      lessonLabel: '核心商业启示',
       case1: {
         title: '案例研究 #1：竞争对手攻击型内容 × AI 批量生产',
         scenario:
@@ -678,8 +678,8 @@ export const i18n = {
       introduction:
         '最好的 AI 结果来自提出正确的战略问题——而不仅仅是要求内容生产。以下是如何提示以获得真正洞察的方法。',
       keyInsight: '要求 AI 给出诚实、清晰的战略判断——而不是内容生产。这是 AI 真正价值所在。',
-      doLabel: '✓ DO:  ✓ 推荐做法(宜）',
-      dontLabel: '✗ DON\'T： ✗ 避免做法（忌）',
+      doLabel: '✓ 推荐做法(宜）',
+      dontLabel: '✗ 避免做法（忌）',
       examples: [
         {
           correct: '我们目前忽视了哪些客户需求？',
@@ -886,8 +886,8 @@ export const i18n = {
       subtitle: '双语预览与下载',
       description: '三份示例幻灯片，演示同一 AI 应用框架如何在测试、政治与企业战略间迁移与变通。',
       conclusionText: '在算力、模型与知识资源日益充裕(Abundance of Resources)的时代,掌握一种AI应用框架,往往能够快速迁移到多个行业与领域。',
-      caseLabel: 'Case: 应用案例',
-      caseExample: 'Test Automation → Politics Maneuver → Business Strategy: 测试自动化 → 政治博弈 → 商业战略',
+      caseLabel: '应用案例',
+      caseExample: '测试自动化 → 政治博弈 → 商业战略',
       items: [
         {
           id: 'amplifier',
