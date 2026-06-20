@@ -269,7 +269,8 @@ export const i18n = {
             'Outputs structured, ready-to-file bug tickets',
           ],
           githubLink: { label: 'Github Source Code', url: 'https://github.com/hockchiyeer/ai-powered-auto-bug-ticket-logger' },
-          appLink: { label: 'Application', url: 'https://aistudio.google.com/apps/ce12cbda-aa17-405d-9018-96a8ef249d29?showPreview=true&showAssistant=true' },
+          aiStudioLink: { label: 'Google AI Studio-enabled Application', url: 'https://aistudio.google.com/apps/ce12cbda-aa17-405d-9018-96a8ef249d29?showPreview=true&showAssistant=true' },
+          canvasLink: { label: 'Google Gemini Canvas-enabled Application', url: 'https://gemini.google.com/share/5a9916e135f0' },
         },
         agileMaturity: {
           name: 'Agile Maturity Assessment App',
@@ -743,7 +744,8 @@ export const i18n = {
             '输出结构化的、可直接提交的错误单据',
           ],
           githubLink: { label: 'Github代码链接', url: 'https://github.com/hockchiyeer/ai-powered-auto-bug-ticket-logger' },
-          appLink: { label: '应用链接', url: 'https://aistudio.google.com/apps/ce12cbda-aa17-405d-9018-96a8ef249d29?showPreview=true&showAssistant=true' },
+          aiStudioLink: { label: '基于Google AI Studio的应用链接', url: 'https://aistudio.google.com/apps/ce12cbda-aa17-405d-9018-96a8ef249d29?showPreview=true&showAssistant=true' },
+          canvasLink: { label: '基于Google Gemini Canvas的应用链接', url: 'https://gemini.google.com/share/5a9916e135f0' },
         },
         agileMaturity: {
           name: '敏捷成熟度评估应用',

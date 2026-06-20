@@ -391,9 +391,15 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="font-semibold text-slate-700">{t.vibeCoding.tools.bugGenie.appLink.label}: </span>
-                  <a href={t.vibeCoding.tools.bugGenie.appLink.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 underline font-semibold hover:text-violet-800 break-all">
-                    {t.vibeCoding.tools.bugGenie.appLink.url.replace('https://', '')}
+                  <span className="font-semibold text-slate-700">{t.vibeCoding.tools.bugGenie.aiStudioLink?.label}: </span>
+                  <a href={t.vibeCoding.tools.bugGenie.aiStudioLink?.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 underline font-semibold hover:text-violet-800 break-all">
+                    {t.vibeCoding.tools.bugGenie.aiStudioLink?.url.replace('https://', '')}
+                  </a>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="font-semibold text-slate-700">{t.vibeCoding.tools.bugGenie.canvasLink?.label}: </span>
+                  <a href={t.vibeCoding.tools.bugGenie.canvasLink?.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 underline font-semibold hover:text-violet-800 break-all">
+                    {t.vibeCoding.tools.bugGenie.canvasLink?.url.replace('https://', '')}
                   </a>
                 </div>
               </div>

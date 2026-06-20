@@ -258,9 +258,13 @@ window.APP_CONTENT = {
             "label": "Github Source Code",
             "url": "https://github.com/hockchiyeer/ai-powered-auto-bug-ticket-logger"
           },
-          "appLink": {
-            "label": "Application",
+          "aiStudioLink": {
+            "label": "Google AI Studio-enabled Application",
             "url": "https://aistudio.google.com/apps/ce12cbda-aa17-405d-9018-96a8ef249d29?showPreview=true&showAssistant=true"
+          },
+          "canvasLink": {
+            "label": "Google Gemini Canvas-enabled Application",
+            "url": "https://gemini.google.com/share/5a9916e135f0"
           }
         },
         "agileMaturity": {
@@ -774,9 +778,13 @@ window.APP_CONTENT = {
             "label": "Github代码链接",
             "url": "https://github.com/hockchiyeer/ai-powered-auto-bug-ticket-logger"
           },
-          "appLink": {
-            "label": "应用链接",
+          "aiStudioLink": {
+            "label": "基于Google AI Studio的应用链接",
             "url": "https://aistudio.google.com/apps/ce12cbda-aa17-405d-9018-96a8ef249d29?showPreview=true&showAssistant=true"
+          },
+          "canvasLink": {
+            "label": "基于Google Gemini Canvas的应用链接",
+            "url": "https://gemini.google.com/share/5a9916e135f0"
           }
         },
         "agileMaturity": {
