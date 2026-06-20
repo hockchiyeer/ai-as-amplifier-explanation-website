@@ -202,6 +202,15 @@ a {
 .perspective-1000{perspective:1000px}
 .transform-origin-left{transform-origin:left center}
 
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
