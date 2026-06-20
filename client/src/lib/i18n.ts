@@ -700,7 +700,7 @@ export const i18n = {
       introduction:
         '最好的 AI 结果来自提出正确的战略问题——而不仅仅是要求内容生产。以下是如何提示以获得真正洞察的方法。',
       keyInsight: '要求 AI 给出诚实、清晰的战略判断——而不是内容生产。这是 AI 真正价值所在。',
-      doLabel: '✓ 推荐做法(宜）',
+      doLabel: '✓ 推荐做法（宜）',
       dontLabel: '✗ 避免做法（忌）',
       examples: [
         {
