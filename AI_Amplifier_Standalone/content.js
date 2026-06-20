@@ -289,32 +289,32 @@ window.APP_CONTENT = {
         "tools": [
           {
             "rank": 1,
-            "name": "GPT-5.5 Ultra High Thinking",
-            "url": "https://chatgpt.com",
+            "name": "OpenAI Codex - GPT-5.5 Ultra High Thinking",
+            "url": "https://openai.com/codex/",
             "score": "9.0/10"
           },
           {
             "rank": 2,
-            "name": "Claude Sonnet 4.6 High Thinking",
-            "url": "https://claude.ai",
+            "name": "Google Antigravity - Claude Sonnet 4.6 High Thinking",
+            "url": "https://antigravity.google/",
             "score": "7.8/10"
           },
           {
             "rank": 3,
             "name": "Cursor Agents",
-            "url": "https://cursor.com",
+            "url": "https://cursor.com/agents",
             "score": "6.8/10"
           },
           {
             "rank": 4,
-            "name": "GPT-4.1 mini model",
-            "url": "https://chatgpt.com",
+            "name": "GitHub Copilot Free - GPT-4.1 mini model",
+            "url": "https://github.com/features/copilot",
             "score": "5.8/10"
           },
           {
             "rank": 5,
-            "name": "Gemini Pro 3.1 High Thinking",
-            "url": "https://gemini.google.com",
+            "name": "Google Antigravity - Gemini Pro 3.1 High Thinking",
+            "url": "https://antigravity.google/",
             "score": "5.6/10"
           }
         ]
@@ -397,7 +397,7 @@ window.APP_CONTENT = {
     },
     "crossModelValidation": {
       "title": "Cross-Model Validation Workflow",
-      "subtitle": "Reducing hallucinations and expanding context with Google NotebookLM",
+      "subtitle": "Reducing hallucinations and expanding context with <a href=\"https://notebooklm.google.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-blue-800\">Google NotebookLM</a>",
       "description": "Never stop at a single AI model's conclusion. Use the same prompt across multiple models to cross-validate and synthesize deeper insights.",
       "steps": [
         {
@@ -805,32 +805,32 @@ window.APP_CONTENT = {
         "tools": [
           {
             "rank": 1,
-            "name": "GPT-5.5 Ultra High Thinking",
-            "url": "https://chatgpt.com",
+            "name": "OpenAI Codex - GPT-5.5 Ultra High Thinking",
+            "url": "https://openai.com/codex/",
             "score": "9.0/10"
           },
           {
             "rank": 2,
-            "name": "Claude Sonnet 4.6 High Thinking",
-            "url": "https://claude.ai",
+            "name": "Google Antigravity - Claude Sonnet 4.6 High Thinking",
+            "url": "https://antigravity.google/",
             "score": "7.8/10"
           },
           {
             "rank": 3,
             "name": "Cursor Agents",
-            "url": "https://cursor.com",
+            "url": "https://cursor.com/agents",
             "score": "6.8/10"
           },
           {
             "rank": 4,
-            "name": "GPT-4.1 mini model",
-            "url": "https://chatgpt.com",
+            "name": "GitHub Copilot Free - GPT-4.1 mini model",
+            "url": "https://github.com/features/copilot",
             "score": "5.8/10"
           },
           {
             "rank": 5,
-            "name": "Gemini Pro 3.1 High Thinking",
-            "url": "https://gemini.google.com",
+            "name": "Google Antigravity - Gemini Pro 3.1 High Thinking",
+            "url": "https://antigravity.google/",
             "score": "5.6/10"
           }
         ]
@@ -913,7 +913,7 @@ window.APP_CONTENT = {
     },
     "crossModelValidation": {
       "title": "多模型交叉验证工作流",
-      "subtitle": "使用 Google NotebookLM 减少幻觉并扩展上下文",
+      "subtitle": "使用 <a href=\"https://notebooklm.google.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-blue-800\">Google NotebookLM</a> 减少幻觉并扩展上下文",
       "description": "不要止步于单一AI模型的总结与结论——用同一提示词在多个模型间交叉验证，才能拓宽内容的广度与深度。",
       "steps": [
         {

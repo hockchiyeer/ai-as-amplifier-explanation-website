@@ -39,7 +39,7 @@ export function SectionHeader({
   return (
     <div className={cn('mb-12 md:mb-16 animate-slide-in-up', centered && 'text-center')}>
       <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">{title}</h2>
-      {subtitle && <p className="text-lg text-blue-600 font-semibold mb-4">{subtitle}</p>}
+      {subtitle && <p className="text-lg text-blue-600 font-semibold mb-4" dangerouslySetInnerHTML={{ __html: subtitle }} />}
       {description && <p className="text-base text-slate-600 max-w-2xl mx-auto">{description}</p>}
     </div>
   );
