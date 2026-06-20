@@ -5,7 +5,16 @@ import { Button } from '@/components/ui/button';
 import { X } from 'lucide-react';
 export function PptShowcase() {
   const { t } = useLanguage();
-  const data = getSectionContent(t, 'pptShowcase', { title: '', description: '', items: [], preview: 'Preview', download: 'Download' });
+  const data = getSectionContent(t, 'pptShowcase', { 
+    title: '', 
+    description: '', 
+    items: [], 
+    preview: 'Preview', 
+    download: 'Download',
+    conclusionText: 'In the era of increasingly abundant compute, models, and knowledge resources, mastering an AI application framework often allows rapid migration across multiple industries and domains.',
+    caseLabel: 'Case',
+    caseExample: 'Test Automation → Politics Maneuver → Business Strategy'
+  });
   const [imagesMap, setImagesMap] = useState<Record<string, string[]>>({});
   const [modal, setModal] = useState<{
     images: string[];
@@ -271,8 +280,8 @@ export function PptShowcase() {
         </div>
 
         <div className="mt-8 text-center text-sm text-slate-500">
-          <p>在算力、模型与知识资源日益充裕(Abundance of Resources)的时代,掌握一种AI应用框架,往往能够快速迁移到多个行业与领域。</p>
-          <p className="mt-1">Case: 同一套AI应用框架,跨领域变通迁移 — Test Automation → Politics Maneuver → Business Strategy</p>
+          <p>{data.conclusionText}</p>
+          <p className="mt-1">{data.caseLabel}: {data.caseExample}</p>
         </div>
 
         {modal && (

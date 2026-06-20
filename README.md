@@ -1,6 +1,6 @@
 # AI Amplifier — Website
 
-A comprehensive, bilingual (English/Chinese) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder." The project includes a slide-deck showcase with local presentation files that illustrate how a unified AI application framework can be successfully transferred and applied across diverse domains such as software testing, political strategy, and business strategy.
+A comprehensive, bilingual (English/Chinese) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder". The project includes a slide-deck showcase with local presentation files that illustrate how a unified AI application framework can be successfully transferred and applied across diverse domains such as software testing, political strategy, and business strategy.
 
 This repository contains a full-stack application built with React, Vite, Express, and Drizzle ORM.
 

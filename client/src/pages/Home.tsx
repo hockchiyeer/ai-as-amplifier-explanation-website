@@ -166,13 +166,13 @@ export default function Home() {
               <div className="space-y-2 text-sm">
                 <div>
                   <p className="font-semibold text-slate-600 uppercase tracking-wide text-xs mb-1">
-                    Input
+                    {t.mirrorPrinciple.inputLabel}
                   </p>
                   <p className="text-slate-900">{item.scenario.input}</p>
                 </div>
                 <div className="border-t border-slate-200 pt-2">
                   <p className="font-semibold text-slate-600 uppercase tracking-wide text-xs mb-1">
-                    Output
+                    {t.mirrorPrinciple.outputLabel}
                   </p>
                   <p className="text-slate-900">{item.scenario.output}</p>
                 </div>
@@ -215,7 +215,7 @@ export default function Home() {
               <div className="space-y-4">
                 <div>
                   <h4 className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-3">
-                    Best For
+                    {t.aiParadigms.bestForLabel}
                   </h4>
                   <ul className="space-y-2">
                     {item.paradigm.bestFor.map((use, useIdx) => (
@@ -229,7 +229,7 @@ export default function Home() {
 
                 <div className="border-t border-slate-200 pt-4">
                   <h4 className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2">
-                    Prompting Tip
+                    {t.aiParadigms.promptingTipLabel}
                   </h4>
                   <p className="text-sm text-slate-900 italic">{item.paradigm.promptingTip}</p>
                 </div>
@@ -252,6 +252,9 @@ export default function Home() {
             scenario={t.caseStudies.case1.scenario}
             outcome={t.caseStudies.case1.outcome}
             lesson={t.caseStudies.case1.lesson}
+            scenarioLabel={t.caseStudies.scenarioLabel}
+            outcomeLabel={t.caseStudies.outcomeLabel}
+            lessonLabel={t.caseStudies.lessonLabel}
             index={0}
           />
           <CaseStudyCard
@@ -259,6 +262,9 @@ export default function Home() {
             scenario={t.caseStudies.case2.scenario}
             outcome={t.caseStudies.case2.outcome}
             lesson={t.caseStudies.case2.lesson}
+            scenarioLabel={t.caseStudies.scenarioLabel}
+            outcomeLabel={t.caseStudies.outcomeLabel}
+            lessonLabel={t.caseStudies.lessonLabel}
             index={1}
           />
         </div>
@@ -319,7 +325,7 @@ export default function Home() {
               {/* Correct Approach */}
               <div className="border border-green-300 bg-green-50 rounded-lg p-4">
                 <h4 className="text-sm font-semibold text-green-700 uppercase tracking-wide mb-2">
-                  ✓ Do
+                  {t.promptingGuide.doLabel}
                 </h4>
                 <p className="text-sm text-slate-900 italic">{example.correct}</p>
               </div>
@@ -327,7 +333,7 @@ export default function Home() {
               {/* Incorrect Approach */}
               <div className="border border-red-300 bg-red-50 rounded-lg p-4">
                 <h4 className="text-sm font-semibold text-red-700 uppercase tracking-wide mb-2">
-                  ✗ Don't
+                  {t.promptingGuide.dontLabel}
                 </h4>
                 <p className="text-sm text-slate-900 italic">{example.incorrect}</p>
               </div>
