@@ -260,10 +260,10 @@ export const i18n = {
         title: 'Real-World AI Tools in Action',
         bugGenie: {
           name: 'BugGenie AI',
-          subtitle: 'Bug Ticket Drafting tool driven by <a href="https://gemini.google.com/canvas" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Google Gemini\'s built-in Canvas feature</a>',
+          subtitle: 'Bug Ticket Drafting tool driven by <a href="https://gemini.google.com/canvas" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Google Gemini\'s built-in Canvas feature</a>',
           description: 'Transforms screenshots and supporting artifacts into structured, professional bug reports directly in the browser—no backend or installation required.',
           features: [
-            'Driven by <a href="https://gemini.google.com/canvas" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Google Gemini\'s Canvas feature</a> or via <a href="https://aistudio.google.com/apps" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Google AI Studio\'s Build Apps</a> feature',
+            'Driven by <a href="https://gemini.google.com/canvas" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Google Gemini\'s Canvas feature</a> or via <a href="https://aistudio.google.com/apps" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Google AI Studio\'s Build Apps</a> feature',
             'Browser-based—no install, no build step',
             'Accepts screenshots & supporting artifacts',
             'Outputs structured, ready-to-file bug tickets',
@@ -382,11 +382,11 @@ export const i18n = {
     // Cross-Model Validation Section
     crossModelValidation: {
       title: 'Cross-Model Validation Workflow',
-      subtitle: 'Reducing hallucinations and expanding context with <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-800">Google NotebookLM</a>',
+      subtitle: 'Reducing hallucinations and expanding context with <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Google NotebookLM</a>',
       description: 'Never stop at a single AI model\'s conclusion. Use the same prompt across multiple models to cross-validate and synthesize deeper insights.',
       steps: [
         { title: 'Establish Baseline', description: 'Build an initial knowledge base by importing PDFs, reports, and data into NotebookLM.' },
-        { title: 'Parallel Testing', description: 'Send the identical prompt to multiple models (e.g., <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">ChatGPT</a>, <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Gemini</a>, <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Claude</a>, <a href="https://deepseek.com/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">DeepSeek</a>, <a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Qwen</a>).' },
+        { title: 'Parallel Testing', description: 'Send the identical prompt to multiple models (e.g., <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">ChatGPT</a>, <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Gemini</a>, <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Claude</a>, <a href="https://deepseek.com/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">DeepSeek</a>, <a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Qwen</a>).' },
         { title: 'Synthesize & Align', description: 'Export the responses and import them back into NotebookLM to summarize agreements and pinpoint divergence.' },
         { title: 'Final Judgment', description: 'Use the consolidated insights to form a robust strategy—always retaining human accountability.' }
       ]
@@ -734,10 +734,10 @@ export const i18n = {
         title: '实际应用中的 AI 工具',
         bugGenie: {
           name: 'BugGenie AI',
-          subtitle: '由 <a href="https://gemini.google.com/canvas" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Google Gemini内置Canvas功能</a> 驱动的程序漏洞报告起草工具',
+          subtitle: '由 <a href="https://gemini.google.com/canvas" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Google Gemini内置Canvas功能</a> 驱动的程序漏洞报告起草工具',
           description: '将屏幕截图和支持文件转换为结构化的专业错误报告——直接在浏览器中进行，无需后端或安装。',
           features: [
-            '由 <a href="https://gemini.google.com/canvas" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Google Gemini的Canvas功能</a> 或通过 <a href="https://aistudio.google.com/apps" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Google AI Studio的Build Apps功能</a> 所驱动',
+            '由 <a href="https://gemini.google.com/canvas" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Google Gemini的Canvas功能</a> 或通过 <a href="https://aistudio.google.com/apps" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Google AI Studio的Build Apps功能</a> 所驱动',
             '基于浏览器——无需安装、无需构建步骤',
             '接受屏幕截图和支持文件',
             '输出结构化的、可直接提交的错误单据',
@@ -856,11 +856,11 @@ export const i18n = {
     // Cross-Model Validation Section
     crossModelValidation: {
       title: '多模型交叉验证工作流',
-      subtitle: '使用 <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-800">Google NotebookLM</a> 减少幻觉并扩展上下文',
+      subtitle: '使用 <a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Google NotebookLM</a> 减少幻觉并扩展上下文',
       description: '不要止步于单一AI模型的总结与结论——用同一提示词在多个模型间交叉验证，才能拓宽内容的广度与深度。',
       steps: [
         { title: '建立基准', description: '在NotebookLM新建笔记本，导入PDF、研究报告等资料作为基准数据源。' },
-        { title: '多模型并行测试', description: '使用同一Prompt，同时发给多个大语言模型（如 <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">ChatGPT</a>、<a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Gemini</a>、<a href="https://claude.ai/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Claude</a>、<a href="https://deepseek.com/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">DeepSeek</a>、<a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer" class="text-amber-600 underline font-semibold hover:text-amber-800">Qwen</a>）。' },
+        { title: '多模型并行测试', description: '使用同一Prompt，同时发给多个大语言模型（如 <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">ChatGPT</a>、<a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Gemini</a>、<a href="https://claude.ai/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Claude</a>、<a href="https://deepseek.com/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">DeepSeek</a>、<a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer" class="text-violet-600 underline font-semibold hover:text-violet-800">Qwen</a>）。' },
         { title: '汇总与对齐', description: '将模型答复导入NotebookLM，一键摘要梳理各模型脉络，提炼共识与分歧。' },
         { title: '最终判断', description: '多模型加上多来源文档辅以人工验证，提炼出更客观、全面的深度洞察。' }
       ]

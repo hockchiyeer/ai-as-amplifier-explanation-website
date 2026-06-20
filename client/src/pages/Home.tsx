@@ -213,7 +213,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-2 text-sm text-blue-600 font-semibold mb-4 items-center">
                 {item.paradigm.tools.map((tool: any, toolIdx: number) => (
                   <span key={toolIdx} className="flex gap-2 items-center">
-                    <a href={tool.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    <a href={tool.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 underline font-semibold hover:text-violet-800">
                       {tool.name}
                     </a>
                     {toolIdx < item.paradigm.tools.length - 1 && <span className="text-blue-300">·</span>}
@@ -386,13 +386,13 @@ export default function Home() {
               <div className="mt-5 space-y-2 text-sm border-t border-slate-100 pt-4">
                 <div className="flex flex-col gap-1">
                   <span className="font-semibold text-slate-700">{t.vibeCoding.tools.bugGenie.githubLink.label}: </span>
-                  <a href={t.vibeCoding.tools.bugGenie.githubLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">
+                  <a href={t.vibeCoding.tools.bugGenie.githubLink.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 underline font-semibold hover:text-violet-800 break-all">
                     {t.vibeCoding.tools.bugGenie.githubLink.url.replace('https://', '')}
                   </a>
                 </div>
                 <div className="flex flex-col gap-1">
                   <span className="font-semibold text-slate-700">{t.vibeCoding.tools.bugGenie.appLink.label}: </span>
-                  <a href={t.vibeCoding.tools.bugGenie.appLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">
+                  <a href={t.vibeCoding.tools.bugGenie.appLink.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 underline font-semibold hover:text-violet-800 break-all">
                     {t.vibeCoding.tools.bugGenie.appLink.url.replace('https://', '')}
                   </a>
                 </div>
@@ -415,13 +415,13 @@ export default function Home() {
               <div className="mt-5 space-y-2 text-sm border-t border-slate-100 pt-4">
                 <div className="flex flex-col gap-1">
                   <span className="font-semibold text-slate-700">{t.vibeCoding.tools.agileMaturity.githubLink.label}: </span>
-                  <a href={t.vibeCoding.tools.agileMaturity.githubLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">
+                  <a href={t.vibeCoding.tools.agileMaturity.githubLink.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 underline font-semibold hover:text-violet-800 break-all">
                     {t.vibeCoding.tools.agileMaturity.githubLink.url.replace('https://', '')}
                   </a>
                 </div>
                 <div className="flex flex-col gap-1">
                   <span className="font-semibold text-slate-700">{t.vibeCoding.tools.agileMaturity.appLink.label}: </span>
-                  <a href={t.vibeCoding.tools.agileMaturity.appLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">
+                  <a href={t.vibeCoding.tools.agileMaturity.appLink.url} target="_blank" rel="noopener noreferrer" className="text-violet-600 underline font-semibold hover:text-violet-800 break-all">
                     {t.vibeCoding.tools.agileMaturity.appLink.url.replace('https://', '')}
                   </a>
                 </div>
@@ -439,7 +439,7 @@ export default function Home() {
               <div key={idx} className="flex items-center justify-between bg-white p-4 rounded border border-slate-200">
                 <div className="flex items-center gap-4">
                   <span className="text-lg font-bold text-blue-600 w-8 text-center">#{tool.rank}</span>
-                  <a href={tool.url} target="_blank" rel="noopener noreferrer" className="font-medium text-slate-900 hover:text-blue-600 hover:underline">
+                  <a href={tool.url} target="_blank" rel="noopener noreferrer" className="font-medium text-slate-900 underline text-violet-600 hover:text-violet-800">
                     {tool.name}
                   </a>
                 </div>
