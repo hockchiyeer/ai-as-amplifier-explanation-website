@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface UseCaseCardProps {
   title: string;
   cases: string[];

@@ -167,6 +167,15 @@ a {
   animation: slideInDown 0.5s ease-out;
 }
 
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
 /* Visual Metaphor & Comparison Animations (shared) */
 @keyframes flip1 {
   0%,30%{transform:rotateY(0)}

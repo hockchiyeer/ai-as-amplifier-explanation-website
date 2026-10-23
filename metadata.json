@@ -1,0 +1,7 @@
+{
+  "name": "AI as an Amplifier, Multiplier, and Compounder",
+  "description": "An interactive educational web application explaining AI capabilities as Amplifiers, Multipliers, and Compounders for organizational strategy.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

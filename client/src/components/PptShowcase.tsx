@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getSectionContent } from '@/lib/i18nHelpers';
 import { Button } from '@/components/ui/button';
+import { SectionHeader } from '@/components/Section';
 import { X } from 'lucide-react';
 export function PptShowcase() {
   const { t } = useLanguage();
@@ -15,7 +16,23 @@ export function PptShowcase() {
     caseLabel: 'Case',
     caseExample: 'Test Automation → Politics Maneuver → Business Strategy'
   });
-  const [imagesMap, setImagesMap] = useState<Record<string, string[]>>({});
+
+  const DEFAULT_SLIDES_MAP: Record<string, string[]> = {
+    'AI_As_Amplifier_Multiplier_Compounder_Chinese_version_35_slides.pptx': Array.from(
+      { length: 35 },
+      (_, i) => `/pptx-images/AI_As_Amplifier_Multiplier_Compounder_Chinese_version_35_slides/Slide${i + 1}.PNG`
+    ),
+    'AI_in_Software_Test_Automation_ByErHockChiye.pptx': Array.from(
+      { length: 25 },
+      (_, i) => `/pptx-images/AI_in_Software_Test_Automation_ByErHockChiye/Slide${i + 1}.PNG`
+    ),
+    'AI政治策略课程_完整版.pptx': Array.from(
+      { length: 21 },
+      (_, i) => `/pptx-images/AI政治策略课程_完整版/Slide${i + 1}.PNG`
+    ),
+  };
+
+  const [imagesMap, setImagesMap] = useState<Record<string, string[]>>(DEFAULT_SLIDES_MAP);
   const [modal, setModal] = useState<{
     images: string[];
     index: number;
@@ -185,10 +202,14 @@ export function PptShowcase() {
   return (
     <section id="ppt-showcase" className="bg-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto text-center mb-8">
-          <h2 className="text-2xl font-bold text-slate-900">{data.title}</h2>
-          <p className="text-sm text-slate-600 mt-2">{data.description}</p>
-        </div>
+        <SectionHeader
+          title={data.title}
+          description={data.description}
+          stepNumber={15}
+          sectionId="ppt-showcase"
+          slideImage="/pptx-images/AI_As_Amplifier_Multiplier_Compounder_Chinese_version_35_slides/Slide1.PNG"
+          slideTitle="Slide 1: Authentic Presentation Slide Decks"
+        />
 
         <div className="grid md:grid-cols-3 gap-6">
           {data.items.map((item: any) => {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface CaseStudyCardProps {
   title: string;
   scenario: string;
@@ -12,7 +14,7 @@ interface CaseStudyCardProps {
 export function CaseStudyCard({ title, scenario, outcome, lesson, scenarioLabel = 'Scenario', outcomeLabel = 'Outcome', lessonLabel = 'Core Business Lesson', index }: CaseStudyCardProps) {
   return (
     <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: `${0.1 * index}s` }}>
-      <div className="border border-slate-200 rounded-lg p-6 bg-white hover:shadow-lg hover:shadow-blue-100 transition-shadow duration-300">
+      <div className="border border-slate-200 rounded-lg p-6 bg-white hover:shadow-lg hover:shadow-blue-100 hover:border-blue-300 transition-all duration-300">
         <h3 className="text-xl font-semibold text-slate-900 mb-4">{title}</h3>
 
         <div className="space-y-4">

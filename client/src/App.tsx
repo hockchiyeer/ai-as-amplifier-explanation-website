@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { LearningProgressProvider } from "./contexts/LearningProgressContext";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Home from "./pages/Home";
 import I18nDebug from "./components/I18nDebug";
@@ -12,11 +13,13 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <LanguageProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Home />
-            <I18nDebug />
-          </TooltipProvider>
+          <LearningProgressProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Home />
+              <I18nDebug />
+            </TooltipProvider>
+          </LearningProgressProvider>
         </LanguageProvider>
       </ThemeProvider>
     </ErrorBoundary>

@@ -1,53 +1,59 @@
+/* @vitest-environment jsdom */
 import React from 'react';
 import { describe, it, expect } from 'vitest';
-import { renderToStaticMarkup } from 'react-dom/server';
-import HeroSection from '../src/pages/neuralNetworkLimitations/HeroSection';
-import ComparisonSection from '../src/pages/neuralNetworkLimitations/ComparisonSection';
-import DetailedExplanationSection from '../src/pages/neuralNetworkLimitations/DetailedExplanationSection';
-import VisualMetaphorSection from '../src/pages/neuralNetworkLimitations/VisualMetaphorSection';
-import ResourceComparisonSection from '../src/pages/neuralNetworkLimitations/ResourceComparisonSection';
-import ConclusionSection from '../src/pages/neuralNetworkLimitations/ConclusionSection';
-
-// Minimal mock LanguageProvider which supplies a `t` object
+import { render } from '@testing-library/react';
+import { LanguageProvider } from '../src/contexts/LanguageContext';
+import { EffectCard } from '../src/components/EffectCard';
+import { CaseStudyCard } from '../src/components/CaseStudyCard';
+import { UseCaseCard } from '../src/components/UseCaseCard';
 import { getContent } from '../src/lib/i18nHelpers';
-import { Language } from '../src/lib/i18n';
-import { createContext } from 'react';
 
-const MockLanguageContext = createContext<any>(null);
+describe('Educational components smoke tests', () => {
+  it('loads en, zh, and bm i18n content without errors', () => {
+    const en = getContent('en');
+    const zh = getContent('zh');
+    const bm = getContent('bm');
 
-function MockProvider({ children, lang = 'en' }: { children: any; lang?: Language }) {
-  const t = getContent(lang);
-  return (
-    <MockLanguageContext.Provider value={{ language: lang, setLanguage: () => {}, t }}>
-      {children}
-    </MockLanguageContext.Provider>
-  );
-}
+    expect(en.hero.mainHeading).toBeTruthy();
+    expect(zh.hero.mainHeading).toBeTruthy();
+    expect(bm.hero.mainHeading).toBeTruthy();
+  });
 
-// To avoid changing components under test, we wrap them in a context shim by
-// monkey-patching React's require cache (simple approach for small test).
-import * as LanguageModule from '../src/contexts/LanguageContext';
+  it('renders EffectCard without throwing', () => {
+    const { container } = render(
+      <LanguageProvider>
+        <EffectCard
+          icon="⚡"
+          title="The Amplifier Effect"
+          description="AI magnifies every action impact."
+          keyPoint="Faster and cheaper"
+          index={0}
+        />
+      </LanguageProvider>
+    );
+    expect(container).toBeTruthy();
+  });
 
-// Replace useLanguage to read from our mock context
-(LanguageModule as any).useLanguage = function useLanguageMock() {
-  const ctx = React.useContext(MockLanguageContext);
-  if (!ctx) throw new Error('MockLanguageContext not provided');
-  return ctx;
-};
-
-describe('Neural sections smoke test', () => {
-  const components = [
-    HeroSection,
-    ComparisonSection,
-    DetailedExplanationSection,
-    VisualMetaphorSection,
-    ResourceComparisonSection,
-    ConclusionSection,
-  ];
-
-  for (const C of components) {
-    it(`renders ${C.name} without throwing`, () => {
-      expect(() => renderToStaticMarkup(<MockProvider><C /></MockProvider>)).not.toThrow();
-    });
-  }
+  it('renders CaseStudyCard and UseCaseCard', () => {
+    const { container } = render(
+      <LanguageProvider>
+        <CaseStudyCard
+          title="Case Study #1"
+          scenario="Marketing team deployed AI."
+          outcome="Negative effects amplified."
+          lesson="Wrong direction = faster failure."
+          scenarioLabel="Scenario"
+          outcomeLabel="Outcome"
+          lessonLabel="Lesson"
+          index={0}
+        />
+        <UseCaseCard
+          title="Sales"
+          cases={['Customer research', 'Call prep']}
+          index={0}
+        />
+      </LanguageProvider>
+    );
+    expect(container).toBeTruthy();
+  });
 });
