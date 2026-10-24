@@ -1,0 +1,230 @@
+Microsoft Windows [Version 10.0.19045.6466]
+(c) Microsoft Corporation. All rights reserved.
+
+F:\Downloads\ai-as-amplifier-explanation-website-trilingual-updated (4)\ai-as-amplifier-explanation-website-main>npm install --legacy-peer-deps
+npm warn deprecated hast@1.0.0: Renamed to rehype
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+npm warn deprecated recharts@2.15.4: 1.x and 2.x branches are no longer active. Bump to Recharts v3 to receive latest features and bugfixes. See https://github.com/recharts/recharts/wiki/3.0-migration-guide
+
+added 794 packages, and audited 795 packages in 4m
+
+230 packages are looking for funding
+  run `npm fund` for details
+
+33 vulnerabilities (5 low, 13 moderate, 11 high, 4 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm warn allow-scripts 6 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   esbuild@0.18.20 (postinstall: node install.js)
+npm warn allow-scripts   esbuild@0.25.12 (postinstall: node install.js)
+npm warn allow-scripts   esbuild@0.28.1 (postinstall: node install.js)
+npm warn allow-scripts   esbuild@0.21.5 (postinstall: node install.js)
+npm warn allow-scripts   esbuild@0.27.7 (postinstall: node install.js)
+npm warn allow-scripts   esbuild@0.21.5 (postinstall: node install.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+F:\Downloads\ai-as-amplifier-explanation-website-trilingual-updated (4)\ai-as-amplifier-explanation-website-main>npm audit fix
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: @builder.io/vite-plugin-jsx-loc@0.1.1
+npm error Found: vite@7.3.5
+npm error node_modules/vite
+npm error   dev vite@"^7.1.7" from the root project
+npm error   peer vite@"^5.2.0 || ^6 || ^7 || ^8" from @tailwindcss/vite@4.3.1
+npm error   node_modules/@tailwindcss/vite
+npm error     dev @tailwindcss/vite@"^4.1.3" from the root project
+npm error   1 more (@vitejs/plugin-react)
+npm error
+npm error Could not resolve dependency:
+npm error peer vite@"^4.0.0 || ^5.0.0" from @builder.io/vite-plugin-jsx-loc@0.1.1
+npm error node_modules/@builder.io/vite-plugin-jsx-loc
+npm error   dev @builder.io/vite-plugin-jsx-loc@"^0.1.1" from the root project
+npm error
+npm error Conflicting peer dependency: vite@5.4.21
+npm error node_modules/vite
+npm error   peer vite@"^4.0.0 || ^5.0.0" from @builder.io/vite-plugin-jsx-loc@0.1.1
+npm error   node_modules/@builder.io/vite-plugin-jsx-loc
+npm error     dev @builder.io/vite-plugin-jsx-loc@"^0.1.1" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error C:\Users\Thinkpad W541\AppData\Local\npm-cache\_logs\2026-10-24T11_26_30_908Z-eresolve-report.txt
+npm error A complete log of this run can be found in: C:\Users\Thinkpad W541\AppData\Local\npm-cache\_logs\2026-10-24T11_26_30_908Z-debug-0.log
+
+F:\Downloads\ai-as-amplifier-explanation-website-trilingual-updated (4)\ai-as-amplifier-explanation-website-main>npm audit fix --force
+npm warn using --force Recommended protections disabled.
+npm warn audit Updating drizzle-orm to 0.45.4, which is a SemVer major change.
+npm warn audit Updating vitest to 5.0.5, which is a SemVer major change.
+npm warn audit Updating streamdown to 2.7.1, which is a SemVer major change.
+npm warn audit Updating @tailwindcss/typography to 0.5.4, which is a SemVer major change.
+npm warn audit Updating drizzle-kit to 0.18.1, which is a SemVer major change.
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @builder.io/vite-plugin-jsx-loc@0.1.1
+npm warn Found: vite@7.3.5
+npm warn node_modules/vite
+npm warn   peer vite@"^5.2.0 || ^6 || ^7 || ^8" from @tailwindcss/vite@4.3.1
+npm warn   node_modules/@tailwindcss/vite
+npm warn     dev @tailwindcss/vite@"^4.1.3" from the root project
+npm warn   3 more (@vitejs/plugin-react, the root project, vitest)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer vite@"^4.0.0 || ^5.0.0" from @builder.io/vite-plugin-jsx-loc@0.1.1
+npm warn node_modules/@builder.io/vite-plugin-jsx-loc
+npm warn   dev @builder.io/vite-plugin-jsx-loc@"^0.1.1" from the root project
+npm warn
+npm warn Conflicting peer dependency: vite@5.4.21
+npm warn node_modules/vite
+npm warn   peer vite@"^4.0.0 || ^5.0.0" from @builder.io/vite-plugin-jsx-loc@0.1.1
+npm warn   node_modules/@builder.io/vite-plugin-jsx-loc
+npm warn     dev @builder.io/vite-plugin-jsx-loc@"^0.1.1" from the root project
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @testing-library/react@14.3.1
+npm warn Found: react@19.2.7
+npm warn node_modules/react
+npm warn   peer react@">=16.8.0" from @floating-ui/react-dom@2.1.8
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.3.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   78 more (@radix-ui/react-accordion, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^18.0.0" from @testing-library/react@14.3.1
+npm warn node_modules/@testing-library/react
+npm warn   dev @testing-library/react@"^14.0.0" from the root project
+npm warn
+npm warn Conflicting peer dependency: react@18.3.1
+npm warn node_modules/react
+npm warn   peer react@"^18.0.0" from @testing-library/react@14.3.1
+npm warn   node_modules/@testing-library/react
+npm warn     dev @testing-library/react@"^14.0.0" from the root project
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: @testing-library/react@14.3.1
+npm warn Found: react-dom@19.2.7
+npm warn node_modules/react-dom
+npm warn   peer react-dom@">=16.8.0" from @floating-ui/react-dom@2.1.8
+npm warn   node_modules/@floating-ui/react-dom
+npm warn     @floating-ui/react-dom@"^2.0.0" from @radix-ui/react-popper@1.3.1
+npm warn     node_modules/@radix-ui/react-popper
+npm warn   49 more (@radix-ui/react-accordion, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react-dom@"^18.0.0" from @testing-library/react@14.3.1
+npm warn node_modules/@testing-library/react
+npm warn   dev @testing-library/react@"^14.0.0" from the root project
+npm warn
+npm warn Conflicting peer dependency: react-dom@18.3.1
+npm warn node_modules/react-dom
+npm warn   peer react-dom@"^18.0.0" from @testing-library/react@14.3.1
+npm warn   node_modules/@testing-library/react
+npm warn     dev @testing-library/react@"^14.0.0" from the root project
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@8.1.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 50 packages, removed 160 packages, changed 38 packages, and audited 685 packages in 49s
+
+211 packages are looking for funding
+  run `npm fund` for details
+
+# npm audit report
+
+esbuild  <=0.24.2 || 0.27.3 - 0.28.0
+Severity: moderate
+esbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99
+esbuild allows arbitrary file read when running the development server on Windows - https://github.com/advisories/GHSA-g7r4-m6w7-qqqr
+fix available via `npm audit fix --force`
+Will install drizzle-kit@0.31.11, which is a breaking change
+node_modules/drizzle-kit/node_modules/esbuild
+node_modules/vite/node_modules/esbuild
+  drizzle-kit  0.9.1 - 0.30.6 || 1.0.0-beta.1 - 1.0.0-beta.1-fd5d1e8
+  Depends on vulnerable versions of esbuild
+  Depends on vulnerable versions of zod
+  node_modules/drizzle-kit
+
+vite  7.0.0 - 7.3.6
+Severity: high
+launch-editor: escapeCmdArgs() omits % escaping on Windows - https://github.com/advisories/GHSA-698v-4r3x-3vcv
+launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors - https://github.com/advisories/GHSA-r825-w8mm-5pxw
+launch-editor: `fs.existsSync()` existence check can be bypassed on Windows - https://github.com/advisories/GHSA-587h-7wmj-h5pm
+Vite: Cross origin script execution through Vite custom middleware - https://github.com/advisories/GHSA-9jrq-w75r-8gcw
+Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine - https://github.com/advisories/GHSA-rq7h-c2jc-7f22
+fix available via `npm audit fix`
+node_modules/vite
+
+zod  <4.6.6
+Severity: high
+Zod can exhaust memory while validating oversized constrained collections - https://github.com/advisories/GHSA-mrhx-c7xc-m3w5
+fix available via `npm audit fix --force`
+Will install drizzle-kit@0.31.11, which is a breaking change
+node_modules/drizzle-kit/node_modules/zod
+node_modules/zod
+
+4 vulnerabilities (1 moderate, 3 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+npm warn allow-scripts 5 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   esbuild@0.25.12 (install: (install scripts present))
+npm warn allow-scripts   esbuild@0.28.1 (install: (install scripts present))
+npm warn allow-scripts   esbuild@0.27.7 (install: (install scripts present))
+npm warn allow-scripts   esbuild@0.15.18 (postinstall: node install.js)
+npm warn allow-scripts   es5-ext@0.10.64 (postinstall:  node -e "try{require('./_postinstall')}catch(e){}" || exit 0)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+F:\Downloads\ai-as-amplifier-explanation-website-trilingual-updated (4)\ai-as-amplifier-explanation-website-main>npm audit
+# npm audit report
+
+esbuild  <=0.24.2 || 0.27.3 - 0.28.0
+Severity: moderate
+esbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99
+esbuild allows arbitrary file read when running the development server on Windows - https://github.com/advisories/GHSA-g7r4-m6w7-qqqr
+fix available via `npm audit fix --force`
+Will install drizzle-kit@0.31.11, which is a breaking change
+node_modules/drizzle-kit/node_modules/esbuild
+node_modules/vite/node_modules/esbuild
+  drizzle-kit  0.9.1 - 0.30.6 || 1.0.0-beta.1 - 1.0.0-beta.1-fd5d1e8
+  Depends on vulnerable versions of esbuild
+  Depends on vulnerable versions of zod
+  node_modules/drizzle-kit
+
+vite  7.0.0 - 7.3.6
+Severity: high
+launch-editor: escapeCmdArgs() omits % escaping on Windows - https://github.com/advisories/GHSA-698v-4r3x-3vcv
+launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors - https://github.com/advisories/GHSA-r825-w8mm-5pxw
+launch-editor: `fs.existsSync()` existence check can be bypassed on Windows - https://github.com/advisories/GHSA-587h-7wmj-h5pm
+Vite: Cross origin script execution through Vite custom middleware - https://github.com/advisories/GHSA-9jrq-w75r-8gcw
+Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine - https://github.com/advisories/GHSA-rq7h-c2jc-7f22
+fix available via `npm audit fix`
+node_modules/vite
+
+zod  <4.6.6
+Severity: high
+Zod can exhaust memory while validating oversized constrained collections - https://github.com/advisories/GHSA-mrhx-c7xc-m3w5
+fix available via `npm audit fix --force`
+Will install drizzle-kit@0.31.11, which is a breaking change
+node_modules/drizzle-kit/node_modules/zod
+node_modules/zod
+
+4 vulnerabilities (1 moderate, 3 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+F:\Downloads\ai-as-amplifier-explanation-website-trilingual-updated (4)\ai-as-amplifier-explanation-website-main>

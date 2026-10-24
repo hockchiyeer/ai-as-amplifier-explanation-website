@@ -12,7 +12,7 @@
     "lint": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run",
-    "find:t-any": "node ./scripts/find_t_any.js",
+    "find:t-any": "node ./scripts/find_t_any.cjs",
     "find-casts": "node ./scripts/find_casts.cjs",
     "db:push": "drizzle-kit generate && drizzle-kit migrate"
   },

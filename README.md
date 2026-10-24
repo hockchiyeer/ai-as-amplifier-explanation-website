@@ -37,10 +37,14 @@ ai-as-amplifier-explanation-website/
 ├── scripts/                # Build and maintenance utility scripts
 ├── dist-standalone/        # Generated standalone static distribution (optional build)
 └── docs/                   # Project documentation and specifications
-    └── archive/            # Archived planning, content specifications, and todo logs
-        ├── CONTENT_2026-06-20.md # Detailed curriculum content documentation
-        ├── EXPANSION_PLAN_2026-06-19.md # Roadmap and future expansion plans
-        └── todo_2026-06-19.md  # Historical task tracking and planning notes
+    └── archive/            # Archived planning, specifications, templates, and legacy utilities
+        ├── CONTENT_2026-06-20.md          # Detailed curriculum content documentation
+        ├── EXPANSION_PLAN_2026-06-19.md   # Roadmap and future expansion plans
+        ├── todo_2026-06-19.md             # Historical task tracking and planning notes
+        ├── template_starter_2026-06-19.json # Initial project scaffolding template
+        ├── test_export_2026-06-20.py      # Early PowerPoint export test script
+        ├── find_t_any_2026-06-20.js       # Historical code analysis script
+        └── replace_t_any_2026-06-20.cjs   # Historical type-cast migration utility
 ```
 
 ## 🛠️ Tech Stack
@@ -48,7 +52,7 @@ ai-as-amplifier-explanation-website/
 *   **Frontend**: React 19, TypeScript, Vite, Tailwind CSS, Radix UI primitives, Lucide Icons, Framer Motion
 *   **Backend**: Node.js, Express, TypeScript, Drizzle ORM, tRPC
 *   **Testing & Quality**: Vitest, TypeScript (`tsc --noEmit`), Prettier
-*   **Package Manager**: pnpm
+*   **Package Manager**: pnpm (recommended) or npm (with `--legacy-peer-deps`)
 
 ## 🚀 Getting Started
 
@@ -56,7 +60,7 @@ ai-as-amplifier-explanation-website/
 
 Ensure you have the following installed:
 *   [Node.js](https://nodejs.org/) (v18 or higher recommended)
-*   [pnpm](https://pnpm.io/) (Recommended package manager)
+*   [pnpm](https://pnpm.io/) (Recommended) or [npm](https://docs.npmjs.com/) (v10+)
 
 ### Installation
 
@@ -66,23 +70,29 @@ Ensure you have the following installed:
     cd ai-as-amplifier-explanation-website
     ```
 
-2.  Install all dependencies:
-    ```bash
-    pnpm install
-    ```
+2.  Install dependencies:
+    *   **Using pnpm (Recommended)**:
+        ```bash
+        pnpm install
+        ```
+    *   **Using npm**:
+        ```bash
+        npm install --legacy-peer-deps
+        ```
+        > **Note for npm users**: The `--legacy-peer-deps` flag is required to bypass strict peer dependency checks between Vite 7 / React 19 and development tooling plugins. Avoid running `npm audit fix --force` as it can trigger breaking version downgrades across packages.
 
 ### Available Scripts
 
-| Command | Description |
-| :--- | :--- |
-| `pnpm dev` | Start development server with hot-reloading (default port 3000) |
-| `pnpm build` | Compile full-stack production build (Vite client + Express server in `dist/`) |
-| `pnpm build:standalone` | Generate self-contained static site in `dist-standalone/` for GitHub Pages / CDN |
-| `pnpm start` | Run the compiled full-stack server from `dist/` |
-| `pnpm test` | Run test suites using Vitest |
-| `pnpm check` / `pnpm lint` | Typecheck the entire codebase with `tsc --noEmit` |
-| `pnpm format` | Automatically format code with Prettier |
-| `pnpm db:push` | Generate and apply Drizzle database migrations |
+| Command (pnpm) | Command (npm) | Description |
+| :--- | :--- | :--- |
+| `pnpm dev` | `npm run dev` | Start development server with hot-reloading (default port 3000) |
+| `pnpm build` | `npm run build` | Compile full-stack production build (Vite client + Express server in `dist/`) |
+| `pnpm build:standalone` | `npm run build:standalone` | Generate self-contained static site in `dist-standalone/` for GitHub Pages / CDN |
+| `pnpm start` | `npm start` | Run the compiled full-stack server from `dist/` |
+| `pnpm test` | `npm test` | Run test suites using Vitest |
+| `pnpm check` / `pnpm lint` | `npm run check` / `npm run lint` | Typecheck the entire codebase with `tsc --noEmit` |
+| `pnpm format` | `npm run format` | Automatically format code with Prettier |
+| `pnpm db:push` | `npm run db:push` | Generate and apply Drizzle database migrations |
 
 ## 📖 Using the Slide Showcase
 
@@ -104,6 +114,7 @@ The "Slides / 幻灯片 / Slaid" section demonstrates practical applications of 
 
 *   **Port in Use**: The dev script automatically scans ports from 3000 up to 3019. If port 3000 is occupied, it binds to the next open port.
 *   **Slide Previewing**: Browsers do not render native `.pptx` binaries directly; use the in-app slide image previews or download the file.
+*   **npm Peer Dependency Resolution (`ERESOLVE`)**: When using standard `npm`, always install using `npm install --legacy-peer-deps` to resolve strict peer dependency declarations between Vite 7 / React 19 and plugin toolchains. Do not run `npm audit fix --force`, as it can introduce breaking major version downgrades across packages like `drizzle-orm` and `drizzle-kit`.
 
 ## 🔐 Security & Privacy
 
