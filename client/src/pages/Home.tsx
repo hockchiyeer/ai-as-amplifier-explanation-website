@@ -1,0 +1,701 @@
+import { Fragment, useEffect, useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { Navigation } from '@/components/Navigation';
+import { Section, SectionHeader } from '@/components/Section';
+import { EffectCard } from '@/components/EffectCard';
+import { CaseStudyCard } from '@/components/CaseStudyCard';
+import { UseCaseCard } from '@/components/UseCaseCard';
+import { Button } from '@/components/ui/button';
+import PptShowcase from '@/components/PptShowcase';
+import { StepBadge, StepExtras } from '@/components/StepKit';
+import { goToSection } from '@/lib/scroll';
+import { SECTION_IDS } from '@/lib/steps';
+import { ExternalLink, RichText } from '@/components/RichText';
+import { ArrowRight } from 'lucide-react';
+
+export default function Home() {
+  const { t } = useLanguage();
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      for (const section of SECTION_IDS) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom > 100) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+    const handleScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  // Deep links such as /#mirror-principle: scroll once the content has rendered
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.replace('#', ''));
+    if (id && SECTION_IDS.includes(id)) {
+      const timer = window.setTimeout(() => goToSection(id), 150);
+      return () => window.clearTimeout(timer);
+    }
+  }, []);
+
+  const handleScrollToSection = (sectionId: string) => goToSection(sectionId);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <a
+        href="#main-content"
+        onClick={e => {
+          e.preventDefault();
+          document.getElementById('main-content')?.focus();
+          document.getElementById('home-title')?.scrollIntoView();
+        }}
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[10002] focus:bg-white focus:text-blue-700 focus:font-semibold focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
+      >
+        {t.ui.skipToContent}
+      </a>
+      <Navigation activeSection={activeSection} />
+
+      <main id="main-content" tabIndex={-1} className="outline-none">
+
+      {/* Hero Section */}
+      <Section id="home" className="pt-32 md:pt-40 pb-16 md:pb-24 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <div className="animate-fade-in-up" style={{ animationDelay: '0s' }}>
+            <h1 id="home-title" className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
+              {t.hero.mainHeading}
+            </h1>
+          </div>
+
+          <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <p className="text-xl md:text-2xl text-blue-600 font-semibold">{t.hero.subheading}</p>
+          </div>
+
+          <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              {t.hero.description}
+            </p>
+          </div>
+
+          <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <Button
+              size="lg"
+              onClick={() => handleScrollToSection('three-effects')}
+              className="gap-2"
+            >
+              {t.hero.cta}
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
+        </div>
+      </Section>
+
+      {/* Three Effects Section */}
+      <Section id="three-effects" dark className="bg-slate-50">
+        <SectionHeader
+          stepId="three-effects"
+          title={t.threeEffects.title}
+          subtitle={t.threeEffects.subtitle}
+        />
+        <div className="grid md:grid-cols-3 gap-6">
+          <EffectCard
+            icon={t.threeEffects.amplifier.icon}
+            title={t.threeEffects.amplifier.title}
+            description={t.threeEffects.amplifier.description}
+            keyPoint={t.threeEffects.amplifier.keyPoint}
+            index={0}
+          />
+          <EffectCard
+            icon={t.threeEffects.multiplier.icon}
+            title={t.threeEffects.multiplier.title}
+            description={t.threeEffects.multiplier.description}
+            keyPoint={t.threeEffects.multiplier.keyPoint}
+            index={1}
+          />
+          <EffectCard
+            icon={t.threeEffects.compounder.icon}
+            title={t.threeEffects.compounder.title}
+            description={t.threeEffects.compounder.description}
+            keyPoint={t.threeEffects.compounder.keyPoint}
+            index={2}
+          />
+        </div>
+      
+        <StepExtras id="three-effects" />
+      </Section>
+
+      {/* Mirror Principle Section */}
+      <Section id="mirror-principle" className="bg-white">
+        <SectionHeader
+          stepId="mirror-principle"
+          title={t.mirrorPrinciple.title}
+          subtitle={t.mirrorPrinciple.subtitle}
+          description={t.mirrorPrinciple.description}
+        />
+
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          {[
+            {
+              scenario: t.mirrorPrinciple.scenarios.smart,
+              color: 'from-green-500/20 to-green-500/5',
+              borderColor: 'border-green-500/30',
+            },
+            {
+              scenario: t.mirrorPrinciple.scenarios.mediocre,
+              color: 'from-yellow-500/20 to-yellow-500/5',
+              borderColor: 'border-yellow-500/30',
+            },
+            {
+              scenario: t.mirrorPrinciple.scenarios.defective,
+              color: 'from-red-500/20 to-red-500/5',
+              borderColor: 'border-red-500/30',
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className={`bg-gradient-to-b ${item.color} border ${item.borderColor} rounded-lg p-6 space-y-4 animate-fade-in-up`}
+              style={{ animationDelay: `${0.1 * idx}s` }}
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-2xl" aria-hidden="true">{item.scenario.emoji}</span>
+                <div>
+                  <h3 className="font-semibold text-slate-900">{item.scenario.title}</h3>
+                  <p className="text-xs text-slate-600">{item.scenario.label}</p>
+                </div>
+              </div>
+
+              <div className="space-y-2 text-sm">
+                <div>
+                  <p className="font-semibold text-slate-600 uppercase tracking-wide text-xs mb-1">
+                    {t.mirrorPrinciple.inputLabel}
+                  </p>
+                  <p className="text-slate-900">{item.scenario.input}</p>
+                </div>
+                <div className="border-t border-slate-200 pt-2">
+                  <p className="font-semibold text-slate-600 uppercase tracking-wide text-xs mb-1">
+                    {t.mirrorPrinciple.outputLabel}
+                  </p>
+                  <p className="text-slate-900">{item.scenario.output}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+          <p className="text-lg font-semibold text-blue-700">{t.mirrorPrinciple.rule}</p>
+        </div>
+      
+        <StepExtras id="mirror-principle" />
+      </Section>
+
+      {/* Two AI Paradigms Section */}
+      <Section id="ai-paradigms" dark className="bg-slate-50">
+        <SectionHeader
+          stepId="ai-paradigms"
+          title={t.aiParadigms.title}
+          subtitle={t.aiParadigms.subtitle}
+        />
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {[
+            {
+              paradigm: t.aiParadigms.paradigm1,
+              index: 0,
+            },
+            {
+              paradigm: t.aiParadigms.paradigm2,
+              index: 1,
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="border border-slate-200 rounded-lg p-6 bg-white hover:shadow-lg hover:shadow-blue-100 transition-shadow duration-300 animate-fade-in-up"
+              style={{ animationDelay: `${0.1 * item.index}s` }}
+            >
+              <h3 className="text-2xl font-bold text-slate-900 mb-1">{item.paradigm.title}</h3>
+              <ul className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm mb-4">
+                {item.paradigm.tools.map((tool, toolIdx) => (
+                  <Fragment key={tool.url}>
+                    {toolIdx > 0 && (
+                      <li aria-hidden="true" className="text-slate-400">
+                        ·
+                      </li>
+                    )}
+                    <li>
+                      <ExternalLink href={tool.url}>{tool.name}</ExternalLink>
+                    </li>
+                  </Fragment>
+                ))}
+              </ul>
+
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-3">
+                    {t.aiParadigms.bestForLabel}
+                  </h4>
+                  <ul className="space-y-2">
+                    {item.paradigm.bestFor.map((use, useIdx) => (
+                      <li key={useIdx} className="flex gap-2 items-start text-sm text-slate-900">
+                        <span className="text-blue-600 font-bold mt-0.5" aria-hidden="true">·</span>
+                        <span>{use}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="border-t border-slate-200 pt-4">
+                  <h4 className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2">
+                    {t.aiParadigms.promptingTipLabel}
+                  </h4>
+                  <p className="text-sm text-slate-900 italic">{item.paradigm.promptingTip}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      
+        <StepExtras id="ai-paradigms" />
+      </Section>
+
+      {/* Case Studies Section */}
+      <Section id="case-studies" className="bg-white">
+        <SectionHeader
+          stepId="case-studies"
+          title={t.caseStudies.title}
+          subtitle={t.caseStudies.subtitle}
+        />
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <CaseStudyCard
+            title={t.caseStudies.case1.title}
+            scenario={t.caseStudies.case1.scenario}
+            outcome={t.caseStudies.case1.outcome}
+            lesson={t.caseStudies.case1.lesson}
+            scenarioLabel={t.caseStudies.scenarioLabel}
+            outcomeLabel={t.caseStudies.outcomeLabel}
+            lessonLabel={t.caseStudies.lessonLabel}
+            index={0}
+          />
+          <CaseStudyCard
+            title={t.caseStudies.case2.title}
+            scenario={t.caseStudies.case2.scenario}
+            outcome={t.caseStudies.case2.outcome}
+            lesson={t.caseStudies.case2.lesson}
+            scenarioLabel={t.caseStudies.scenarioLabel}
+            outcomeLabel={t.caseStudies.outcomeLabel}
+            lessonLabel={t.caseStudies.lessonLabel}
+            index={1}
+          />
+        </div>
+      
+        <StepExtras id="case-studies" />
+      </Section>
+
+      {/* Use Cases Section */}
+      <Section id="use-cases" dark className="bg-slate-50">
+        <SectionHeader
+          stepId="use-cases"
+          title={t.useCases.title}
+          subtitle={t.useCases.subtitle}
+        />
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <UseCaseCard
+            title={t.useCases.sales.title}
+            cases={t.useCases.sales.cases}
+            index={0}
+          />
+          <UseCaseCard
+            title={t.useCases.marketing.title}
+            cases={t.useCases.marketing.cases}
+            index={1}
+          />
+          <UseCaseCard
+            title={t.useCases.operations.title}
+            cases={t.useCases.operations.cases}
+            index={2}
+          />
+          <UseCaseCard
+            title={t.useCases.product.title}
+            cases={t.useCases.product.cases}
+            index={3}
+          />
+          <UseCaseCard
+            title={t.useCases.qa.title}
+            cases={t.useCases.qa.cases}
+            index={4}
+          />
+          <UseCaseCard
+            title={t.useCases.competitiveIntelligence.title}
+            cases={t.useCases.competitiveIntelligence.cases}
+            index={5}
+          />
+        </div>
+      
+        <StepExtras id="use-cases" />
+      </Section>
+
+      {/* Prompting Guide Section */}
+      <Section id="prompting-guide" className="bg-white">
+        <SectionHeader
+          stepId="prompting-guide"
+          title={t.promptingGuide.title}
+          subtitle={t.promptingGuide.subtitle}
+          description={t.promptingGuide.introduction}
+        />
+
+        <div className="space-y-6">
+          {t.promptingGuide.examples.map((example, idx) => (
+            <div key={idx} className="grid md:grid-cols-2 gap-6 animate-fade-in-up" style={{ animationDelay: `${0.05 * idx}s` }}>
+              {/* Correct Approach */}
+              <div className="border border-green-300 bg-green-50 rounded-lg p-4">
+                <h4 className="text-sm font-semibold text-green-700 uppercase tracking-wide mb-2">
+                  {t.promptingGuide.doLabel}
+                </h4>
+                <p className="text-sm text-slate-900 italic">{example.correct}</p>
+              </div>
+
+              {/* Incorrect Approach */}
+              <div className="border border-red-300 bg-red-50 rounded-lg p-4">
+                <h4 className="text-sm font-semibold text-red-700 uppercase tracking-wide mb-2">
+                  {t.promptingGuide.dontLabel}
+                </h4>
+                <p className="text-sm text-slate-900 italic">{example.incorrect}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+          <p className="text-lg font-semibold text-blue-700">{t.promptingGuide.keyInsight}</p>
+        </div>
+      
+        <StepExtras id="prompting-guide" />
+      </Section>
+
+
+
+      {/* Vibe Coding Section */}
+      <Section id="vibe-coding" className="bg-white">
+        <SectionHeader
+          stepId="vibe-coding"
+          title={t.vibeCoding.title}
+          subtitle={t.vibeCoding.subtitle}
+          description={t.vibeCoding.description}
+        />
+
+        {/* Useful Tip — same look & hover/shimmer effect as the original page */}
+        <div
+          role="note"
+          className="max-w-4xl mx-auto -mt-6 mb-12 p-6 bg-yellow-200 hover:bg-blue-100 border border-yellow-300 hover:border-blue-200 transition-colors duration-300 rounded-xl shadow-md relative overflow-hidden group hover:shadow-lg"
+        >
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/80 to-transparent group-hover:animate-shimmer skew-x-12"
+          />
+          <p className="text-base md:text-lg text-slate-900 leading-relaxed relative z-10 font-medium">
+            <RichText text={t.vibeCoding.usefulTip} />
+          </p>
+        </div>
+
+        {/* AI Tools */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">{t.vibeCoding.tools.title}</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                tool: t.vibeCoding.tools.bugGenie,
+                links: [
+                  t.vibeCoding.tools.bugGenie.githubLink,
+                  t.vibeCoding.tools.bugGenie.aiStudioLink,
+                  t.vibeCoding.tools.bugGenie.canvasLink,
+                ],
+              },
+              {
+                tool: t.vibeCoding.tools.agileMaturity,
+                links: [t.vibeCoding.tools.agileMaturity.githubLink, t.vibeCoding.tools.agileMaturity.appLink],
+              },
+            ].map(({ tool, links }) => (
+              <div key={tool.name} className="border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h4 className="text-xl font-bold text-slate-900 mb-2">{tool.name}</h4>
+                <p className="text-sm text-blue-600 font-semibold mb-3">
+                  <RichText text={tool.subtitle} />
+                </p>
+                <p className="text-sm text-slate-600 mb-4">{tool.description}</p>
+                <ul className="space-y-2">
+                  {tool.features.map((feature, idx) => (
+                    <li key={idx} className="text-sm text-slate-700 flex items-start">
+                      <span className="text-green-600 mr-2" aria-hidden="true">✓</span>
+                      <span>
+                        <RichText text={feature} />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <dl className="mt-5 space-y-2 text-sm border-t border-slate-100 pt-4">
+                  {links.map(link => (
+                    <div key={link.url}>
+                      <dt className="font-semibold text-slate-900">{link.label}:</dt>
+                      <dd>
+                        <ExternalLink href={link.url} className="break-all font-normal">
+                          {link.url.replace(/^https?:\/\//, '')}
+                        </ExternalLink>
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tool Rankings */}
+        <div className="bg-slate-50 rounded-lg p-8">
+          <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">{t.vibeCoding.toolRankings.title}</h3>
+          <p className="text-sm text-slate-600 text-center mb-6">{t.vibeCoding.toolRankings.subtitle}</p>
+          <div role="list" className="space-y-3">
+            {t.vibeCoding.toolRankings.tools.map((tool, idx) => (
+              <div role="listitem" key={idx} className="flex items-center justify-between gap-4 bg-white p-4 rounded border border-slate-200">
+                <div className="flex items-center gap-4">
+                  <span className="text-lg font-bold text-blue-600 w-8 text-center flex-shrink-0">#{tool.rank}</span>
+                  <ExternalLink href={tool.url} className="font-medium">
+                    {tool.name}
+                  </ExternalLink>
+                </div>
+                <span className="text-lg font-bold text-blue-600 flex-shrink-0">{tool.score}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <StepExtras id="vibe-coding" />
+      </Section>
+
+      
+      {/* Cross-Model Validation Section */}
+      <Section id="cross-model-validation" className="bg-slate-50">
+        <SectionHeader
+          stepId="cross-model-validation"
+          title={t.crossModelValidation?.title || 'Cross-Model Validation'}
+          subtitle={t.crossModelValidation?.subtitle || 'Reducing hallucinations'}
+          description={t.crossModelValidation?.description}
+        />
+        <div role="list" className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {t.crossModelValidation?.steps?.map((step: any, idx: number) => (
+            <div role="listitem" key={idx} className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s` }}>
+              <div className="text-3xl font-bold text-blue-200 mb-4" aria-hidden="true">{idx + 1}</div>
+              <h4 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h4>
+              <p className="text-sm text-slate-600">
+                <RichText text={step.description} />
+              </p>
+            </div>
+          ))}
+        </div>
+      
+        <StepExtras id="cross-model-validation" />
+      </Section>
+
+      {/* Strategic Insights Section */}
+      <Section id="strategic-insights" className="bg-blue-50">
+        <SectionHeader
+          stepId="strategic-insights"
+          title={t.strategicInsights.title}
+          subtitle={t.strategicInsights.subtitle}
+        />
+
+        <div className="bg-white rounded-lg border border-blue-200 p-8 mb-6">
+          <p className="text-lg text-slate-900 font-semibold mb-4 italic">"{t.strategicInsights.question}"</p>
+          <p className="text-sm text-slate-600 leading-relaxed">{t.strategicInsights.insight}</p>
+        </div>
+
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg p-8 text-center">
+          <p className="text-lg font-semibold">{t.strategicInsights.keyPoint}</p>
+        </div>
+      
+        <StepExtras id="strategic-insights" />
+      </Section>
+
+      
+      {/* AI Red Teaming Section */}
+      <Section id="ai-red-teaming" className="bg-red-50/50">
+        <SectionHeader
+          stepId="ai-red-teaming"
+          title={t.aiRedTeaming?.title || 'AI Red Teaming'}
+          subtitle={t.aiRedTeaming?.subtitle}
+          description={t.aiRedTeaming?.description}
+        />
+        <div role="list" className="space-y-4 max-w-3xl mx-auto">
+          {t.aiRedTeaming?.questions?.map((q: string, idx: number) => (
+            <div role="listitem" key={idx} className="flex gap-4 items-start bg-white p-5 rounded-lg border border-red-100 shadow-sm animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s` }}>
+              <span className="text-red-500 font-bold text-xl flex-shrink-0" aria-hidden="true">🔴</span>
+              <p className="text-slate-800 font-medium">{q}</p>
+            </div>
+          ))}
+        </div>
+      
+        <StepExtras id="ai-red-teaming" />
+      </Section>
+
+      
+      {/* Production Observations Section */}
+      <Section id="production-observations" className="bg-white">
+        <SectionHeader
+          stepId="production-observations"
+          title={t.productionObservations?.title || 'Observations'}
+          subtitle={t.productionObservations?.subtitle}
+        />
+        <div role="list" className="grid md:grid-cols-2 gap-6">
+          {t.productionObservations?.observations?.map((obs: any, idx: number) => (
+            <div role="listitem" key={idx} className="border border-slate-200 rounded-xl p-6 hover:border-blue-300 transition-colors">
+              <div className="text-blue-600 font-bold text-lg mb-2">0{idx + 1}</div>
+              <h4 className="text-xl font-bold text-slate-900 mb-3">{obs.title}</h4>
+              <p className="text-slate-600 leading-relaxed text-sm">{obs.description}</p>
+            </div>
+          ))}
+        </div>
+      
+        <StepExtras id="production-observations" />
+      </Section>
+
+      {/* Subtract Principle Section */}
+      <Section id="subtract-principle" className="bg-white">
+        <SectionHeader
+          stepId="subtract-principle"
+          title={t.subtractPrinciple.title}
+          subtitle={t.subtractPrinciple.subtitle}
+          description={t.subtractPrinciple.description}
+        />
+
+        <div className="bg-red-50 border border-red-200 rounded-lg p-8">
+          <h3 className="text-lg font-bold text-slate-900 mb-6">{t.subtractPrinciple.corePrinciplesLabel}</h3>
+          <ul className="space-y-4">
+            {t.subtractPrinciple.principles.map((principle, idx) => (
+              <li key={idx} className="flex items-start gap-4">
+                <span className="text-red-600 font-bold text-lg flex-shrink-0" aria-hidden="true">−</span>
+                <span className="text-slate-700">{principle}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      
+        <StepExtras id="subtract-principle" />
+      </Section>
+
+      
+      {/* AI Moats Section */}
+      <Section id="ai-moats" className="bg-gradient-to-br from-blue-50 to-indigo-50">
+        <SectionHeader
+          stepId="ai-moats"
+          title={t.aiMoats?.title || 'Building Long-Term AI Moats'}
+          subtitle={t.aiMoats?.subtitle}
+          description={t.aiMoats?.description}
+        />
+        <div role="list" className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {t.aiMoats?.timeline?.map((item: any, idx: number) => (
+            <div role="listitem" key={idx} className="bg-white/80 backdrop-blur rounded-lg p-6 border border-blue-100 relative overflow-hidden group hover:shadow-md transition-all">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-blue-100 rounded-bl-full -mr-8 -mt-8 opacity-50 group-hover:bg-blue-200 transition-colors"></div>
+              <h5 className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">{item.period}</h5>
+              <h4 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h4>
+              <p className="text-sm text-slate-600">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      
+        <StepExtras id="ai-moats" />
+      </Section>
+
+      {/* Key Takeaways Section */}
+      <Section id="key-takeaways" className="bg-slate-50">
+        <SectionHeader
+          stepId="key-takeaways"
+          title={t.keyTakeaways.title}
+          subtitle={t.keyTakeaways.subtitle}
+        />
+
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
+          {t.keyTakeaways.takeaways.map((takeaway, idx) => (
+            <div key={idx} className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-shadow animate-fade-in-up" style={{ animationDelay: `${0.05 * idx}s` }}>
+              <div className="flex items-start gap-4">
+                <span className="text-3xl flex-shrink-0" aria-hidden="true">{takeaway.icon}</span>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">{takeaway.title}</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">{takeaway.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      
+        <StepExtras id="key-takeaways" />
+      </Section>
+
+      {/* Your AI Journey Section */}
+  <PptShowcase />
+
+  <Section id="ai-journey" className="bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+        <div className="text-center mb-12">
+          <StepBadge id="ai-journey" />
+          <h2 id="ai-journey-title" className="text-4xl md:text-5xl font-bold mb-4 focus:outline-none">{t.aiJourney.title}</h2>
+          <p className="text-lg text-slate-300 mb-6">{t.aiJourney.subtitle}</p>
+          <p className="text-xl font-semibold text-blue-300 italic max-w-3xl mx-auto">{t.aiJourney.tagline}</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {t.aiJourney.steps.map((step, idx) => (
+            <div key={idx} className="text-center p-6 bg-slate-800 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors animate-fade-in-up" style={{ animationDelay: `${0.1 * idx}s` }}>
+              <div className="text-4xl font-bold text-blue-400 mb-3">{step.step}</div>
+              <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
+              <p className="text-slate-300">{step.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            {t.aiJourney.cta}
+          </Button>
+          <p className="text-slate-400 text-sm mt-6">{t.aiJourney.author}</p>
+        </div>
+        <StepExtras id="ai-journey" />
+      </Section>
+
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-slate-50 border-t border-slate-200 py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">{t.footer.aboutTitle}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">{t.footer.aboutText}</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">{t.footer.keyTakeaway}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">{t.footer.keyTakeawayText}</p>
+            </div>
+          </div>
+          <div className="border-t border-slate-200 pt-8 text-center text-xs text-slate-600">
+            <p>{t.ui.copyright}</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
