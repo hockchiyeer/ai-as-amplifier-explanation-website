@@ -1,15 +1,17 @@
 # AI Amplifier — Website
 
-A comprehensive, bilingual (English/Chinese) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder". The project includes a slide-deck showcase with local presentation files that illustrate how a unified AI application framework can be successfully transferred and applied across diverse domains such as software testing, political strategy, and business strategy.
+A comprehensive, trilingual (English, Chinese, and Bahasa Melayu — EN / ZH / BM) educational platform demonstrating the concept of "AI as an Amplifier, Multiplier, and Compounder". The project includes 15 step-by-step curriculum modules, real-world domain examples, practical tips, and an authentic slide-deck showcase illustrating how a unified AI application framework transfers across software testing, political strategy, and business strategy.
 
-This repository contains a full-stack application built with React, Vite, Express, and Drizzle ORM.
+This repository supports both a full-stack deployment (React, Vite, Express, and Drizzle ORM) and a standalone static bundle for serverless hosting.
 
 ## 🌟 Key Features
 
-*   **Bilingual Interface**: Seamless switching between English and Chinese content.
-*   **Educational Slide Showcase**: Explore how AI amplifies outcomes across different domains. The application provides interactive previews and downloads for multiple demonstration slide decks.
-*   **Modern Full-Stack Architecture**: A robust React frontend backed by a fast Express API and type-safe database access using Drizzle ORM.
-*   **Responsive Design**: A user interface that works beautifully across all devices.
+*   **Trilingual Interface**: Full localization across English (EN), Simplified Chinese (ZH), and Bahasa Melayu (BM) with an instant language switcher across all views.
+*   **15 Guided Curriculum Modules**: Step-by-step exploration covering the Three Effects (Amplifier, Multiplier, Compounder), Mirror Principle, AI Paradigms, Case Studies, Prompting Guides, Vibe Coding, AI Moats, and Strategic Insights.
+*   **Practical Tips & Real-World Examples**: Concrete enterprise scenarios, operational checklists, and domain transfer patterns.
+*   **Interactive Slide Showcase & Evidence**: In-app previews, slide-by-slide evidence viewer, and direct downloads for presentation decks (`.pptx`).
+*   **Dynamic Visual Experience**: Domain-specific accent colors, interactive hover state transitions, and responsive mobile-first layout.
+*   **Dual Build Modes**: Run as a full-stack Express + Vite application or build a standalone static site (`dist-standalone/`) ready for GitHub Pages or CDN hosting.
 
 ## 📂 Repository Structure
 
@@ -18,28 +20,32 @@ The project is structured as a monorepo containing both client and server applic
 ```text
 ai-as-amplifier-explanation-website/
 ├── client/                 # Frontend React + Vite application
-│   ├── public/             # Static assets
-│   ├── src/                # React components, pages, hooks, and utilities
+│   ├── public/             # Static assets (fonts, icons, slide copies)
+│   ├── src/                # React components, pages, hooks, contexts, and i18n
 │   └── test/               # Frontend test suites
 ├── server/                 # Backend Express server and API routes
 │   ├── _core/              # Server configuration and startup
 │   └── routers.ts          # API route definitions
-├── shared/                 # Shared types, constants, and utilities for both client and server
+├── shared/                 # Shared types, constants, and utilities for client and server
 ├── drizzle/                # Database schemas and migration files (Drizzle ORM)
-├── resources/              # Static resources and data
-│   └── data/pptx/          # The example slide decks showcasing AI amplification
-├── scripts/                # Development and build utility scripts
-├── patches/                # Dependency patches
-├── CONTENT.md              # Detailed content documentation
-└── EXPANSION_PLAN.md       # Roadmap and future expansion plans
+├── resources/              # Static presentations and image assets
+│   └── data/
+│       ├── pptx/           # Original presentation slide decks (.pptx)
+│       └── pptx_images/    # Rendered slide preview images for web viewing
+├── scripts/                # Build and maintenance utility scripts
+├── dist-standalone/        # Generated standalone static distribution (optional build)
+└── docs/                   # Project documentation and specifications
+    └── archive/            # Archived planning, content specifications, and todo logs
+        ├── CONTENT_2026-06-20.md # Detailed curriculum content documentation
+        ├── EXPANSION_PLAN_2026-06-19.md # Roadmap and future expansion plans
+        └── todo_2026-06-19.md  # Historical task tracking and planning notes
 ```
 
 ## 🛠️ Tech Stack
 
-*   **Frontend**: React, TypeScript, Vite
-*   **Backend**: Node.js, Express, TypeScript
-*   **Database**: Drizzle ORM
-*   **Testing**: Vitest
+*   **Frontend**: React 19, TypeScript, Vite, Tailwind CSS, Radix UI primitives, Lucide Icons, Framer Motion
+*   **Backend**: Node.js, Express, TypeScript, Drizzle ORM, tRPC
+*   **Testing & Quality**: Vitest, TypeScript (`tsc --noEmit`), Prettier
 *   **Package Manager**: pnpm
 
 ## 🚀 Getting Started
@@ -63,40 +69,43 @@ Ensure you have the following installed:
     pnpm install
     ```
 
-### Running the Application
+### Available Scripts
 
-To start the development server for both the frontend and backend:
-
-```bash
-pnpm dev
-```
-
-*   The local development server will start (typically bound to `http://localhost:3000`, or the next available port).
-*   Open your browser and navigate to the provided URL to view the application.
+| Command | Description |
+| :--- | :--- |
+| `pnpm dev` | Start development server with hot-reloading (default port 3000) |
+| `pnpm build` | Compile full-stack production build (Vite client + Express server in `dist/`) |
+| `pnpm build:standalone` | Generate self-contained static site in `dist-standalone/` for GitHub Pages / CDN |
+| `pnpm start` | Run the compiled full-stack server from `dist/` |
+| `pnpm test` | Run test suites using Vitest |
+| `pnpm check` / `pnpm lint` | Typecheck the entire codebase with `tsc --noEmit` |
+| `pnpm format` | Automatically format code with Prettier |
+| `pnpm db:push` | Generate and apply Drizzle database migrations |
 
 ## 📖 Using the Slide Showcase
 
-The "Slides / 幻灯片" section is a core feature of the platform, demonstrating practical applications of AI:
+The "Slides / 幻灯片 / Slaid" section demonstrates practical applications of AI across multiple domains:
 
 1.  Navigate to the Slides section via the top navigation bar.
-2.  You can **Preview** the slides (which opens them in a new tab) or **Download** them directly to your machine.
-3.  Alternatively, to view the slides without running the application, navigate to `resources/data/pptx/` and open the `.pptx` files using your preferred presentation software.
+2.  Use **Preview** to inspect high-resolution slide images directly in the browser.
+3.  Use **Download** to obtain original `.pptx` files for presentation software.
+4.  Local slide files can also be accessed directly in `resources/data/pptx/`.
 
 ## 🔧 Development Guide
 
-*   **Bilingual Content**: Text and translations are managed within the `client/src/lib/i18n.ts` file.
-*   **Slide Showcase Component**: Modifications to the presentation viewer can be made in `client/src/components/PptShowcase.tsx`.
-*   **Database Schema**: Update your Drizzle schema in the `drizzle/` directory and use the provided pnpm scripts to generate and run migrations.
+*   **Trilingual Localization**: Text and translations are maintained in `client/src/lib/i18n.ts` supporting `en`, `zh`, and `bm`.
+*   **Slide Showcase Component**: Interactive slide viewers and modals are located in `client/src/components/PptShowcase.tsx`.
+*   **Visual Themes & Hover Effects**: Accent colors and hover effects are managed through Tailwind utility classes and CSS variables in `client/src/index.css`.
+*   **Database Schema**: Define and modify models in `drizzle/schema.ts` and apply updates with `pnpm db:push`.
 
 ### Troubleshooting
 
-*   **Port in Use**: The dev script automatically attempts to find an available port starting from 3000 up to 3019. Check if any background services are blocking these ports.
-*   **TypeScript Errors**: Ensure you have run `pnpm install` so that all necessary `@types/*` packages are available to your IDE.
-*   **Slide Previewing**: Browsers generally do not render `.pptx` files natively. Use the "Download" option or upload the file to a cloud viewer (like Google Drive) for an optimal experience.
+*   **Port in Use**: The dev script automatically scans ports from 3000 up to 3019. If port 3000 is occupied, it binds to the next open port.
+*   **Slide Previewing**: Browsers do not render native `.pptx` binaries directly; use the in-app slide image previews or download the file.
 
 ## 🔐 Security & Privacy
 
-This demonstration is intended for local or protected environments. The slide decks under `resources/data/pptx/` are served statically. If deployed to a public environment, ensure proper authentication and authorization mechanisms are implemented before exposing sensitive routes or files.
+This demonstration is intended for local or protected environments. Presentation files under `resources/data/pptx/` are served statically. If deployed to a public environment, ensure proper authentication and authorization mechanisms are implemented before exposing sensitive routes or data.
 
 ## 📞 Contact
 

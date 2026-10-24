@@ -271,8 +271,8 @@ export default function Home() {
                   ))}
                 </div>
               ) : (
-                item.paradigm.subtitle && (
-                  <p className="text-sm text-blue-600 font-semibold mb-4">{item.paradigm.subtitle}</p>
+                Boolean((item.paradigm as any).subtitle) && (
+                  <p className="text-sm text-blue-600 font-semibold mb-4">{(item.paradigm as any).subtitle}</p>
                 )
               )}
 
