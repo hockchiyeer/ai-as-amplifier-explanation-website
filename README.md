@@ -4,6 +4,8 @@ A comprehensive, trilingual (English, Chinese, and Bahasa Melayu — EN / ZH / B
 
 This repository supports both a full-stack deployment (React, Vite, Express, and Drizzle ORM) and a standalone static bundle for serverless hosting.
 
+> **Live Application**: The website built from this repository can be accessed at [https://ai.studio/apps/f4e1e03a-4a8a-4a8f-a961-cf64f68b4993](https://ai.studio/apps/f4e1e03a-4a8a-4a8f-a961-cf64f68b4993).
+
 ## 🌟 Key Features
 
 *   **Trilingual Interface**: Full localization across English (EN), Simplified Chinese (ZH), and Bahasa Melayu (BM) with an instant language switcher across all views.

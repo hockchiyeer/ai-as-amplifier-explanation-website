@@ -33,33 +33,67 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
   throw new Error(`No available port found starting from ${startPort}`);
 }
 
+function findProjectRoot(): string {
+  // Check process.cwd()
+  if (fs.existsSync(path.resolve(process.cwd(), "resources", "data"))) {
+    return process.cwd();
+  }
+  // Check one directory up (when running from dist/index.js in production)
+  const oneUp = path.resolve(import.meta.dirname, "..");
+  if (fs.existsSync(path.resolve(oneUp, "resources", "data"))) {
+    return oneUp;
+  }
+  // Check two directories up (when running from server/_core/index.ts in development)
+  const twoUp = path.resolve(import.meta.dirname, "..", "..");
+  if (fs.existsSync(path.resolve(twoUp, "resources", "data"))) {
+    return twoUp;
+  }
+  return process.cwd();
+}
+
 async function startServer() {
   const app = express();
   const server = createServer(app);
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+
+  const projectRoot = findProjectRoot();
+  const pptxDir = path.resolve(projectRoot, "resources", "data", "pptx");
+  const pptxImagesDir = path.resolve(projectRoot, "resources", "data", "pptx_images");
+
   // Serve local PPTX resources under /pptx/<filename>
-  // Serve local PPTX resources under /pptx/<filename>
-  app.use('/pptx', express.static(path.resolve(import.meta.dirname, '..', '..', 'resources', 'data', 'pptx')));
-  // Serve generated PPTX images under /pptx-images
-  const pptxImagesDir = path.resolve(import.meta.dirname, '..', '..', 'resources', 'data', 'pptx_images');
-  if (!fs.existsSync(pptxImagesDir)) {
-    fs.mkdirSync(pptxImagesDir, { recursive: true });
+  if (fs.existsSync(pptxDir)) {
+    app.use("/pptx", express.static(pptxDir));
   }
-  app.use('/pptx-images', express.static(pptxImagesDir));
+
+  // Serve generated PPTX images under /pptx-images (safely created)
+  try {
+    if (!fs.existsSync(pptxImagesDir)) {
+      fs.mkdirSync(pptxImagesDir, { recursive: true });
+    }
+  } catch (err) {
+    console.warn("[PPTX] Warning: Could not create pptx_images directory:", err);
+  }
+  if (fs.existsSync(pptxImagesDir)) {
+    app.use("/pptx-images", express.static(pptxImagesDir));
+  }
 
   const execFileAsync = promisify(execFile);
 
   // Helper: ensure images exist for a PPTX. Returns array of image filenames (relative to pptxImagesDir subfolder) or null if conversion not possible.
   async function ensureImagesForPptx(filename: string): Promise<string[] | null> {
     const safe = path.basename(filename);
-    const pptPath = path.resolve(import.meta.dirname, '..', '..', 'resources', 'data', 'pptx', safe);
+    const pptPath = path.resolve(pptxDir, safe);
     if (!fs.existsSync(pptPath)) return null;
 
     const outFolder = path.resolve(pptxImagesDir, path.parse(safe).name);
-    if (!fs.existsSync(outFolder)) {
-      fs.mkdirSync(outFolder, { recursive: true });
+    try {
+      if (!fs.existsSync(outFolder)) {
+        fs.mkdirSync(outFolder, { recursive: true });
+      }
+    } catch (err) {
+      console.warn(`[PPTX] Warning: Could not create output folder ${outFolder}:`, err);
     }
 
     const sortFiles = (files: string[]) => {
@@ -144,7 +178,7 @@ async function startServer() {
       return;
     }
 
-    const pptPath = path.resolve(import.meta.dirname, '..', '..', 'resources', 'data', 'pptx', filename);
+    const pptPath = path.resolve(pptxDir, filename);
     if (!fs.existsSync(pptPath)) {
       res.status(404).send('Not found');
       return;
@@ -183,7 +217,6 @@ async function startServer() {
   // Background pre-generation: convert all PPTX files to images to avoid first-request latency
   (async function preGenerateAllPptxImages() {
     try {
-      const pptxDir = path.resolve(import.meta.dirname, '..', '..', 'resources', 'data', 'pptx');
       if (!fs.existsSync(pptxDir)) return;
 
       const files = fs.readdirSync(pptxDir).filter(f => /\.pptx$/i.test(f));
